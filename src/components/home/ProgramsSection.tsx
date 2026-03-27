@@ -28,7 +28,7 @@ const programs = [
 
 const ProgramsSection = () => {
   return (
-    <section className="w-full min-h-screen bg-[#DBC2FF] flex items-center justify-center py-24">
+    <section className="w-full bg-[#EADDFF] flex items-center justify-center py-24 overflow-hidden">
       <div className="max-w-[1440px] w-full mx-auto px-6 md:px-20 lg:px-[120px]">
         {/* Header Section */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 gap-6">
@@ -42,15 +42,15 @@ const ProgramsSection = () => {
           </motion.h2>
           
           <motion.button
-            whileHover={{ scale: 1.05, backgroundColor: "#9569E6" }}
+            whileHover={{ scale: 1.05, backgroundColor: "#B794F4" }}
             whileTap={{ scale: 0.95 }}
-            className="flex items-center gap-3 px-8 py-4 bg-[#A782F0] text-white rounded-full font-bold text-[18px] shadow-xl transition-all"
+            className="flex items-center gap-3 px-8 py-3.5 bg-[#A78BFA] text-white rounded-full font-bold text-[18px] shadow-lg transition-all"
           >
             View All
-            <div className="bg-white/20 p-1 rounded-full flex items-center justify-center">
+            <div className="bg-white p-1 rounded-full flex items-center justify-center">
               <svg 
-                width="20" height="20" viewBox="0 0 24 24" fill="none" 
-                stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"
+                width="16" height="16" viewBox="0 0 24 24" fill="none" 
+                stroke="#A78BFA" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"
               >
                 <path d="M7 7h10v10" />
                 <path d="M7 17 17 7" />
@@ -60,7 +60,7 @@ const ProgramsSection = () => {
         </div>
 
         {/* Programs Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {programs.map((program, idx) => (
             <motion.div
               key={idx}
@@ -68,30 +68,30 @@ const ProgramsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1, duration: 0.5 }}
-              className="bg-white rounded-[48px] overflow-hidden flex flex-col h-full shadow-2xl group cursor-default"
+              className="relative bg-white rounded-[32px] overflow-hidden flex flex-col h-[480px] group shadow-xl cursor-default"
             >
-              {/* Image Container */}
-              <div className="w-full h-auto flex items-center justify-center pt-8 px-6">
-                <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden">
-                   <img 
-                      src={program.image} 
-                      alt={program.title} 
-                      className="w-full h-full object-contain"
-                    />
-                </div>
+              {/* Full Card Image Background */}
+              <div className="absolute inset-0 w-full h-full pt-6">
+                <img 
+                  src={program.image} 
+                  alt={program.title} 
+                  className="w-full h-full object-contain object-top opacity-90 transition-transform duration-700 group-hover:scale-105"
+                />
+                {/* Gradient for text legibility */}
+                <div className="absolute inset-0 bg-gradient-to-t from-white/95 via-white/5 to-transparent" />
               </div>
               
-              {/* Content Section */}
-              <div className="p-8 pt-6 flex flex-col flex-1">
-                <h3 className="text-[26px] font-bold text-[#1A1A1A] leading-[1.1] mb-3 tracking-tight">
+              {/* Content Section - Pinned to bottom */}
+              <div className="relative z-10 p-8 mt-auto flex flex-col">
+                <h3 className="text-[22px] md:text-[24px] font-bold text-[#1A1A1A] leading-[1.2] mb-3 tracking-tight">
                   {program.title}
                 </h3>
-                <p className="text-[15px] text-[#6B7280] leading-[1.5] mb-8 flex-1">
+                <p className="text-[13px] md:text-[14px] text-[#4B5563] leading-[1.5] mb-5 line-clamp-3">
                   {program.description}
                 </p>
-                <button className="flex items-center gap-2 text-[#A782F0] font-bold text-[18px] group/btn transition-colors hover:text-[#8B5CF6]">
+                <button className="flex items-center gap-1.5 text-[#A78BFA] font-bold text-[15px] group/btn transition-colors hover:text-[#8B5CF6]">
                   Learn More 
-                  <span className="transition-transform group-hover/btn:translate-x-1">→</span>
+                  <span className="text-[18px] transition-transform group-hover/btn:translate-x-1">→</span>
                 </button>
               </div>
             </motion.div>

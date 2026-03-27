@@ -23,10 +23,24 @@ const ContactSection = () => {
                   viewport={{ once: true }}
                   className="flex flex-col gap-4 mb-12 sm:mb-16"
                 >
-                  <span className="text-[#9F7AEA] font-bold tracking-[0.2em] text-xs sm:text-sm uppercase">CONTACT</span>
                   <h2 className="relative inline-block text-[36px] sm:text-[48px] lg:text-[64px] font-bold text-[#1A1A1A] leading-[1.1] tracking-tighter">
                     Collaborate With Us
-                    <div className="absolute -bottom-1 left-0 w-full h-4 bg-[#A782F0]/20 -rotate-1 rounded-full -z-10" />
+                    <div className="absolute -bottom-6 left-0 w-full group">
+                      <svg
+                        viewBox="0 0 400 20"
+                        className="w-full h-auto text-[#A782F0] opacity-80"
+                        preserveAspectRatio="none"
+                      >
+                        <path
+                          d="M5 15 Q 100 5, 200 15 T 395 15"
+                          stroke="currentColor"
+                          strokeWidth="8"
+                          strokeLinecap="round"
+                          fill="none"
+                          className="drop-shadow-sm"
+                        />
+                      </svg>
+                    </div>
                   </h2>
                 </motion.div>
                 <p className="text-[24px] md:text-[28px] font-bold italic text-[#1A1A1A] leading-[1.3] max-w-[500px]">

@@ -58,13 +58,23 @@ const TrainingSection = () => {
                 animate={{ opacity: 1, y: 0 }}
                 className="text-[32px] md:text-[44px] lg:text-[52px] font-bold leading-[1.1] text-black mb-6 tracking-tight"
               >
-                {/* Fixed the 'Platm' bug by splitting only on the word ' for ' with spaces */}
+                {/* Typing Animation for the dynamic part of the title */}
                 {trainingPrograms[activeTab].title.includes(' for ') ? (
                   <>
-                    {trainingPrograms[activeTab].title.split(' for ')[0].trim()}
+                    <span className="inline-block whitespace-nowrap">
+                      {trainingPrograms[activeTab].title.split(' for ')[0].trim()}
+                    </span>
                     <br className="hidden sm:block" />
                     <span className="text-[#1A1A1A]">for </span>
-                    {trainingPrograms[activeTab].title.split(' for ')[1].trim()}
+                    <motion.span
+                      key={`typing-${activeTab}`}
+                      initial={{ width: 0 }}
+                      animate={{ width: "auto" }}
+                      transition={{ duration: 1.2, ease: "easeOut" }}
+                      className="inline-block overflow-hidden whitespace-nowrap align-bottom border-r-2 border-[#A782F0] pr-1"
+                    >
+                      {trainingPrograms[activeTab].title.split(' for ')[1].trim()}
+                    </motion.span>
                   </>
                 ) : (
                   trainingPrograms[activeTab].title

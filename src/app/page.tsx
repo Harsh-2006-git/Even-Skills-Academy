@@ -15,9 +15,9 @@ export default function Home() {
       {/* Spacer for the fixed navbar (78px) */}
       <div className="pt-[78px]">
         <Hero />
+        <WhyChange />
         <TrainingSection />
         <ImpactBanner />
-        <WhyChange />
         <ProgramsSection />
         <ImpactStats />
         <ContactSection />
