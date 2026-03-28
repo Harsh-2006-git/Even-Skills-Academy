@@ -3,12 +3,14 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
+  const pathname = usePathname();
   
   const navLinks = [
-    { name: "Home", href: "/", active: true },
+    { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Programs", href: "/programs" },
     { name: "Advisory", href: "/advisory" },
@@ -35,17 +37,20 @@ const Navbar = () => {
 
         {/* Desktop Links */}
         <div className="hidden lg:flex items-center gap-[40px]">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className={`text-base font-medium transition-colors hover:text-[#9F7AEA] ${
-                link.active ? "text-[#9F7AEA]" : "text-zinc-600"
-              }`}
-            >
-              {link.name}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href;
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={`text-base font-medium transition-colors hover:text-[#9F7AEA] ${
+                  isActive ? "text-[#9F7AEA]" : "text-zinc-600"
+                }`}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
         </div>
 
         <div className="flex items-center gap-4">
@@ -96,18 +101,21 @@ const Navbar = () => {
         className="fixed inset-0 z-[90] bg-white flex flex-col pt-24 px-8 lg:hidden"
       >
         <div className="flex flex-col gap-6">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              onClick={() => setIsOpen(false)}
-              className={`text-2xl font-bold ${
-                link.active ? "text-[#9F7AEA]" : "text-zinc-600"
-              }`}
-            >
-              {link.name}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href;
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className={`text-2xl font-bold ${
+                  isActive ? "text-[#9F7AEA]" : "text-zinc-600"
+                }`}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
           <button className="flex items-center justify-center gap-2 px-8 py-4 bg-[#B794F4] text-white rounded-2xl font-bold text-lg mt-4 shadow-lg">
             Join our Team
           </button>
