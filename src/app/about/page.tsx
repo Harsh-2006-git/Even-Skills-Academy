@@ -4,7 +4,6 @@ import VisionSection from "@/components/about/VisionSection";
 import ApproachSection from "@/components/about/ApproachSection";
 import WorkProcess from "@/components/about/WorkProcess";
 import ReadyToBuild from "@/components/about/ReadyToBuild";
-import ContactSection from "@/components/home/ContactSection";
 import Footer from "@/components/home/Footer";
 
 export default function AboutPage() {
@@ -19,7 +18,6 @@ export default function AboutPage() {
         <WorkProcess />
         <ReadyToBuild />
         {/* We can potentially add more sections here as we build them */}
-        <ContactSection />
         <Footer />
       </div>
     </main>

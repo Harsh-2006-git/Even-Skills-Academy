@@ -77,9 +77,9 @@ const ApproachCard = ({ title, description, image, index }: { title: string; des
     className="relative pt-24 pb-12 px-8 rounded-[40px] border-2 border-[#E9D8FD] flex flex-col items-center text-center group hover:border-[#B794F4] transition-all duration-300 bg-white min-h-[300px]"
   >
     {/* Stylized Floating Icon */}
-    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[1px] w-48 h-24 bg-[#E9D8FD] rounded-b-full flex items-end justify-center pb-3 overflow-hidden transition-all duration-300 group-hover:bg-[#D6BCFA]">
+    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-0 w-48 h-24 bg-[#E9D8FD] rounded-b-full flex items-center justify-center overflow-hidden transition-all duration-300 group-hover:bg-[#D6BCFA]">
       {/* The Illustration aligned inside */}
-      <div className="relative w-20 h-20 lg:w-16 lg:h-16 group-hover:scale-110 transition-transform duration-300">
+      <div className="relative w-28 h-28 group-hover:scale-110 transition-transform duration-300">
         <Image 
           src={image} 
           alt={title} 
