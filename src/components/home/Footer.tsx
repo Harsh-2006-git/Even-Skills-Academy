@@ -12,11 +12,14 @@ const Footer = () => {
           
           {/* Column 1: Logo & Mission */}
           <div className="lg:col-span-4 space-y-6">
-            <div className="flex flex-col leading-tight font-black tracking-tighter">
-              <span className="text-2xl uppercase flex items-baseline">
-                <span className="text-[#9F7AEA]">E</span>VEN
+            <div className="flex flex-col leading-[0.9] font-[900] tracking-tighter">
+              <span className="text-[26px] uppercase flex items-baseline">
+                <span className="text-[#A64AED]">EVE</span>
+                <span className="text-[#1A1A1A]">N</span>
               </span>
-              <span className="text-2xl uppercase">ACADEMY</span>
+              <span className="text-[26px] uppercase text-[#A64AED]">
+                ACADEMY
+              </span>
             </div>
             <p className="text-[16px] text-[#6B7280] leading-[1.6] max-w-[280px]">
               The global standard for inclusive professional education and workforce placement.
@@ -31,7 +34,7 @@ const Footer = () => {
             <ul className="space-y-4">
               {["Home", "About", "Programs", "Advisory", "Impact"].map((item) => (
                 <li key={item}>
-                  <Link href={`/${item.toLowerCase()}`} className="text-[15px] font-medium text-[#6B7280] hover:text-[#9F7AEA] transition-colors">
+                  <Link href={`/${item.toLowerCase()}`} className="text-[15px] font-medium text-[#6B7280] hover:text-[#A64AED] transition-colors">
                     {item}
                   </Link>
                 </li>
@@ -47,7 +50,7 @@ const Footer = () => {
             <ul className="space-y-4">
               {["Green Energy", "Mobility Training", "Platform Economy Skills", "Ai Labs"].map((item) => (
                 <li key={item}>
-                  <Link href="#" className="text-[15px] font-medium text-[#6B7280] hover:text-[#9F7AEA] transition-colors">
+                  <Link href="#" className="text-[15px] font-medium text-[#6B7280] hover:text-[#A64AED] transition-colors">
                     {item}
                   </Link>
                 </li>
@@ -62,13 +65,13 @@ const Footer = () => {
             </h4>
             <div className="space-y-5">
               <a href="mailto:info@evenacademy.com" className="flex items-center gap-3 group">
-                <div className="text-[#6B7280] group-hover:text-[#9F7AEA] transition-colors">
+                <div className="text-[#6B7280] group-hover:text-[#A64AED] transition-colors">
                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                      <rect width="20" height="16" x="2" y="4" rx="2" />
                      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                    </svg>
                 </div>
-                <span className="text-[15px] font-medium text-[#6B7280] group-hover:text-[#9F7AEA] transition-colors">
+                <span className="text-[15px] font-medium text-[#6B7280] group-hover:text-[#A64AED] transition-colors">
                   info@evenacademy.com
                 </span>
               </a>
@@ -95,10 +98,10 @@ const Footer = () => {
             © 2026 Even Academy. Empowering women through education.
           </p>
           <div className="flex items-center gap-8">
-            <Link href="/privacy" className="text-[14px] font-medium text-[#9CA3AF] hover:text-[#9F7AEA] transition-colors">
+                      <Link href="/privacy" className="text-[14px] font-medium text-[#9CA3AF] hover:text-[#A64AED] transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="text-[14px] font-medium text-[#9CA3AF] hover:text-[#9F7AEA] transition-colors">
+            <Link href="/terms" className="text-[14px] font-medium text-[#9CA3AF] hover:text-[#A64AED] transition-colors">
               Terms of Service
             </Link>
           </div>

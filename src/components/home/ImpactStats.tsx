@@ -6,7 +6,7 @@ import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
 const stats = [
   {
     icon: (
-      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#B794F4" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#A64AED" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
         <circle cx="9" cy="7" r="4" />
         <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
@@ -19,7 +19,7 @@ const stats = [
   },
   {
     icon: (
-      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#B794F4" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#A64AED" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
         <path d="M22 7L13.5 15.5L8.5 10.5L2 17" />
         <path d="M16 7H22V13" />
       </svg>
@@ -30,7 +30,7 @@ const stats = [
   },
   {
     icon: (
-      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#B794F4" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#A64AED" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
         <rect x="4" y="2" width="16" height="20" rx="2" ry="2" />
         <path d="M9 22V18" />
         <path d="M15 22V18" />
@@ -51,7 +51,7 @@ const stats = [
   },
   {
     icon: (
-      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#B794F4" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#A64AED" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
         <path d="M11 17l-5-5L8 9l4 4 4-4 2 3-5 5z" />
         <path d="M18 9l1.5 1.5a1.5 1.5 0 1 1-2.12 2.12L16 11.25" />
         <path d="M6 9L4.5 10.5a1.5 1.5 0 1 0 2.12 2.12L8 11.25" />
@@ -117,10 +117,10 @@ const ImpactStats = () => {
               transition={{ delay: idx * 0.1, duration: 0.5, type: "spring", stiffness: 100 }}
               className="bg-white rounded-[32px] p-10 md:p-12 flex flex-col items-center justify-center shadow-lg shadow-purple-200/50 cursor-default transition-all hover:translate-y-[-8px] hover:shadow-xl hover:shadow-purple-200"
             >
-              <div className="mb-8">
+              <div className="mb-6">
                 {stat.icon}
               </div>
-              <div className="text-[48px] md:text-[56px] lg:text-[64px] font-[900] text-[#B794F4] leading-none mb-4 tracking-tighter">
+              <div className="text-[48px] md:text-[56px] lg:text-[64px] font-[900] text-[#A64AED] leading-none mb-4 tracking-tighter">
                 <AnimatedNumber value={stat.value} suffix={stat.suffix} />
               </div>
               <p className="text-[18px] md:text-[20px] font-bold text-[#4B5563]">
@@ -137,7 +137,7 @@ const ImpactStats = () => {
           transition={{ delay: 0.5 }}
           className="mt-20"
         >
-          <button className="flex items-center gap-4 px-10 py-5 bg-[#B794F4] text-white rounded-full font-[900] text-[20px] shadow-xl shadow-purple-400/30 transition-all hover:scale-105 hover:bg-[#A855F7] active:scale-95 mx-auto">
+          <button className="flex items-center gap-4 px-10 py-5 bg-[#A64AED] text-white rounded-full font-[900] text-[20px] shadow-xl shadow-purple-400/30 transition-all hover:scale-105 hover:bg-[#9333EA] active:scale-95 mx-auto">
             View Our Impact
             <div className="bg-white/20 p-1.5 rounded-full flex items-center justify-center">
               <svg

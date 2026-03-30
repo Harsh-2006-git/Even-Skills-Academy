@@ -71,13 +71,13 @@ const TrainingSection = () => {
                       initial={{ width: 0 }}
                       animate={{ width: "auto" }}
                       transition={{ duration: 1.2, ease: "easeOut" }}
-                      className="inline-block overflow-hidden whitespace-nowrap align-bottom border-r-2 border-[#9333EA] pr-1 text-[#9333EA]"
+                      className="inline-block overflow-hidden whitespace-nowrap align-bottom border-r-2 border-[#A64AED] pr-1 text-[#A64AED]"
                     >
                       {trainingPrograms[activeTab].title.split(' for ')[1].trim()}
                     </motion.span>
                   </>
                 ) : (
-                  <span className="text-[#9333EA]">{trainingPrograms[activeTab].title}</span>
+                  <span className="text-[#A64AED]">{trainingPrograms[activeTab].title}</span>
                 )}
               </motion.h2>
               <motion.p 
@@ -91,9 +91,9 @@ const TrainingSection = () => {
               
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-6">
                 <motion.button
-                  whileHover={{ scale: 1.05, backgroundColor: "#a782f0" }}
+                  whileHover={{ scale: 1.05, backgroundColor: "#9333EA" }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-full sm:w-auto flex items-center justify-center gap-2 px-10 py-4 bg-[#B794F4] text-white rounded-full font-bold transition-all shadow-lg shadow-purple-200"
+                  className="w-full sm:w-auto flex items-center justify-center gap-2 px-10 py-4 bg-[#A64AED] text-white rounded-full font-bold transition-all shadow-lg shadow-purple-200"
                 >
                   Our Programs
                   <svg 

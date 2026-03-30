@@ -44,7 +44,7 @@ const ProgramsSection = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="flex items-center gap-3 px-8 py-3.5 bg-[#B794F4] text-white rounded-full font-bold text-[18px] shadow-sm transition-all"
+            className="flex items-center gap-3 px-8 py-3.5 bg-[#A64AED] text-white rounded-full font-bold text-[18px] shadow-sm transition-all"
           >
             View All
             <div className="bg-white/20 p-1 rounded-full flex items-center justify-center">
@@ -87,7 +87,7 @@ const ProgramsSection = () => {
                 <p className="text-[13px] md:text-[14px] text-zinc-500 font-medium leading-[1.5] mb-5 line-clamp-3">
                   {program.description}
                 </p>
-                <button className="flex items-center gap-1.5 text-[#B794F4] font-extrabold text-[16px] group/btn transition-colors hover:text-[#9F7AEA]">
+                <button className="flex items-center gap-1.5 text-[#A64AED] font-extrabold text-[16px] group/btn transition-colors hover:text-[#9333EA]">
                   Learn More 
                   <span className="text-[20px] transition-transform group-hover/btn:translate-x-1">→</span>
                 </button>

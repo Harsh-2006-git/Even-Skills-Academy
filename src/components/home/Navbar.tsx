@@ -29,10 +29,10 @@ const Navbar = () => {
         <div className="flex items-center">
           <div className="flex flex-col leading-[0.9] font-[900] tracking-tighter">
             <span className="text-[26px] uppercase flex items-baseline">
-              <span className="text-[#9333EA]">EVE</span>
+              <span className="text-[#A64AED]">EVE</span>
               <span className="text-[#1A1A1A]">N</span>
             </span>
-            <span className="text-[26px] uppercase text-[#9333EA]">
+            <span className="text-[26px] uppercase text-[#A64AED]">
               ACADEMY
             </span>
           </div>
@@ -60,12 +60,12 @@ const Navbar = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="hidden sm:flex items-center gap-3 px-6 py-2 bg-[#9333EA] text-white rounded-full font-bold text-sm shadow-md hover:bg-[#7e22ce] transition-all"
+            className="hidden sm:flex items-center gap-3 px-6 py-2 bg-[#A64AED] text-white rounded-full font-bold text-sm shadow-md hover:bg-[#9333EA] transition-all"
           >
             <div className="relative w-7 h-7 bg-white rounded-[8px] flex items-center justify-center">
               <svg 
                 width="14" height="14" viewBox="0 0 24 24" fill="none" 
-                stroke="#9333EA" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"
+                stroke="#A64AED" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"
               >
                 <path d="M4 9l8 6 8-6" />
               </svg>
@@ -114,7 +114,7 @@ const Navbar = () => {
               </Link>
             );
           })}
-          <button className="flex items-center justify-center gap-2 px-8 py-4 bg-[#B794F4] text-white rounded-2xl font-bold text-lg mt-4 shadow-lg">
+          <button className="flex items-center justify-center gap-2 px-8 py-4 bg-[#A64AED] text-white rounded-2xl font-bold text-lg mt-4 shadow-lg">
             Join our Team
           </button>
         </div>
