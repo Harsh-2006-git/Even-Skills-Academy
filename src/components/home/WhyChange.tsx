@@ -150,7 +150,7 @@ const WhyChange = () => {
           >
             {/* Top Section */}
             <div className="p-10 flex flex-col sm:flex-row items-center gap-10 flex-grow">
-              <CircularProgress percentage={5} label="<5%" size={160} strokeWidth={6} />
+              <CircularProgress percentage={5} label="<5%" size={160} strokeWidth={12} />
               <div className="flex-1 text-center sm:text-left">
                 <h3 className="text-[36px] md:text-[48px] lg:text-[54px] font-[900] leading-[1.05] text-[#1A1A1A] tracking-tighter">
                   <span className="block">&lt;5%</span>
@@ -182,7 +182,7 @@ const WhyChange = () => {
               viewport={{ once: true }}
               className="bg-white rounded-[32px] p-8 md:p-10 flex items-center gap-6 shadow-sm flex-1"
             >
-              <CircularProgress percentage={72} label="72%" size={100} strokeWidth={5} isSmall={true} />
+              <CircularProgress percentage={72} label="72%" size={100} strokeWidth={10} isSmall={true} />
               <h4 className="text-[20px] md:text-[24px] lg:text-[28px] font-[900] leading-[1.2] text-[#1A1A1A] tracking-tighter text-left">
                 72% Of Our Graduates Get Hired Within 6 Months
               </h4>
@@ -196,7 +196,7 @@ const WhyChange = () => {
               transition={{ delay: 0.1 }}
               className="bg-white rounded-[32px] p-8 md:p-10 flex items-center gap-6 shadow-sm flex-1"
             >
-              <CircularProgress percentage={1} label="<1%" size={100} strokeWidth={5} isSmall={true} />
+              <CircularProgress percentage={1} label="<1%" size={100} strokeWidth={10} isSmall={true} />
               <h4 className="text-[20px] md:text-[24px] lg:text-[28px] font-[900] leading-[1.2] text-[#1A1A1A] tracking-tighter text-left">
                 Professional Driving Licenses Held by Women
               </h4>

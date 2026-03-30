@@ -36,10 +36,10 @@ const ImpactBanner = () => {
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-[24px] md:text-[34px] lg:text-[42px] font-[800] leading-[1.1] text-[#1A1A1A] max-w-[750px] mx-auto tracking-tight"
+            className="text-[28px] md:text-[38px] lg:text-[48px] font-[900] leading-[1.1] text-[#1A1A1A] max-w-[800px] mx-auto tracking-tighter"
           >
             Empowering Women Through <br className="hidden md:block" />
-            <span className="text-[#9333EA]">Skills & Opportunities</span>
+            <span className="text-[#A64AED]">Skills & Opportunities</span>
           </motion.h2>
         </div>
 
@@ -49,38 +49,62 @@ const ImpactBanner = () => {
             initial={{ opacity: 0, scale: 0.98 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="w-full h-full border-[1.5px] border-[#1A1A1A] rounded-[28px] md:rounded-[48px] flex flex-col items-center justify-center bg-transparent px-4"
+            className="w-full h-full border-[3px] border-[#A64AED]/20 rounded-[32px] md:rounded-[56px] flex flex-col items-center justify-center bg-white/40 backdrop-blur-sm shadow-2xl shadow-purple-500/10 px-4"
           >
-            {/* The Venn Diagram Group - Compact & Elegant Scaling */}
+            {/* The Venn Diagram Group */}
             <div className="relative w-full h-full flex flex-col items-center justify-center -translate-y-4 md:-translate-y-6 scale-[0.95] md:scale-100">
 
-              <div className="relative flex items-center justify-center w-full max-w-[400px] aspect-[1.8/1]">
+              <div className="relative flex items-center justify-center w-full max-w-[420px] aspect-[1.8/1]">
 
                 {/* Left Circle - Women Area */}
-                <div className="absolute left-0 w-[54%] aspect-square rounded-full border-[2px] border-[#1A1A1A] flex items-center justify-start pl-[12%]">
-                  <span className="text-[12px] md:text-[16px] lg:text-[20px] font-medium text-[#1A1A1A] tracking-tighter">
+                <motion.div 
+                  initial={{ scale: 0.8, opacity: 0, x: -30 }}
+                  whileInView={{ scale: 1, opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                  className="absolute left-0 w-[56%] aspect-square rounded-full border-[4px] border-[#A64AED] bg-[#F3E8FF]/40 backdrop-blur-[2px] flex items-center justify-start pl-[14%] mix-blend-multiply"
+                >
+                  <span className="text-[14px] md:text-[18px] lg:text-[22px] font-[900] text-[#1A1A1A] tracking-tighter">
                     Women
                   </span>
-                </div>
-
+                </motion.div>
+                
                 {/* Right Circle - Skills Area */}
-                <div className="absolute right-0 w-[54%] aspect-square rounded-full border-[2px] border-[#1A1A1A] flex items-center justify-end pr-[12%]">
-                  <span className="text-[12px] md:text-[16px] lg:text-[20px] font-medium text-[#1A1A1A] tracking-tighter">
+                <motion.div 
+                   initial={{ scale: 0.8, opacity: 0, x: 30 }}
+                   whileInView={{ scale: 1, opacity: 1, x: 0 }}
+                   viewport={{ once: true }}
+                   transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                   className="absolute right-0 w-[56%] aspect-square rounded-full border-[4px] border-[#9333EA] bg-[#FAE8FF]/40 backdrop-blur-[2px] flex items-center justify-end pr-[14%] mix-blend-multiply"
+                >
+                  <span className="text-[14px] md:text-[18px] lg:text-[22px] font-[900] text-[#1A1A1A] tracking-tighter">
                     Skills
                   </span>
-                </div>
+                </motion.div>
 
                 {/* Refined Modular Vertical Connector */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 flex flex-col items-center h-[180%] pointer-events-none z-10 pt-[14.5%]">
-                  <div className="h-[52%] border-r-[2px] border-dotted border-[#1A1A1A]" />
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 flex flex-col items-center h-[180%] pointer-events-none z-10 pt-[15.5%]">
+                  <motion.div 
+                    initial={{ height: 0 }}
+                    whileInView={{ height: "55%" }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1, delay: 0.8, ease: "easeInOut" }}
+                    className="border-l-[4px] border-dotted border-[#A64AED]" 
+                  />
 
                   {/* Small Terminal Dot and Elegant Label */}
-                  <div className="flex flex-col items-center pt-0">
-                    <div className="w-2 h-2 bg-[#1A1A1A] rounded-full translate-y-[-1px]" />
-                    <span className="mt-3 text-[14px] md:text-[20px] lg:text-[26px] font-medium text-[#1A1A1A] tracking-tighter">
+                  <motion.div 
+                    initial={{ opacity: 0, y: -10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 1.8 }}
+                    className="flex flex-col items-center pt-0"
+                  >
+                    <div className="w-3 h-3 bg-[#A64AED] rounded-full shadow-lg shadow-purple-500/50" />
+                    <span className="mt-4 text-[16px] md:text-[24px] lg:text-[32px] font-[1000] text-[#1A1A1A] tracking-tighter leading-none bg-white/80 px-4 py-1 rounded-full backdrop-blur-sm">
                       Employment
                     </span>
-                  </div>
+                  </motion.div>
                 </div>
 
               </div>

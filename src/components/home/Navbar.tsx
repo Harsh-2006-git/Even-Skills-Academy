@@ -28,12 +28,12 @@ const Navbar = () => {
       >
         <div className="flex items-center">
           <div className="flex flex-col leading-[0.9] font-[900] tracking-tighter">
-            <span className="text-[26px] uppercase flex items-baseline">
-              <span className="text-[#A64AED]">EVE</span>
-              <span className="text-[#1A1A1A]">N</span>
+            <span className="text-[26px] flex items-baseline">
+              <span className="text-[#A64AED]">Eve</span>
+              <span className="text-[#1A1A1A]">n</span>
             </span>
-            <span className="text-[26px] uppercase text-[#A64AED]">
-              ACADEMY
+            <span className="text-[26px] text-[#A64AED]">
+              Academy
             </span>
           </div>
         </div>
@@ -46,11 +46,18 @@ const Navbar = () => {
               <Link
                 key={link.name}
                 href={link.href}
-                className={`text-base font-medium transition-colors hover:text-[#9F7AEA] ${
-                  isActive ? "text-[#9F7AEA]" : "text-zinc-600"
+                className={`relative text-base transition-colors hover:text-[#A64AED] py-2 ${
+                  isActive ? "text-[#A64AED] font-[900]" : "text-zinc-600 font-medium"
                 }`}
               >
                 {link.name}
+                {isActive && (
+                  <motion.div
+                    layoutId="navbar-underline"
+                    className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#A64AED] rounded-full"
+                    transition={{ type: "spring", stiffness: 350, damping: 30 }}
+                  />
+                )}
               </Link>
             );
           })}
@@ -106,8 +113,8 @@ const Navbar = () => {
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className={`text-2xl font-bold ${
-                  isActive ? "text-[#9F7AEA]" : "text-zinc-600"
+                className={`text-2xl transition-colors ${
+                  isActive ? "text-[#A64AED] font-[900]" : "text-zinc-600 font-bold"
                 }`}
               >
                 {link.name}

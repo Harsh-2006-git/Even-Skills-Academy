@@ -13,13 +13,13 @@ const Footer = () => {
           {/* Column 1: Logo & Mission */}
           <div className="lg:col-span-4 space-y-6">
             <div className="flex flex-col leading-[0.9] font-[900] tracking-tighter">
-              <span className="text-[26px] uppercase flex items-baseline">
-                <span className="text-[#A64AED]">EVE</span>
-                <span className="text-[#1A1A1A]">N</span>
-              </span>
-              <span className="text-[26px] uppercase text-[#A64AED]">
-                ACADEMY
-              </span>
+            <span className="text-[26px] flex items-baseline">
+              <span className="text-[#A64AED]">Eve</span>
+              <span className="text-[#1A1A1A]">n</span>
+            </span>
+            <span className="text-[26px] text-[#A64AED]">
+              Academy
+            </span>
             </div>
             <p className="text-[16px] text-[#6B7280] leading-[1.6] max-w-[280px]">
               The global standard for inclusive professional education and workforce placement.

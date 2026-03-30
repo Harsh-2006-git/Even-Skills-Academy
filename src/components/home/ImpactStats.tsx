@@ -96,18 +96,18 @@ const AnimatedNumber = ({ value, suffix }: { value: number; suffix: string }) =>
 
 const ImpactStats = () => {
   return (
-    <section className="w-full bg-[#F3E8FF] py-24 overflow-hidden">
+    <section className="w-full bg-[#F3E8FF] py-10 md:py-14 overflow-hidden">
       <div className="max-w-[1440px] w-full mx-auto px-6 md:px-20 lg:px-[120px] text-center">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-[48px] md:text-[64px] font-[900] text-[#1A1A1A] mb-20 tracking-tighter"
+          className="text-[48px] md:text-[56px] font-[900] text-[#1A1A1A] mb-10 tracking-tighter"
         >
           Our Impact
         </motion.h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {stats.map((stat, idx) => (
             <motion.div
               key={idx}
@@ -115,7 +115,7 @@ const ImpactStats = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1, duration: 0.5, type: "spring", stiffness: 100 }}
-              className="bg-white rounded-[32px] p-10 md:p-12 flex flex-col items-center justify-center shadow-lg shadow-purple-200/50 cursor-default transition-all hover:translate-y-[-8px] hover:shadow-xl hover:shadow-purple-200"
+              className="bg-white rounded-[32px] p-8 md:p-10 flex flex-col items-center justify-center shadow-lg shadow-purple-200/50 cursor-default transition-all hover:translate-y-[-8px] hover:shadow-xl hover:shadow-purple-200"
             >
               <div className="mb-6">
                 {stat.icon}
@@ -135,9 +135,9 @@ const ImpactStats = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          className="mt-20"
+          className="mt-10"
         >
-          <button className="flex items-center gap-4 px-10 py-5 bg-[#A64AED] text-white rounded-full font-[900] text-[20px] shadow-xl shadow-purple-400/30 transition-all hover:scale-105 hover:bg-[#9333EA] active:scale-95 mx-auto">
+          <button className="flex items-center gap-4 px-10 py-4 bg-[#A64AED] text-white rounded-full font-[900] text-[18px] shadow-xl shadow-purple-400/30 transition-all hover:scale-105 hover:bg-[#9333EA] active:scale-95 mx-auto">
             View Our Impact
             <div className="bg-white/20 p-1.5 rounded-full flex items-center justify-center">
               <svg
