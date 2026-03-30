@@ -30,11 +30,11 @@ const trainingPrograms = [
 const TrainingSection = () => {
   const [activeTab, setActiveTab] = React.useState(0);
 
-  // Auto-play feature: 3 seconds
+  // Auto-play feature: 5 seconds
   React.useEffect(() => {
     const timer = setInterval(() => {
       setActiveTab((prev) => (prev + 1) % trainingPrograms.length);
-    }, 3000);
+    }, 5000);
     return () => clearInterval(timer);
   }, []);
 
@@ -71,13 +71,13 @@ const TrainingSection = () => {
                       initial={{ width: 0 }}
                       animate={{ width: "auto" }}
                       transition={{ duration: 1.2, ease: "easeOut" }}
-                      className="inline-block overflow-hidden whitespace-nowrap align-bottom border-r-2 border-[#A782F0] pr-1"
+                      className="inline-block overflow-hidden whitespace-nowrap align-bottom border-r-2 border-[#9333EA] pr-1 text-[#9333EA]"
                     >
                       {trainingPrograms[activeTab].title.split(' for ')[1].trim()}
                     </motion.span>
                   </>
                 ) : (
-                  trainingPrograms[activeTab].title
+                  <span className="text-[#9333EA]">{trainingPrograms[activeTab].title}</span>
                 )}
               </motion.h2>
               <motion.p 

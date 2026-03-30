@@ -27,11 +27,14 @@ const Navbar = () => {
         style={{ height: "78px" }}
       >
         <div className="flex items-center">
-          <div className="flex flex-col leading-tight font-black tracking-tighter">
-            <span className="text-xl uppercase flex items-baseline">
-              EVE<span className="text-[#9F7AEA] text-lg mx-[1px]">N</span>
+          <div className="flex flex-col leading-[0.9] font-[900] tracking-tighter">
+            <span className="text-[26px] uppercase flex items-baseline">
+              <span className="text-[#9333EA]">EVE</span>
+              <span className="text-[#1A1A1A]">N</span>
             </span>
-            <span className="text-xl uppercase">ACADEMY</span>
+            <span className="text-[26px] uppercase text-[#9333EA]">
+              ACADEMY
+            </span>
           </div>
         </div>
 
@@ -57,21 +60,16 @@ const Navbar = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="hidden sm:flex items-center gap-2 px-6 py-2.5 bg-[#B794F4] text-white rounded-full font-semibold text-sm shadow-sm hover:bg-[#a782f0] transition-colors"
+            className="hidden sm:flex items-center gap-3 px-6 py-2 bg-[#9333EA] text-white rounded-full font-bold text-sm shadow-md hover:bg-[#7e22ce] transition-all"
           >
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <rect width="20" height="16" x="2" y="4" rx="2" />
-              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-            </svg>
+            <div className="relative w-7 h-7 bg-white rounded-[8px] flex items-center justify-center">
+              <svg 
+                width="14" height="14" viewBox="0 0 24 24" fill="none" 
+                stroke="#9333EA" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"
+              >
+                <path d="M4 9l8 6 8-6" />
+              </svg>
+            </div>
             Join our Team
           </motion.button>
 
