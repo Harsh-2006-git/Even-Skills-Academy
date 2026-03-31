@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
 const trainingPrograms = [
@@ -90,27 +90,31 @@ const TrainingSection = () => {
               </motion.p>
               
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-6">
-                <motion.button
-                  whileHover={{ scale: 1.05, backgroundColor: "#9333EA" }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-full sm:w-auto flex items-center justify-center gap-2 px-10 py-4 bg-[#A64AED] text-white rounded-full font-bold transition-all shadow-lg shadow-purple-200"
-                >
-                  Our Programs
-                  <svg 
-                    width="20" height="20" viewBox="0 0 24 24" fill="none" 
-                    stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"
+                <Link href="/programs" className="w-full sm:w-auto">
+                  <motion.button
+                    whileHover={{ scale: 1.05, backgroundColor: "#9333EA" }}
+                    whileTap={{ scale: 0.95 }}
+                    className="w-full flex items-center justify-center gap-2 px-10 py-4 bg-[#A64AED] text-white rounded-full font-bold transition-all shadow-lg shadow-purple-200"
                   >
-                    <path d="M7 7h10v10" />
-                    <path d="M7 17 17 7" />
-                  </svg>
-                </motion.button>
-                <motion.button
-                  whileHover={{ scale: 1.05, backgroundColor: "#f9fafb" }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-full sm:w-auto px-10 py-4 bg-white text-zinc-800 border-2 border-zinc-200 rounded-full font-bold transition-all"
-                >
-                  See our Impact
-                </motion.button>
+                    Our Programs
+                    <svg 
+                      width="20" height="20" viewBox="0 0 24 24" fill="none" 
+                      stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"
+                    >
+                      <path d="M7 7h10v10" />
+                      <path d="M7 17 17 7" />
+                    </svg>
+                  </motion.button>
+                </Link>
+                <Link href="/impact" className="w-full sm:w-auto">
+                  <motion.button
+                    whileHover={{ scale: 1.05, backgroundColor: "#f9fafb" }}
+                    whileTap={{ scale: 0.95 }}
+                    className="w-full px-10 py-4 bg-white text-zinc-800 border-2 border-zinc-200 rounded-full font-bold transition-all"
+                  >
+                    See our Impact
+                  </motion.button>
+                </Link>
               </div>
             </div>
 

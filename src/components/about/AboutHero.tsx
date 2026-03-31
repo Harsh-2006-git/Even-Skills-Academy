@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 const AboutHero = () => {
@@ -54,26 +55,30 @@ const AboutHero = () => {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="flex flex-wrap items-center gap-5"
             >
-              <button className="flex items-center gap-3 px-8 py-4 bg-[#B794F4] text-white rounded-full font-bold text-lg shadow-lg shadow-purple-200 hover:bg-[#a782f0] transition-all transform hover:scale-105 active:scale-95 group">
-                Our Programs
-                <svg
-                  className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M7 17L17 7M17 7H7M17 7V17" />
-                </svg>
-              </button>
+              <Link href="/programs">
+                <button className="flex items-center gap-3 px-8 py-4 bg-[#B794F4] text-white rounded-full font-bold text-lg shadow-lg shadow-purple-200 hover:bg-[#a782f0] transition-all transform hover:scale-105 active:scale-95 group">
+                  Our Programs
+                  <svg
+                    className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M7 17L17 7M17 7H7M17 7V17" />
+                  </svg>
+                </button>
+              </Link>
 
-              <button className="px-8 py-4 border-2 border-zinc-200 text-zinc-800 rounded-full font-extrabold text-lg hover:bg-zinc-50 hover:border-zinc-300 transition-all transform hover:scale-105 active:scale-95">
-                See our Impact
-              </button>
+              <Link href="/impact">
+                <button className="px-8 py-4 border-2 border-zinc-200 text-zinc-800 rounded-full font-extrabold text-lg hover:bg-zinc-50 hover:border-zinc-300 transition-all transform hover:scale-105 active:scale-95">
+                  See our Impact
+                </button>
+              </Link>
             </motion.div>
           </div>
 

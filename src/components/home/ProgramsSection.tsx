@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const programs = [
   {
@@ -41,22 +42,24 @@ const ProgramsSection = () => {
             Our Programs
           </motion.h2>
           
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="flex items-center gap-3 px-8 py-3.5 bg-[#A64AED] text-white rounded-full font-bold text-[18px] shadow-sm transition-all"
-          >
-            View All
-            <div className="bg-white/20 p-1 rounded-full flex items-center justify-center">
-              <svg 
-                width="20" height="20" viewBox="0 0 24 24" fill="none" 
-                stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"
-              >
-                <path d="M7 7h10v10" />
-                <path d="M7 17 17 7" />
-              </svg>
-            </div>
-          </motion.button>
+          <Link href="/programs">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="flex items-center gap-3 px-8 py-3.5 bg-[#A64AED] text-white rounded-full font-bold text-[18px] shadow-sm transition-all text-center"
+            >
+              View All
+              <div className="bg-white/20 p-1 rounded-full flex items-center justify-center">
+                <svg 
+                  width="20" height="20" viewBox="0 0 24 24" fill="none" 
+                  stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"
+                >
+                  <path d="M7 7h10v10" />
+                  <path d="M7 17 17 7" />
+                </svg>
+              </div>
+            </motion.button>
+          </Link>
         </div>
 
         {/* Programs Grid */}
@@ -87,10 +90,10 @@ const ProgramsSection = () => {
                 <p className="text-[13px] md:text-[14px] text-zinc-500 font-medium leading-[1.5] mb-5 line-clamp-3">
                   {program.description}
                 </p>
-                <button className="flex items-center gap-1.5 text-[#A64AED] font-extrabold text-[16px] group/btn transition-colors hover:text-[#9333EA]">
+                <Link href="/programs" className="flex items-center gap-1.5 text-[#A64AED] font-extrabold text-[16px] group/btn transition-colors hover:text-[#9333EA]">
                   Learn More 
                   <span className="text-[20px] transition-transform group-hover/btn:translate-x-1">→</span>
-                </button>
+                </Link>
               </div>
             </motion.div>
           ))}
@@ -101,5 +104,3 @@ const ProgramsSection = () => {
 };
 
 export default ProgramsSection;
-
-

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const ContactSection = () => {
   return (
-    <section className="relative w-full bg-white flex flex-col items-center justify-center pt-24 overflow-hidden">
+    <section id="contact" className="relative w-full bg-white flex flex-col items-center justify-center pt-24 overflow-hidden">
       <div className="max-w-[1440px] w-full mx-auto px-6 md:px-12 lg:px-[120px] pb-24">
         <div className="flex flex-col lg:flex-row items-start justify-between gap-16 lg:gap-24">
           {/* Left Content */}

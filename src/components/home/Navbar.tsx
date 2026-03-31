@@ -64,21 +64,23 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-4">
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="hidden sm:flex items-center gap-3 px-6 py-2 bg-[#A64AED] text-white rounded-full font-bold text-sm shadow-md hover:bg-[#9333EA] transition-all"
-          >
-            <div className="relative w-7 h-7 bg-white rounded-[8px] flex items-center justify-center">
-              <svg 
-                width="14" height="14" viewBox="0 0 24 24" fill="none" 
-                stroke="#A64AED" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"
-              >
-                <path d="M4 9l8 6 8-6" />
-              </svg>
-            </div>
-            Join our Team
-          </motion.button>
+          <Link href="/#contact">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="hidden sm:flex items-center gap-3 px-6 py-2 bg-[#A64AED] text-white rounded-full font-bold text-sm shadow-md hover:bg-[#9333EA] transition-all"
+            >
+              <div className="relative w-7 h-7 bg-white rounded-[8px] flex items-center justify-center">
+                <svg 
+                  width="14" height="14" viewBox="0 0 24 24" fill="none" 
+                  stroke="#A64AED" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"
+                >
+                  <path d="M4 9l8 6 8-6" />
+                </svg>
+              </div>
+              Join our Team
+            </motion.button>
+          </Link>
 
           {/* Mobile Menu Toggle */}
           <button 
@@ -121,9 +123,11 @@ const Navbar = () => {
               </Link>
             );
           })}
-          <button className="flex items-center justify-center gap-2 px-8 py-4 bg-[#A64AED] text-white rounded-2xl font-bold text-lg mt-4 shadow-lg">
-            Join our Team
-          </button>
+          <Link href="/#contact" onClick={() => setIsOpen(false)}>
+            <button className="flex items-center justify-center gap-2 px-8 py-4 bg-[#A64AED] text-white rounded-2xl font-bold text-lg mt-4 shadow-lg w-full">
+              Join our Team
+            </button>
+          </Link>
         </div>
       </motion.div>
     </>

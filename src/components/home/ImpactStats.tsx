@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
+import Link from "next/link";
 import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
 
 const stats = [
@@ -137,18 +138,20 @@ const ImpactStats = () => {
           transition={{ delay: 0.5 }}
           className="mt-10"
         >
-          <button className="flex items-center gap-4 px-10 py-4 bg-[#A64AED] text-white rounded-full font-[900] text-[18px] shadow-xl shadow-purple-400/30 transition-all hover:scale-105 hover:bg-[#9333EA] active:scale-95 mx-auto">
-            View Our Impact
-            <div className="bg-white/20 p-1.5 rounded-full flex items-center justify-center">
-              <svg
-                width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"
-              >
-                <path d="M7 7h10v10" />
-                <path d="M7 17 17 7" />
-              </svg>
-            </div>
-          </button>
+          <Link href="/impact">
+            <button className="flex items-center gap-4 px-10 py-4 bg-[#A64AED] text-white rounded-full font-[900] text-[18px] shadow-xl shadow-purple-400/30 transition-all hover:scale-105 hover:bg-[#9333EA] active:scale-95 mx-auto">
+              View Our Impact
+              <div className="bg-white/20 p-1.5 rounded-full flex items-center justify-center">
+                <svg
+                  width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"
+                >
+                  <path d="M7 7h10v10" />
+                  <path d="M7 17 17 7" />
+                </svg>
+              </div>
+            </button>
+          </Link>
         </motion.div>
       </div>
     </section>
@@ -156,5 +159,3 @@ const ImpactStats = () => {
 };
 
 export default ImpactStats;
-
-

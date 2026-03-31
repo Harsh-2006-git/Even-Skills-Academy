@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 const processSteps = [
@@ -136,13 +137,15 @@ const WorkProcess = () => {
 
         {/* CTA Button */}
         <div className="text-center mt-12">
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-white text-[#1A1A1A] font-black text-lg px-12 py-4 rounded-full shadow-2xl hover:bg-zinc-50 transition-all border-2 border-white"
-          >
-            Explore Our Impact
-          </motion.button>
+          <Link href="/impact">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-white text-[#1A1A1A] font-black text-lg px-12 py-4 rounded-full shadow-2xl hover:bg-zinc-50 transition-all border-2 border-white"
+            >
+              Explore Our Impact
+            </motion.button>
+          </Link>
         </div>
       </div>
     </section>

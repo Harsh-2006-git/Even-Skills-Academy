@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 const ReadyToBuild = () => {
@@ -26,13 +27,15 @@ const ReadyToBuild = () => {
               Connect And Explore Opportunities To Work Together.
             </p>
             
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-[#9F7AEA] hover:bg-[#8B5CF6] text-white font-bold text-lg px-12 py-4 rounded-full shadow-lg transition-all"
-            >
-              Partner with Us
-            </motion.button>
+            <Link href="/#contact">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-[#9F7AEA] hover:bg-[#8B5CF6] text-white font-bold text-lg px-12 py-4 rounded-full shadow-lg transition-all"
+              >
+                Partner with Us
+              </motion.button>
+            </Link>
           </motion.div>
 
           {/* Right Illustration */}

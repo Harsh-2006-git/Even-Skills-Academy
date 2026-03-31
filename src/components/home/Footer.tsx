@@ -34,7 +34,10 @@ const Footer = () => {
             <ul className="space-y-4">
               {["Home", "About", "Programs", "Advisory", "Impact"].map((item) => (
                 <li key={item}>
-                  <Link href={`/${item.toLowerCase()}`} className="text-[15px] font-medium text-[#6B7280] hover:text-[#A64AED] transition-colors">
+                  <Link 
+                    href={item === "Home" ? "/" : `/${item.toLowerCase()}`} 
+                    className="text-[15px] font-medium text-[#6B7280] hover:text-[#A64AED] transition-colors"
+                  >
                     {item}
                   </Link>
                 </li>
@@ -75,8 +78,8 @@ const Footer = () => {
                   info@evenacademy.com
                 </span>
               </a>
-              <div className="flex items-center gap-3">
-                <div className="text-[#6B7280]">
+              <Link href="/#contact" className="flex items-center gap-3 group transition-colors hover:text-[#A64AED]">
+                <div className="text-[#6B7280] group-hover:text-[#A64AED] transition-colors">
                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
                     <circle cx="9" cy="7" r="4" />
@@ -84,10 +87,10 @@ const Footer = () => {
                     <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                    </svg>
                 </div>
-                <span className="text-[15px] font-medium text-[#6B7280]">
+                <span className="text-[15px] font-medium text-[#6B7280] group-hover:text-[#A64AED] transition-colors">
                   Partner With Us
                 </span>
-              </div>
+              </Link>
             </div>
           </div>
         </div>

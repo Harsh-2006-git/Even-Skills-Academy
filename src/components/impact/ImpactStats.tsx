@@ -1,0 +1,108 @@
+"use client";
+
+import React from "react";
+import { motion } from "framer-motion";
+import { GraduationCap, TrendingUp, Building2, ClipboardCheck, Users, ShieldCheck, Headset, Banknote } from "lucide-react";
+
+interface StatCardProps {
+  icon: React.ReactNode;
+  value: string;
+  label: string;
+  delay: number;
+}
+
+const StatCard = ({ icon, value, label, delay }: StatCardProps) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.5, delay }}
+    className="bg-white rounded-[32px] p-8 shadow-sm flex flex-col justify-between h-[216px]"
+  >
+    <div className="text-[#A64AED] mb-4">
+      {icon}
+    </div>
+    <div>
+      <h3 className="text-[32px] font-black text-[#1A1A1A] leading-tight mb-2">
+        {value}
+      </h3>
+      <p className="text-[#6B7280] text-[12px] font-bold tracking-widest uppercase leading-snug">
+        {label}
+      </p>
+    </div>
+  </motion.div>
+);
+
+const ImpactStats = () => {
+  const stats = [
+    {
+      icon: <GraduationCap size={32} />,
+      value: "2,500+",
+      label: "Women Trained Across 4 Verticals",
+    },
+    {
+      icon: <TrendingUp size={32} />,
+      value: "1,800+",
+      label: "Work Transitions",
+    },
+    {
+      icon: <Building2 size={32} />,
+      value: "10+",
+      label: "Cities Across India",
+    },
+    {
+      icon: <ClipboardCheck size={32} />,
+      value: "72%",
+      label: "Placement Rate Within 6 Months",
+    },
+    {
+      icon: <Users size={32} />,
+      value: "40+",
+      label: "Employer Partners",
+    },
+    {
+      icon: <ShieldCheck size={32} />,
+      value: "20%",
+      label: "Higher Retention vs. Industry Average",
+    },
+    {
+      icon: <Headset size={32} />,
+      value: "6 Months",
+      label: "Post-Placement Support",
+    },
+    {
+      icon: <Banknote size={32} />,
+      value: "₹12K–18K",
+      label: "Average Starting Monthly Salary",
+    },
+  ];
+
+  return (
+    <section className="bg-[#E9D5FF] py-24">
+      <div className="max-w-[1280px] mx-auto px-6 lg:px-24">
+        <motion.h2 
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-[48px] md:text-[56px] font-black text-[#1A1A1A] text-center mb-16"
+        >
+          Empowering Women at Scale
+        </motion.h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {stats.map((stat, index) => (
+            <StatCard 
+              key={index}
+              icon={stat.icon}
+              value={stat.value}
+              label={stat.label}
+              delay={index * 0.1}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ImpactStats;
