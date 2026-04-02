@@ -39,8 +39,8 @@ const TrainingSection = () => {
   }, []);
 
   return (
-    <section className="relative w-full lg:h-[calc(100vh-78px)] min-h-[600px] bg-white flex items-center justify-center overflow-hidden py-20 lg:py-0">
-      <div className="max-w-[1440px] w-full mx-auto px-6 md:px-20 lg:px-[120px]">
+    <section className="relative w-full min-h-[400px] bg-white flex flex-col justify-center overflow-hidden py-16 lg:py-8">
+      <div className="max-w-[1440px] w-full mx-auto px-6 md:px-12 lg:px-[60px] min-h-[650px] md:min-h-[500px] lg:min-h-[420px] flex flex-col justify-center">
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab}
@@ -48,53 +48,56 @@ const TrainingSection = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-24"
+            className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-16 w-full"
           >
             {/* Left Side: Content */}
-            <div className="flex-1 max-w-[650px] text-center lg:text-left">
+            <div className="w-full lg:w-1/2 flex flex-col justify-center items-start text-left">
               <motion.h2 
                 key={`title-${activeTab}`}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="text-[32px] md:text-[44px] lg:text-[52px] font-bold leading-[1.1] text-black mb-6 tracking-tight"
+                className="text-[32px] md:text-[48px] lg:text-[56px] font-[900] leading-tight text-black mb-4 tracking-tight min-h-[120px] md:min-h-[140px] lg:min-h-[160px] flex flex-col justify-start"
               >
                 {/* Typing Animation for the dynamic part of the title */}
                 {trainingPrograms[activeTab].title.includes(' for ') ? (
-                  <>
-                    <span className="inline-block whitespace-nowrap">
-                      {trainingPrograms[activeTab].title.split(' for ')[0].trim()}
+                  <div className="flex flex-col items-start leading-tight">
+                    <span className="whitespace-nowrap text-[#1A1A1A]">
+                      {trainingPrograms[activeTab].title.split(' for ')[0].trim()} for
                     </span>
-                    <br className="hidden sm:block" />
-                    <span className="text-[#1A1A1A]">for </span>
-                    <motion.span
-                      key={`typing-${activeTab}`}
-                      initial={{ width: 0 }}
-                      animate={{ width: "auto" }}
-                      transition={{ duration: 1.2, ease: "easeOut" }}
-                      className="inline-block overflow-hidden whitespace-nowrap align-bottom border-r-2 border-[#A64AED] pr-1 text-[#A64AED]"
-                    >
-                      {trainingPrograms[activeTab].title.split(' for ')[1].trim()}
-                    </motion.span>
-                  </>
+                    <div className="flex items-center mt-1 sm:mt-2">
+                      <motion.span
+                        key={`typing-${activeTab}`}
+                        initial={{ width: 0 }}
+                        animate={{ width: "auto" }}
+                        transition={{ duration: 1.2, ease: "easeOut" }}
+                        className="inline-block overflow-hidden whitespace-nowrap align-bottom border-r-4 border-[#A64AED] pr-2 text-[#A64AED]"
+                      >
+                        {trainingPrograms[activeTab].title.split(' for ')[1].trim()}
+                      </motion.span>
+                    </div>
+                  </div>
                 ) : (
-                  <span className="text-[#A64AED]">{trainingPrograms[activeTab].title}</span>
+                  <div className="flex flex-col items-start leading-tight">
+                    <span className="whitespace-nowrap text-[#1A1A1A]">Mobilizing Women for</span>
+                    <span className="text-[#A64AED] block mt-1 sm:mt-2">{trainingPrograms[activeTab].title.replace('Mobilizing Women for', '').trim()}</span>
+                  </div>
                 )}
               </motion.h2>
               <motion.p 
                 key={`desc-${activeTab}`}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="text-[16px] md:text-lg text-zinc-500 leading-relaxed mb-10 md:mb-12 max-w-[540px] mx-auto lg:mx-0"
+                className="text-[17px] md:text-[20px] text-zinc-500 leading-relaxed mb-8 max-w-[550px] min-h-[80px] lg:min-h-[100px]"
               >
                 {trainingPrograms[activeTab].description}
               </motion.p>
               
-              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-6">
+              <div className="flex flex-col sm:flex-row items-center justify-start gap-4 sm:gap-4 w-full">
                 <Link href="/programs" className="w-full sm:w-auto">
                   <motion.button
                     whileHover={{ scale: 1.05, backgroundColor: "#9333EA" }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-full flex items-center justify-center gap-2 px-10 py-4 bg-[#A64AED] text-white rounded-full font-bold transition-all shadow-lg shadow-purple-200"
+                    className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3.5 bg-[#A64AED] text-white rounded-full font-bold transition-all shadow-lg shadow-purple-200 whitespace-nowrap"
                   >
                     Our Programs
                     <svg 
@@ -110,7 +113,7 @@ const TrainingSection = () => {
                   <motion.button
                     whileHover={{ scale: 1.05, backgroundColor: "#f9fafb" }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-full px-10 py-4 bg-white text-zinc-800 border-2 border-zinc-200 rounded-full font-bold transition-all"
+                    className="w-full sm:w-auto px-8 py-3.5 bg-white text-zinc-800 border-2 border-zinc-200 rounded-full font-bold transition-all whitespace-nowrap"
                   >
                     See our Impact
                   </motion.button>
@@ -119,14 +122,14 @@ const TrainingSection = () => {
             </div>
 
             {/* Right Side: Illustration */}
-            <div className="flex-1 max-w-[500px] w-full flex justify-center lg:justify-end">
+            <div className="w-full lg:w-1/2 flex justify-center lg:justify-end items-center h-full">
               <motion.img
                 key={`img-${activeTab}`}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 src={trainingPrograms[activeTab].image}
                 alt={trainingPrograms[activeTab].title}
-                className="w-full h-auto max-h-[300px] md:max-h-[420px] object-contain drop-shadow-sm"
+                className="w-full h-auto max-h-[300px] md:max-h-[380px] lg:max-h-[420px] object-contain drop-shadow-sm"
               />
             </div>
           </motion.div>

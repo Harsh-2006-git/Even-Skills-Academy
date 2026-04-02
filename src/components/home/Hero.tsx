@@ -33,30 +33,22 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      {/* Side Illustrations - Visible on all screens, size adjusted */}
+      {/* Moving Scooter Illustration */}
       <motion.div
-        initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.8 }}
-        className="absolute left-[4%] sm:left-[2%] bottom-[12%] sm:bottom-[5%] z-20 w-[60px] md:w-[120px] lg:w-[160px]"
+        initial={{ x: "-20vw" }}
+        animate={{ x: "100vw" }}
+        transition={{ 
+          repeat: Infinity,
+          duration: 15,
+          ease: "linear",
+          repeatType: "loop"
+        }}
+        className="absolute bottom-[8%] sm:bottom-[5%] z-20 w-[120px] md:w-[180px] lg:w-[240px]"
       >
         <img
-          src="/Hero-sides.PNG"
-          alt="Scooter Illustration Left"
-          className="w-full h-auto drop-shadow-2xl opacity-90 sm:opacity-80"
-        />
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0, x: 50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.8 }}
-        className="absolute right-[4%] sm:right-[2%] bottom-[12%] sm:bottom-[5%] z-20 w-[60px] md:w-[120px] lg:w-[160px]"
-      >
-        <img
-          src="/Hero-sides.PNG"
-          alt="Scooter Illustration Right"
-          className="w-full h-auto drop-shadow-2xl opacity-90 sm:opacity-80"
+          src="/Hero-sides2.png"
+          alt="Moving Scooter Illustration"
+          className="w-full h-auto drop-shadow-2xl opacity-90 -scale-x-100"
         />
       </motion.div>
 

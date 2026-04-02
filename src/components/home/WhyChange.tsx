@@ -8,7 +8,10 @@ interface CircularProgressProps {
   label: string;
   size?: number;
   strokeWidth?: number;
-  isSmall?: boolean;
+  textSizeClass?: string;
+  color?: string;
+  bgColor?: string;
+  rotation?: number;
 }
 
 const CircularProgress = ({ 
@@ -16,7 +19,10 @@ const CircularProgress = ({
   label, 
   size = 120, 
   strokeWidth = 6,
-  isSmall = false
+  textSizeClass = "text-[28px] md:text-[34px]",
+  color = "#A64AED",
+  bgColor = "#F3E8FF",
+  rotation = -90
 }: CircularProgressProps) => {
   const radius = (size - strokeWidth) / 2;
   const circumference = radius * 2 * Math.PI;
@@ -24,13 +30,13 @@ const CircularProgress = ({
 
   return (
     <div className="relative flex items-center justify-center shrink-0" style={{ width: size, height: size }}>
-      <svg width={size} height={size} className="transform -rotate-90">
+      <svg width={size} height={size} style={{ transform: `rotate(${rotation}deg)` }}>
         {/* Background Circle */}
         <circle
           cx={size / 2}
           cy={size / 2}
           r={radius}
-          stroke="#F3E8FF"
+          stroke={bgColor}
           strokeWidth={strokeWidth}
           fill="transparent"
         />
@@ -39,7 +45,7 @@ const CircularProgress = ({
           cx={size / 2}
           cy={size / 2}
           r={radius}
-          stroke="#A64AED"
+          stroke={color}
           strokeWidth={strokeWidth}
           fill="transparent"
           strokeDasharray={circumference}
@@ -51,7 +57,7 @@ const CircularProgress = ({
         />
       </svg>
       <div className="absolute inset-0 flex items-center justify-center">
-        <span className={`${isSmall ? 'text-[20px] md:text-[24px]' : 'text-[28px] md:text-[34px]'} font-[900] text-[#1A1A1A] tracking-tighter`}>
+        <span className={`${textSizeClass} font-[900] text-[#1A1A1A] tracking-tighter`}>
           {label}
         </span>
       </div>
@@ -85,8 +91,8 @@ const WhyChange = () => {
               viewport={{ once: true }}
               className="flex items-start text-left gap-5"
             >
-              <div className="w-14 h-14 md:w-16 md:h-16 flex-shrink-0 flex items-center justify-center">
-                 <img src="/mobility.png" alt="Mobility" className="w-full h-full object-contain" />
+              <div className="flex-shrink-0 flex items-center justify-center">
+                 <CircularProgress percentage={87} label="87%" size={72} strokeWidth={6} textSizeClass="text-[18px] md:text-[22px]" color="#F59E0B" bgColor="#FEF3C7" />
               </div>
               <div>
                 <h3 className="text-[#F59E0B] font-bold text-[18px] md:text-[20px] mb-2 tracking-tight">Mobility</h3>
@@ -104,8 +110,8 @@ const WhyChange = () => {
               transition={{ delay: 0.1 }}
               className="flex items-start text-left gap-5"
             >
-              <div className="w-14 h-14 md:w-16 md:h-16 flex-shrink-0 flex items-center justify-center">
-                 <img src="/skill_gap.png" alt="Skills Gap" className="w-full h-full object-contain" />
+              <div className="flex-shrink-0 flex items-center justify-center">
+                 <CircularProgress percentage={30} label="30%" size={72} strokeWidth={6} textSizeClass="text-[18px] md:text-[22px]" color="#F59E0B" bgColor="#FEF3C7" />
               </div>
               <div>
                 <h3 className="text-[#F59E0B] font-bold text-[18px] md:text-[20px] mb-2 tracking-tight">Skills Gap</h3>
@@ -123,8 +129,8 @@ const WhyChange = () => {
               transition={{ delay: 0.2 }}
               className="flex items-start text-left gap-5"
             >
-              <div className="w-14 h-14 md:w-16 md:h-16 flex-shrink-0 flex items-center justify-center">
-                 <img src="/workplace_safety.png" alt="Safety" className="w-full h-full object-contain" />
+              <div className="flex-shrink-0 flex items-center justify-center">
+                 <CircularProgress percentage={60} label="60%" size={72} strokeWidth={6} textSizeClass="text-[18px] md:text-[22px]" color="#F59E0B" bgColor="#FEF3C7" />
               </div>
               <div>
                 <h3 className="text-[#F59E0B] font-bold text-[18px] md:text-[20px] mb-2 tracking-tight">Workplace Safety</h3>
@@ -149,12 +155,14 @@ const WhyChange = () => {
             className="lg:col-span-7 bg-white rounded-[40px] overflow-hidden flex flex-col shadow-sm"
           >
             {/* Top Section */}
-            <div className="p-10 flex flex-col sm:flex-row items-center gap-10 flex-grow">
-              <CircularProgress percentage={5} label="<5%" size={160} strokeWidth={12} />
+            <div className="p-10 flex flex-col sm:flex-row items-center gap-8 md:gap-12 flex-grow">
+              <CircularProgress percentage={95} label="<5%" size={140} strokeWidth={14} />
               <div className="flex-1 text-center sm:text-left">
-                <h3 className="text-[36px] md:text-[48px] lg:text-[54px] font-[900] leading-[1.05] text-[#1A1A1A] tracking-tighter">
+                <h3 className="text-[36px] md:text-[42px] lg:text-[48px] font-[900] leading-[1.05] text-[#1A1A1A] tracking-tighter">
                   <span className="block">&lt;5%</span>
-                  Women in <br className="hidden md:block" /> Transport Jobs
+                  <span className="block">Women in</span>
+                  <span className="block">Transport</span>
+                  <span className="block">Jobs</span>
                 </h3>
               </div>
             </div>
@@ -182,7 +190,7 @@ const WhyChange = () => {
               viewport={{ once: true }}
               className="bg-white rounded-[32px] p-8 md:p-10 flex items-center gap-6 shadow-sm flex-1"
             >
-              <CircularProgress percentage={72} label="72%" size={100} strokeWidth={10} isSmall={true} />
+              <CircularProgress percentage={72} label="72%" size={100} strokeWidth={10} textSizeClass="text-[28px] lg:text-[34px]" />
               <h4 className="text-[20px] md:text-[24px] lg:text-[28px] font-[900] leading-[1.2] text-[#1A1A1A] tracking-tighter text-left">
                 72% Of Our Graduates Get Hired Within 6 Months
               </h4>
@@ -196,7 +204,7 @@ const WhyChange = () => {
               transition={{ delay: 0.1 }}
               className="bg-white rounded-[32px] p-8 md:p-10 flex items-center gap-6 shadow-sm flex-1"
             >
-              <CircularProgress percentage={1} label="<1%" size={100} strokeWidth={10} isSmall={true} />
+              <CircularProgress percentage={1} label="<1%" size={100} strokeWidth={10} textSizeClass="text-[28px] lg:text-[34px]" rotation={-180} />
               <h4 className="text-[20px] md:text-[24px] lg:text-[28px] font-[900] leading-[1.2] text-[#1A1A1A] tracking-tighter text-left">
                 Professional Driving Licenses Held by Women
               </h4>
