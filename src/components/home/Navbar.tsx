@@ -51,13 +51,6 @@ const Navbar = () => {
                 }`}
               >
                 {link.name}
-                {isActive && (
-                  <motion.div
-                    layoutId="navbar-underline"
-                    className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#A64AED] rounded-full"
-                    transition={{ type: "spring", stiffness: 350, damping: 30 }}
-                  />
-                )}
               </Link>
             );
           })}
