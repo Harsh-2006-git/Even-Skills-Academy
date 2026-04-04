@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
 
 const stats = [
@@ -97,34 +98,46 @@ const AnimatedNumber = ({ value, suffix }: { value: number; suffix: string }) =>
 
 const ImpactStats = () => {
   return (
-    <section className="w-full bg-[#F3E8FF] py-10 md:py-14 overflow-hidden">
-      <div className="max-w-[1440px] w-full mx-auto px-6 md:px-20 lg:px-[120px] text-center">
+    <section className="w-full relative py-16 md:py-24 overflow-hidden bg-[#1A0B2E]">
+      {/* Background Images with Improved Visibility */}
+      <div className="absolute inset-0 z-0 flex">
+        <div className="relative w-1/2 h-full grayscale-[0.3] opacity-40">
+          <Image src="/our-impact-1.jpg" alt="Impact background" fill className="object-cover" />
+        </div>
+        <div className="relative w-1/2 h-full grayscale-[0.3] opacity-40">
+          <Image src="/our-impact-2.jpg" alt="Impact background" fill className="object-cover" />
+        </div>
+        {/* Subtle Purple Dynamic Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#A64AED]/40 via-[#1A0B2E]/60 to-[#1A0B2E]" />
+      </div>
+
+      <div className="max-w-[1440px] w-full mx-auto px-6 md:px-20 lg:px-[120px] text-center relative z-10">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-[48px] md:text-[56px] font-[900] text-[#1A1A1A] mb-10 tracking-tighter"
+          className="text-[40px] md:text-[60px] font-[900] text-white mb-10 tracking-tight drop-shadow-2xl"
         >
           Our Impact
         </motion.h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {stats.map((stat, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: idx * 0.1, duration: 0.5, type: "spring", stiffness: 100 }}
-              className="bg-white rounded-[32px] p-8 md:p-10 flex flex-col items-center justify-center shadow-lg shadow-purple-200/50 cursor-default transition-all hover:translate-y-[-8px] hover:shadow-xl hover:shadow-purple-200"
+              transition={{ delay: idx * 0.1, duration: 0.5 }}
+              className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-[32px] p-8 md:p-10 flex flex-col items-center justify-center shadow-2xl transition-all hover:bg-white/20 hover:scale-[1.02] group"
             >
-              <div className="mb-6">
+              <div className="mb-4 bg-white/10 p-3 rounded-2xl group-hover:bg-[#A64AED]/20 transition-colors">
                 {stat.icon}
               </div>
-              <div className="text-[48px] md:text-[56px] lg:text-[64px] font-[900] text-[#A64AED] leading-none mb-4 tracking-tighter">
+              <div className="text-[36px] md:text-[48px] font-[900] text-white leading-none mb-2 tracking-tighter">
                 <AnimatedNumber value={stat.value} suffix={stat.suffix} />
               </div>
-              <p className="text-[18px] md:text-[20px] font-bold text-[#4B5563]">
+              <p className="text-[12px] md:text-[14px] font-bold text-white/80 uppercase tracking-widest">
                 {stat.label}
               </p>
             </motion.div>
@@ -136,20 +149,18 @@ const ImpactStats = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          className="mt-10"
+          className="mt-12"
         >
           <Link href="/impact">
-            <button className="flex items-center gap-4 px-10 py-4 bg-[#A64AED] text-white rounded-full font-[900] text-[18px] shadow-xl shadow-purple-400/30 transition-all hover:scale-105 hover:bg-[#9333EA] active:scale-95 mx-auto">
+            <button className="flex items-center gap-3 px-10 py-3.5 bg-white text-[#A64AED] rounded-full font-[900] text-[16px] shadow-2xl transition-all hover:scale-105 active:scale-95 mx-auto">
               View Our Impact
-              <div className="bg-white/20 p-1.5 rounded-full flex items-center justify-center">
-                <svg
-                  width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"
-                >
-                  <path d="M7 7h10v10" />
-                  <path d="M7 17 17 7" />
-                </svg>
-              </div>
+              <svg
+                width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"
+              >
+                <path d="M7 7h10v10" />
+                <path d="M7 17 17 7" />
+              </svg>
             </button>
           </Link>
         </motion.div>

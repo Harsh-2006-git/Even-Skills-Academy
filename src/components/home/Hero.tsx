@@ -10,9 +10,9 @@ const Hero = () => {
       {/* Background Image Wrapper */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/hero-bg.jpg"
+          src="/Hero-New_One.jpg"
           alt="Making the Gig Economy Work for Women"
-          className="w-full h-full object-contain object-top sm:object-cover sm:object-center"
+          className="w-full h-full object-cover sm:object-center"
         />
         {/* Smooth Purple Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#2D1B4E]/60 to-[#1A0B2E]/90" />

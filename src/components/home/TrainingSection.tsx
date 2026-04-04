@@ -39,8 +39,8 @@ const TrainingSection = () => {
   }, []);
 
   return (
-    <section className="relative w-full min-h-[400px] bg-white flex flex-col justify-center overflow-hidden py-16 lg:py-8">
-      <div className="max-w-[1440px] w-full mx-auto px-6 md:px-12 lg:px-[60px] min-h-[650px] md:min-h-[500px] lg:min-h-[420px] flex flex-col justify-center">
+    <section className="relative w-full min-h-[600px] bg-[#F8F5FF] flex flex-col justify-center overflow-hidden py-20 lg:py-16">
+      <div className="max-w-[1440px] w-full mx-auto px-6 md:px-12 lg:px-[60px] min-h-[700px] md:min-h-[600px] lg:min-h-[550px] flex flex-col justify-center">
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab}
@@ -129,7 +129,7 @@ const TrainingSection = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 src={trainingPrograms[activeTab].image}
                 alt={trainingPrograms[activeTab].title}
-                className="w-full h-auto max-h-[300px] md:max-h-[380px] lg:max-h-[420px] object-contain drop-shadow-sm"
+                className="w-full h-auto max-h-[400px] md:max-h-[500px] lg:max-h-[550px] object-contain drop-shadow-sm"
               />
             </div>
           </motion.div>
