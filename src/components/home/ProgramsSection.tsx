@@ -8,22 +8,22 @@ const programs = [
   {
     title: "Women Mobility Centre",
     description: "Building confidence through two-wheeler and three-wheeler training at Women Mobility Centers (WMC).",
-    image: "/our-program-1.png",
+    image: "/our-program-new-1.jpg",
   },
   {
     title: "Platform Economy",
     description: "Warehouse operations, picking/packing, inventory management, and digital workflow tools.",
-    image: "/our-program-2.png",
+    image: "/our-program-new-2.jpg",
   },
   {
     title: "EV & Green Energy",
     description: "Training women in EV systems, charging infrastructure, and solar basics.",
-    image: "/our-program-3.png",
+    image: "/our-program-new-3.jpg",
   },
   {
     title: "AI Labs",
     description: "Training women in EV systems, charging infrastructure, and solar basics.",
-    image: "/our-program-4.jpg",
+    image: "/our-program-new-4.jpg",
   },
 ];
 
