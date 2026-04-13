@@ -20,7 +20,7 @@ const modules = [
       { icon: "/module-1-icon-3.png", label: "Defensive Driving", isImage: true },
       { icon: "/module-1-icon-4.png", label: "Route Planning", isImage: true }
     ],
-    image: "/module-1.png",
+    image: "/module-1-new.png",
     reverse: false
   },
   {
@@ -37,7 +37,7 @@ const modules = [
       { icon: "/module-2-icon-3.png", label: "Safety Tools", isImage: true },
       { icon: "/module-2-icon-4.png", label: "Legal Rights", isImage: true }
     ],
-    image: "/module-2.png",
+    image: "/module-2-new4.png",
     reverse: true
   },
   {
@@ -54,7 +54,7 @@ const modules = [
       { icon: "/module-3-icon-3.png", label: "Tech Operations", isImage: true },
       { icon: "/module-3-icon-4.png", label: "Load Handling", isImage: true }
     ],
-    image: "/module-3.png",
+    image: "/module-3-new.png",
     reverse: false
   },
   {
