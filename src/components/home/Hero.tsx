@@ -43,12 +43,12 @@ const Hero = () => {
           ease: "linear",
           repeatType: "loop"
         }}
-        className="absolute bottom-[8%] sm:bottom-[5%] z-20 w-[120px] md:w-[180px] lg:w-[240px]"
+        className="absolute bottom-[4%] sm:bottom-[2%] z-20 w-[90px] md:w-[150px] lg:w-[210px]"
       >
         <img
-          src="/Hero-sides2.png"
+          src="/scomrnvsndscoo.png"
           alt="Moving Scooter Illustration"
-          className="w-full h-auto drop-shadow-2xl opacity-90 -scale-x-100"
+          className="w-full h-auto drop-shadow-2xl opacity-90"
         />
       </motion.div>
 
