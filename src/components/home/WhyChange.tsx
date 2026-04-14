@@ -67,9 +67,9 @@ const CircularProgress = ({
 
 const WhyChange = () => {
   return (
-    <section className="w-full bg-[#EADDFF] pt-20 lg:pt-24 pb-20 lg:pb-24 overflow-hidden font-inter">
+    <section className="w-full bg-[#EADDFF] pt-8 lg:pt-12 pb-8 lg:pb-12 overflow-hidden font-inter">
       {/* SECTION 1 TITLE - RESTORED */}
-      <div className="max-w-[1440px] w-full mx-auto px-6 md:px-20 lg:px-[120px] text-center mb-12">
+      <div className="max-w-[1440px] w-full mx-auto px-6 md:px-20 lg:px-[120px] text-center mb-6">
         <motion.h2 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -81,7 +81,7 @@ const WhyChange = () => {
       </div>
 
       {/* WHITE STRIP WITH INFO CARDS - RESTORED */}
-      <div className="w-full bg-white py-10 lg:py-12 mb-16 lg:mb-24 shadow-sm border-y border-purple-100">
+      <div className="w-full bg-white py-6 lg:py-8 mb-8 lg:mb-12 shadow-sm border-y border-purple-100">
         <div className="max-w-[1440px] w-full mx-auto px-6 md:px-20 lg:px-[120px]">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16">
             {/* CARD 1 */}

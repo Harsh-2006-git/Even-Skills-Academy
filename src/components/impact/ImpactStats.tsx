@@ -11,22 +11,37 @@ interface StatCardProps {
   delay: number;
 }
 
-const StatCard = ({ icon, value, label, delay }: StatCardProps) => (
+const StatCard = ({ icon, value, label, delay, isFirst }: StatCardProps & { isFirst?: boolean }) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
+    whileHover={{ y: -5 }}
     viewport={{ once: true }}
     transition={{ duration: 0.5, delay }}
-    className="bg-white rounded-[32px] p-8 shadow-sm flex flex-col justify-between h-[216px]"
+    className={`rounded-[32px] p-8 shadow-md flex flex-col justify-between h-[216px] group transition-all duration-300 cursor-pointer ${
+      isFirst 
+        ? "bg-[#A64AED] text-white" 
+        : "bg-white hover:bg-[#1A0B2E] text-[#1A1A1A]"
+    }`}
   >
-    <div className="text-[#A64AED] mb-4">
-      {icon}
+    <div className={`mb-4 transition-colors duration-300 ${
+      isFirst ? "text-white" : "text-[#A64AED] group-hover:text-white"
+    }`}>
+      <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-colors duration-300 ${
+        isFirst ? "bg-white/20" : "bg-[#F3E8FF] group-hover:bg-white/20"
+      }`}>
+        {icon}
+      </div>
     </div>
     <div>
-      <h3 className="text-[32px] font-black text-[#1A1A1A] leading-tight mb-2">
+      <h3 className={`text-[32px] font-black leading-tight mb-2 transition-colors duration-300 ${
+        isFirst ? "text-white" : "text-[#1A1A1A] group-hover:text-white"
+      }`}>
         {value}
       </h3>
-      <p className="text-[#6B7280] text-[12px] font-bold tracking-widest uppercase leading-snug">
+      <p className={`text-[12px] font-bold tracking-widest uppercase leading-snug transition-colors duration-300 ${
+        isFirst ? "text-white/80" : "text-[#6B7280] group-hover:text-white/80"
+      }`}>
         {label}
       </p>
     </div>
@@ -78,13 +93,13 @@ const ImpactStats = () => {
   ];
 
   return (
-    <section className="bg-[#E9D5FF] py-24">
+    <section className="bg-[#E9D5FF] pt-12 pb-20">
       <div className="max-w-[1280px] mx-auto px-6 lg:px-24">
         <motion.h2 
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-[48px] md:text-[56px] font-black text-[#1A1A1A] text-center mb-16"
+          className="text-[48px] md:text-[56px] font-black text-[#1A1A1A] text-center mb-10"
         >
           Empowering Women at Scale
         </motion.h2>
@@ -97,6 +112,7 @@ const ImpactStats = () => {
               value={stat.value}
               label={stat.label}
               delay={index * 0.1}
+              isFirst={index === 0}
             />
           ))}
         </div>

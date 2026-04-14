@@ -40,11 +40,11 @@ const ImpactHero = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="hidden lg:flex items-center justify-center absolute top-[60px] right-0 w-[665px] h-[488px] overflow-visible"
+            className="hidden lg:flex items-center justify-center absolute top-[70px] right-10 w-[580px] h-[430px] overflow-visible"
           >
-            <div className="relative w-full h-full transform scale-125 translate-x-12">
+            <div className="relative w-full h-full transform scale-110">
               <Image
-                src="/impact-side-img.png"
+                src="/impact_hero-new.jpg"
                 alt="Impact Tracking Illustration"
                 fill
                 className="object-contain"
