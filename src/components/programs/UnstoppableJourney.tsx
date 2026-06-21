@@ -38,7 +38,7 @@ const UnstoppableJourney = () => {
       <div className="max-w-[1440px] w-full mx-auto px-6 md:px-20 lg:px-[120px] relative z-10">
         {/* Header content */}
         <div className="text-center mb-16">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -46,7 +46,7 @@ const UnstoppableJourney = () => {
           >
             Skills Journey
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -57,14 +57,14 @@ const UnstoppableJourney = () => {
           </motion.p>
         </div>
 
-        {/* Timeline container */}
+        {/* Timeline continer */}
         <div className="relative">
           {/* Full-bleed Dotted Line relative to the timeline container */}
           <div className="absolute top-[11px] left-[-200px] right-[-200px] h-[2px] border-t-2 border-dotted border-black/20 z-0 hidden md:block" />
-          
+
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-4 relative z-10">
             {steps.map((item, idx) => (
-              <motion.div 
+              <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
