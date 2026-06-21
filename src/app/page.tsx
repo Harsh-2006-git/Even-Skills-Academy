@@ -16,9 +16,9 @@ export default function Home() {
       <div className="pt-[78px]">
         <Hero />
         <WhyChange />
-        <TrainingSection />
         <ImpactBanner />
         <ProgramsSection />
+        <TrainingSection />
         <ImpactStats />
         <ContactSection />
         <Footer />

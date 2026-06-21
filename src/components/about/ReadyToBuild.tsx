@@ -1,59 +1,67 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
 const ReadyToBuild = () => {
   return (
-    <section className="bg-white py-12 lg:py-16 overflow-hidden">
-      <div className="container mx-auto px-6 max-w-7xl">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-16">
+    <section className="relative w-full bg-white overflow-hidden py-8 lg:py-12">
+      <div className="max-w-[1440px] w-full mx-auto px-6 md:px-20 lg:px-[120px]">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
           
           {/* Left Content */}
-          <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+          <div className="flex flex-col items-start gap-[38px] w-full lg:w-[55%] z-10 text-left">
+            <div className="flex flex-col items-start gap-[18px] w-full">
+              <motion.h2
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-[#000] font-montserrat text-4xl md:text-5xl font-bold leading-tight"
+              >
+                Ready to build with us?
+              </motion.h2>
+              
+              <motion.p
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="text-[#191919] opacity-[59%] font-inter text-[20px] md:text-[22px] leading-[1.472em]"
+              >
+                Whether you&apos;re an employer, funder, or partner, we’d love to connect and explore opportunities to work together.
+              </motion.p>
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
+              <Link href="/#contact">
+                <button className="cursor-pointer text-nowrap flex items-center justify-center rounded-[33px] border border-[#A64AED] bg-[#AE75DA] hover:bg-[#9c60cc] transition-colors w-[211px] h-[57px] shadow-sm">
+                  <p className="text-[#FFF] font-inter text-xl font-semibold w-fit">
+                    Partner With Us
+                  </p>
+                </button>
+              </Link>
+            </motion.div>
+          </div>
+
+          {/* Right Content - Illustration */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 0.8, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="flex-1 max-w-xl text-left"
+            className="w-full lg:w-[40%] flex justify-center lg:justify-end opacity-80"
           >
-            <h2 className="text-[36px] md:text-[45px] lg:text-[52px] font-black text-[#1A1A1A] leading-[1.1] mb-6">
-              Ready To Build With Us?
-            </h2>
-            <p className="text-lg lg:text-[20px] text-[#555555] font-medium leading-[1.6] mb-8 max-w-lg">
-              Whether You&apos;re An Employer, Funder, Or Partner, We&apos;d Love To 
-              Connect And Explore Opportunities To Work Together.
-            </p>
-            
-            <Link href="/#contact">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-[#9F7AEA] hover:bg-[#8B5CF6] text-white font-bold text-lg px-12 py-4 rounded-full shadow-lg transition-all"
-              >
-                Partner with Us
-              </motion.button>
-            </Link>
-          </motion.div>
-
-          {/* Right Illustration */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex-1 relative w-full aspect-[4/3] max-w-[450px]"
-          >
-            <div className="relative w-full h-full flex items-center justify-center">
-              <Image
+            <div className="relative w-full max-w-[500px] lg:max-w-none aspect-[16/9] max-h-[350px]">
+              <img
                 src="/ready_to_build_img.png"
                 alt="Partner with Even Cargo"
-                width={400}
-                height={320}
-                className="object-contain"
-                priority
+                className="w-full h-full object-contain"
               />
             </div>
           </motion.div>

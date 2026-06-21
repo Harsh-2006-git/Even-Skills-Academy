@@ -43,21 +43,41 @@ const Hero = () => {
           ease: "linear",
           repeatType: "loop"
         }}
-        className="absolute bottom-[4%] sm:bottom-[2%] z-20 w-[90px] md:w-[150px] lg:w-[210px]"
+        className="absolute bottom-[4%] sm:bottom-[2%] z-20 w-[90px] md:w-[150px] lg:w-[210px] flex items-center"
       >
+        {/* Exhaust Gas/Smoke Animation */}
+        <div className="absolute left-0 bottom-[12%] w-0 h-0 pointer-events-none z-10">
+          {[0, 1, 2, 3].map((i) => (
+            <motion.div
+              key={i}
+              animate={{
+                x: [0, -35, -80, -125, -170],
+                y: [0, -5, -12, -22, -32],
+                scale: [0.3, 0.9, 1.4, 1.8, 2.2],
+                opacity: [0.75, 0.55, 0.35, 0.12, 0],
+              }}
+              transition={{
+                duration: 1.6,
+                repeat: Infinity,
+                ease: "easeOut",
+                delay: i * 0.4,
+              }}
+              className="absolute w-5 h-5 bg-gradient-to-br from-white/70 to-[#EADDFF]/50 rounded-full blur-[2.5px]"
+              style={{
+                left: "-18px",
+                transformOrigin: "center",
+              }}
+            />
+          ))}
+        </div>
+
         <img
           src="/scomrnvsndscoo.png"
           alt="Moving Scooter Illustration"
-          className="w-full h-auto drop-shadow-2xl opacity-90"
+          className="w-full h-auto drop-shadow-2xl opacity-90 relative z-20"
         />
       </motion.div>
 
-      {/* Small 'N' Badge Corner */}
-      <div className="absolute left-[20px] bottom-[20px] z-30">
-        <div className="bg-[#191919] w-8 h-8 rounded-full flex items-center justify-center border border-white/20">
-          <span className="text-white text-[10px] font-bold font-mono">N'</span>
-        </div>
-      </div>
     </section>
   );
 };

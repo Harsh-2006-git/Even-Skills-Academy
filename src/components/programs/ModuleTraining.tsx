@@ -15,10 +15,10 @@ const modules = [
     statsTag: "WOMEN CERTIFIED",
     description: "Comprehensive road safety and professional navigation mastery for urban mobility.",
     features: [
-      { icon: "/module-1-icon-1.png", label: "Traffic Education", isImage: true },
-      { icon: "/module-1-icon-2.png", label: "Vehicle Mechanism", isImage: true },
-      { icon: "/module-1-icon-3.png", label: "Defensive Driving", isImage: true },
-      { icon: "/module-1-icon-4.png", label: "Route Planning", isImage: true }
+      { icon: "/module-1-icon-1.png", label: "Traffic Education" },
+      { icon: "/module-1-icon-2.png", label: "Vehicle Mechanism" },
+      { icon: "/module-1-icon-3.png", label: "Defensive Driving" },
+      { icon: "/module-1-icon-4.png", label: "Route Planning" }
     ],
     image: "/module-1-new.png",
     reverse: false
@@ -27,15 +27,15 @@ const modules = [
     id: "02",
     moduleNum: "MODULE 02",
     title: "Self-Defense Training",
-    partner: "Zomato",
+    partner: "Delhi Police",
     stats: "700+",
     statsTag: "WOMEN EMPOWERED",
     description: "Physical and psychological preparedness for real-world scenarios and workplace safety.",
     features: [
-      { icon: "/module-2-icon-1.png", label: "Martial Arts Intro", isImage: true },
-      { icon: "/module-2-icon-2.png", label: "De-escalation", isImage: true },
-      { icon: "/module-2-icon-3.png", label: "Safety Tools", isImage: true },
-      { icon: "/module-2-icon-4.png", label: "Legal Rights", isImage: true }
+      { icon: "/module-2-icon-1.png", label: "Practical Personal Safety Techniques" },
+      { icon: "/module-2-icon-2.png", label: "Situational Awareness Training" },
+      { icon: "/module-2-icon-3.png", label: "Strategies for Challenging Situations" },
+      { icon: "/module-2-icon-4.png", label: "Confidence & Assertiveness Building" }
     ],
     image: "/module-2-new4.png",
     reverse: true
@@ -49,10 +49,10 @@ const modules = [
     statsTag: "ORDERS DELIVERED",
     description: "Supply chain fundamentals and last-mile delivery mastery for modern professionals.",
     features: [
-      { icon: "/module-3-icon-1.png", label: "Inventory Mgmt", isImage: true },
-      { icon: "/module-3-icon-2.png", label: "Customer Service", isImage: true },
-      { icon: "/module-3-icon-3.png", label: "Tech Operations", isImage: true },
-      { icon: "/module-3-icon-4.png", label: "Load Handling", isImage: true }
+      { icon: "/module-3-icon-1.png", label: "Inventory Management & Stock Counting" },
+      { icon: "/module-3-icon-2.png", label: "Order Processing & Fulfillment" },
+      { icon: "/module-3-icon-3.png", label: "Packaging Standards & Quality Control" },
+      { icon: "/module-3-icon-4.png", label: "Efficient Distribution Techniques" }
     ],
     image: "/module-3-new.png",
     reverse: false
@@ -66,10 +66,10 @@ const modules = [
     statsTag: "GRADUATES PLACED",
     description: "Digital literacy and professional communication for career growth in logistics.",
     features: [
-      { icon: "/module-4-icon-1.png", label: "Body Language", isImage: true },
-      { icon: "/module-4-icon-2.png", label: "Conflict Mgmt", isImage: true },
-      { icon: "/module-4-icon-3.png", label: "Public Speaking", isImage: true },
-      { icon: "/module-4-icon-4.png", label: "Work Ethic", isImage: true }
+      { icon: "/module-4-icon-1.png", label: "Communication Skills" },
+      { icon: "/module-4-icon-2.png", label: "Teamwork & Collaboration" },
+      { icon: "/module-4-icon-3.png", label: "Time Management" },
+      { icon: "/module-4-icon-4.png", label: "Problem-Solving & Critical Thinking" }
     ],
     image: "/module-4.png",
     reverse: true
@@ -78,58 +78,70 @@ const modules = [
 
 const ModuleBlock = ({ data }: { data: typeof modules[0] }) => {
   return (
-    <div className={`flex flex-col ${data.reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center justify-center gap-10 lg:gap-20 mb-16 last:mb-0 w-full`}>
+    <div className={`flex flex-col ${data.reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center justify-between gap-12 lg:gap-16 xl:gap-20 mb-24 lg:mb-32 last:mb-0 w-full`}>
       {/* Content Card */}
       <motion.div 
         initial={{ opacity: 0, x: data.reverse ? 40 : -40 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7 }}
-        className="bg-white rounded-[40px] p-8 md:p-10 shadow-xl border border-[#AE75DA] relative w-full lg:w-[741px]"
+        className="bg-white rounded-[29px] p-5 md:p-6 shadow-xl border border-[#AE75DA]/50 relative w-full lg:w-[560px] flex flex-col min-h-[460px] justify-between"
       >
-        <div className="flex justify-between items-start mb-4">
-          <div className="flex flex-col">
-            <span className="text-[42px] md:text-[48px] font-black leading-none text-[#1A1A1A] mb-1">{data.id}</span>
-            <span className="text-[#FFA500] font-black text-[16px] tracking-tight">{data.moduleNum}</span>
-            <span className="text-zinc-400 text-[13px] font-bold mt-1">in partnership with: <span className="text-[#1A1A1A]">{data.partner}</span></span>
-          </div>
-          <div className="text-right flex flex-col items-end">
-            <span className="text-[32px] md:text-[36px] font-black text-[#1A1A1A] leading-none">{data.stats}</span>
-            <span className="text-[9px] font-black text-zinc-400 tracking-tighter mt-1">{data.statsTag}</span>
-          </div>
-        </div>
-
-        <h3 className="text-[30px] md:text-[34px] font-black text-[#1A1A1A] mb-4 leading-tight tracking-tighter">
-          {data.title}
-        </h3>
-
-        <p className="text-zinc-500 text-[15px] font-medium leading-relaxed mb-6 max-w-[550px]">
-          {data.description}
-        </p>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
-          {data.features.map((feature, idx) => (
-            <div key={idx} className="flex items-center gap-3 p-3 rounded-[16px] border border-[#AE75DA] bg-[#AE75DA]/5">
-              {(feature as any).isImage ? (
-                <div className="relative w-8 h-8 flex-shrink-0">
-                  <Image src={feature.icon} alt={feature.label} fill className="object-contain" />
-                </div>
-              ) : (
-                <span className="text-lg">{feature.icon}</span>
-              )}
-              <span className="text-[13px] font-bold text-[#1A1A1A] leading-tight">{feature.label}</span>
+        <div>
+          {/* Card Header */}
+          <div className="flex justify-between items-start border-b-2 border-dashed border-zinc-100 pb-3 mb-4">
+            <div className="flex flex-col">
+              <span className="text-[30px] md:text-[36px] font-bold font-montserrat leading-none text-[#1A1A1A] mb-1">{data.id}</span>
+              <span className="text-[#F5A623] font-bold font-montserrat text-[13px] tracking-wide uppercase">{data.moduleNum}</span>
+              <span className="text-zinc-500 text-[12px] font-normal mt-1">
+                in partnership with: <span className="text-[#1A1A1A] font-semibold">{data.partner}</span>
+              </span>
             </div>
-          ))}
+            <div className="text-right flex flex-col items-end">
+              <span className="text-[22px] md:text-[26px] font-bold font-montserrat text-[#A64AED] leading-none">{data.stats}</span>
+              <span className="text-[9px] font-bold text-zinc-400 tracking-wider uppercase mt-1">{data.statsTag}</span>
+            </div>
+          </div>
+
+          {/* Title & Description */}
+          <div className="mb-4">
+            <h3 className="text-[22px] md:text-[25px] font-bold font-montserrat text-[#1A1A1A] mb-2 leading-tight">
+              {data.title}
+            </h3>
+            <p className="text-zinc-500 text-[14px] font-normal leading-relaxed">
+              {data.description}
+            </p>
+          </div>
+
+          {/* Features Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+            {data.features.map((feature, idx) => (
+              <div key={idx} className="flex items-center gap-3 p-1 rounded-[16px] border border-[#A64AED] bg-white h-[70px] shadow-sm hover:shadow-md transition-shadow">
+                <div className="relative w-[60px] h-[54px] flex-shrink-0">
+                  <Image 
+                    src={feature.icon} 
+                    alt={feature.label} 
+                    fill 
+                    className="object-contain" 
+                  />
+                </div>
+                <span className="text-[12px] sm:text-[13px] font-semibold text-[#191919] leading-tight pr-1">
+                  {feature.label}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
 
+        {/* Buttons */}
         <div className="flex flex-wrap gap-3">
           <Link href="/#contact">
-            <button className="bg-[#A64AED] hover:bg-[#9333EA] text-white px-7 py-3.5 rounded-full font-black text-[14px] transition-all shadow-lg hover:shadow-[#A64AED]/30">
+            <button className="bg-[#A64AED] hover:bg-[#9333EA] text-white px-6 py-2.5 rounded-full font-bold text-[13px] transition-all shadow-lg hover:shadow-[#A64AED]/20 active:scale-95">
               Start Training
             </button>
           </Link>
           <Link href="/impact">
-            <button className="bg-white border border-[#1A1A1A] hover:bg-zinc-50 text-[#1A1A1A] px-7 py-3.5 rounded-full font-black text-[14px] transition-all">
+            <button className="bg-white border border-[#1A1A1A] hover:bg-zinc-50 text-[#1A1A1A] px-6 py-2.5 rounded-full font-bold text-[13px] transition-all active:scale-95">
               Learn More
             </button>
           </Link>
@@ -142,9 +154,9 @@ const ModuleBlock = ({ data }: { data: typeof modules[0] }) => {
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="flex-1 flex justify-center items-center"
+        className="flex-1 w-full flex justify-center items-center"
       >
-        <div className="relative w-full lg:w-[680px] h-[450px] lg:h-[680px]">
+        <div className="relative w-full max-w-[480px] h-[360px] md:h-[420px] lg:h-[480px]">
           <Image 
             src={data.image} 
             alt={data.title}
@@ -160,18 +172,17 @@ const ModuleBlock = ({ data }: { data: typeof modules[0] }) => {
 
 const ModuleTraining = () => {
   return (
-    <section className="w-full bg-[#E5D1FF] py-32 flex flex-col items-center">
+    <section className="w-full bg-[#E5D1FF] py-24 md:py-32 flex flex-col items-center">
       <div className="max-w-[1550px] w-full mx-auto px-6 md:px-12 lg:px-16">
         {/* Section Header */}
-        <div className="text-center mb-32">
+        <div className="text-center mb-24 lg:mb-32">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-[38px] sm:text-[46px] md:text-[54px] lg:text-[62px] font-black text-[#1A1A1A] leading-[1.1] tracking-tight w-full"
+            className="text-[36px] sm:text-[44px] md:text-[52px] lg:text-[58px] font-bold font-montserrat text-[#1A1A1A] leading-[1.2] tracking-tight w-full"
           >
-            <span className="whitespace-nowrap">Empowering Excellence through</span><br />
-            <span>Curated Training.</span>
+            Empowering Excellence through<br className="hidden md:inline" /> Curated Training.
           </motion.h2>
         </div>
 

@@ -20,8 +20,8 @@ const CircularProgress = ({
   size = 120, 
   strokeWidth = 6,
   textSizeClass = "text-[28px] md:text-[34px]",
-  color = "#A64AED",
-  bgColor = "#F3E8FF",
+  color = "#AE75DA",
+  bgColor = "rgba(174, 117, 218, 0.2)",
   rotation = -90
 }: CircularProgressProps) => {
   const radius = (size - strokeWidth) / 2;
@@ -57,7 +57,7 @@ const CircularProgress = ({
         />
       </svg>
       <div className="absolute inset-0 flex items-center justify-center">
-        <span className={`${textSizeClass} font-[900] text-[#1A1A1A] tracking-tighter`}>
+        <span className={`${textSizeClass} font-inter font-black text-[#191919] tracking-tighter`}>
           {label}
         </span>
       </div>
@@ -67,16 +67,16 @@ const CircularProgress = ({
 
 const WhyChange = () => {
   return (
-    <section className="w-full bg-[#EADDFF] pt-8 lg:pt-12 pb-8 lg:pb-12 overflow-hidden font-inter">
+    <section className="w-full bg-[#E3C0FF] pt-8 lg:pt-12 pb-8 lg:pb-12 overflow-hidden font-inter">
       {/* SECTION 1 TITLE - RESTORED */}
-      <div className="max-w-[1440px] w-full mx-auto px-6 md:px-20 lg:px-[120px] text-center mb-6">
+      <div className="max-w-[1440px] w-full mx-auto px-4 md:px-8 text-center mb-6">
         <motion.h2 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-[36px] md:text-[56px] lg:text-[60px] font-bold text-[#1A1A1A] leading-[1.15] tracking-tight"
+          className="text-[32px] md:text-[50px] font-montserrat font-bold text-[#191919] leading-tight tracking-tight whitespace-normal md:whitespace-nowrap"
         >
-          Why Women’s Access to <br className="hidden md:block" /> Work Must Change
+          Why Women’s Access to Work Must Change
         </motion.h2>
       </div>
 
@@ -116,7 +116,7 @@ const WhyChange = () => {
               <div>
                 <h3 className="text-[#F59E0B] font-bold text-[18px] md:text-[20px] mb-2 tracking-tight">Skills Gap</h3>
                 <p className="text-[#4B5563] text-[14px] md:text-[15px] leading-[1.5]">
-                  Technical training programs <br className="hidden lg:block" /> rarely target women
+                  Less than <span className="font-bold text-[#1A1A1A]">30%</span> of women participate in technical training programs
                 </p>
               </div>
             </motion.div>
@@ -135,7 +135,7 @@ const WhyChange = () => {
               <div>
                 <h3 className="text-[#F59E0B] font-bold text-[18px] md:text-[20px] mb-2 tracking-tight">Workplace Safety</h3>
                 <p className="text-[#4B5563] text-[14px] md:text-[15px] leading-[1.5]">
-                  Safety concerns and lack of <br className="hidden lg:block" /> support systems
+                  <span className="font-bold text-[#1A1A1A]">60%+</span> Safety concerns and lack of support systems
                 </p>
               </div>
             </motion.div>
@@ -144,54 +144,53 @@ const WhyChange = () => {
       </div>
 
       {/* NEW UPDATED STATS CARDS - MATCHING TYPE 2 (THIN RINGS) */}
-      <div className="max-w-[1240px] w-full mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
+      <div className="max-w-[1080px] w-full mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-stretch">
           
           {/* Main Large Card - Left */}
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-7 bg-white rounded-[40px] overflow-hidden flex flex-col shadow-sm"
+            className="lg:col-span-7 bg-white rounded-[23px] border border-[#AE75DA] overflow-hidden flex flex-col shadow-sm"
           >
             {/* Top Section */}
-            <div className="p-10 flex flex-col sm:flex-row items-center gap-8 md:gap-12 flex-grow">
-              <CircularProgress percentage={95} label="<5%" size={140} strokeWidth={14} />
+            <div className="p-6 md:p-8 flex flex-col sm:flex-row items-center gap-6 md:gap-10 flex-grow">
+              <CircularProgress percentage={4.8} label="<5%" size={110} strokeWidth={11} textSizeClass="text-[20px] md:text-[24px]" color="#AE75DA" bgColor="rgba(174,117,218,0.2)" />
               <div className="flex-1 text-center sm:text-left">
-                <h3 className="text-[36px] md:text-[42px] lg:text-[48px] font-[900] leading-[1.05] text-[#1A1A1A] tracking-tighter">
+                <h3 className="text-[26px] md:text-[36px] font-inter font-bold leading-[1.1] text-[#191919] tracking-[-0.0192em]">
                   <span className="block">&lt;5%</span>
                   <span className="block">Women in</span>
-                  <span className="block">Transport</span>
-                  <span className="block">Jobs</span>
+                  <span className="block">Transport Jobs</span>
                 </h3>
               </div>
             </div>
 
             {/* Bottom Representation Bar */}
-            <div className="bg-[#F3E8FF] p-8 flex justify-between items-center px-12">
+            <div className="bg-[rgba(174,117,218,0.24)] py-4 px-6 md:px-[40px] flex justify-between items-center h-[95px]">
               <div className="flex flex-col items-start text-left">
-                <span className="text-[28px] md:text-[36px] font-[900] text-[#1A1A1A] tracking-tighter leading-none">4.8%</span>
-                <span className="text-[11px] font-[900] text-gray-500 uppercase tracking-wider mt-1">Female Representation</span>
+                <span className="text-[#0F172A] font-inter text-[24px] md:text-[32px] font-bold leading-none">4.8%</span>
+                <span className="text-[#191919] font-inter text-[11px] md:text-[13px] font-semibold leading-none tracking-[-0.0389em] mt-1.5">Female Representation</span>
               </div>
               <div className="flex flex-col items-end text-right">
-                <span className="text-[28px] md:text-[36px] font-[900] text-[#1A1A1A] tracking-tighter leading-none">95.2%</span>
-                <span className="text-[11px] font-[900] text-gray-500 uppercase tracking-wider mt-1">Male Dominated</span>
+                <span className="text-[#000] font-inter text-[24px] md:text-[32px] font-bold leading-none">95.2%</span>
+                <span className="text-[#191919] font-inter text-[11px] md:text-[13px] font-semibold leading-none tracking-[-0.0389em] mt-1.5">Male Dominated</span>
               </div>
             </div>
           </motion.div>
 
           {/* Right Column - Stacked Cards */}
-          <div className="lg:col-span-5 flex flex-col gap-6 lg:gap-8">
+          <div className="lg:col-span-5 flex flex-col gap-5 lg:gap-6">
             
             {/* Hired Card */}
             <motion.div 
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-white rounded-[32px] p-8 md:p-10 flex items-center gap-6 shadow-sm flex-1"
+              className="bg-white rounded-[23px] border border-[#AE75DA] p-5 md:p-6 flex items-center gap-5 shadow-sm flex-1"
             >
-              <CircularProgress percentage={72} label="72%" size={100} strokeWidth={10} textSizeClass="text-[28px] lg:text-[34px]" />
-              <h4 className="text-[20px] md:text-[24px] lg:text-[28px] font-[900] leading-[1.2] text-[#1A1A1A] tracking-tighter text-left">
+              <CircularProgress percentage={72} label="72%" size={85} strokeWidth={8.5} textSizeClass="text-[16px] md:text-[18px]" color="#AE75DA" bgColor="rgba(174,117,218,0.2)" />
+              <h4 className="text-[16px] md:text-[20px] lg:text-[22px] font-inter font-bold leading-tight text-[#191919] tracking-tight text-left">
                 72% Of Our Graduates Get Hired Within 6 Months
               </h4>
             </motion.div>
@@ -202,10 +201,10 @@ const WhyChange = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="bg-white rounded-[32px] p-8 md:p-10 flex items-center gap-6 shadow-sm flex-1"
+              className="bg-white rounded-[23px] border border-[#AE75DA] p-5 md:p-6 flex items-center gap-5 shadow-sm flex-1"
             >
-              <CircularProgress percentage={1} label="<1%" size={100} strokeWidth={10} textSizeClass="text-[28px] lg:text-[34px]" rotation={-180} />
-              <h4 className="text-[20px] md:text-[24px] lg:text-[28px] font-[900] leading-[1.2] text-[#1A1A1A] tracking-tighter text-left">
+              <CircularProgress percentage={0.8} label="<1%" size={85} strokeWidth={8.5} textSizeClass="text-[16px] md:text-[18px]" color="#AE75DA" bgColor="rgba(174,117,218,0.2)" rotation={-90} />
+              <h4 className="text-[16px] md:text-[20px] lg:text-[22px] font-inter font-bold leading-tight text-[#191919] tracking-tight text-left">
                 Professional Driving Licenses Held by Women
               </h4>
             </motion.div>

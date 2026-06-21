@@ -37,22 +37,22 @@ const ProgramsSection = () => {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="text-[40px] md:text-[52px] font-bold text-[#1A1A1A] tracking-tight"
+            className="text-[40px] md:text-[52px] font-montserrat font-bold text-[#191919] tracking-tight"
           >
             Our Programs
           </motion.h2>
           
           <Link href="/programs">
             <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-2 px-6 py-2.5 bg-[#A64AED] text-white rounded-full font-bold text-[16px] shadow-sm transition-all"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              className="flex items-center gap-2.5 px-5 py-2 bg-[#AE75DA] text-white rounded-full font-bold text-[16px] shadow-sm transition-all hover:bg-[#9d60cc]"
             >
               View All
-              <div className="bg-white rounded-full p-0.5 flex items-center justify-center">
+              <div className="bg-white rounded-full w-6 h-6 flex items-center justify-center">
                 <svg 
-                  width="14" height="14" viewBox="0 0 24 24" fill="none" 
-                  stroke="#A64AED" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"
+                  width="12" height="12" viewBox="0 0 24 24" fill="none" 
+                  stroke="#AE75DA" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round"
                 >
                   <path d="M7 7h10v10" />
                   <path d="M7 17 17 7" />
@@ -71,29 +71,25 @@ const ProgramsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1, duration: 0.4 }}
-              className="relative bg-white rounded-[24px] border border-[#E9D5FF] overflow-hidden flex flex-col h-[480px] group transition-all hover:border-[#D8B4FE] hover:shadow-lg hover:shadow-purple-100/50"
+              className="relative bg-white rounded-[23px] border border-[#AE75DA]/80 flex flex-col h-[340px] p-4 group transition-all hover:border-[#AE75DA] hover:shadow-lg hover:shadow-purple-100/50"
             >
               {/* Illustration Area */}
-              <div className="relative w-full h-[65%] flex items-center justify-center p-8">
+              <div className="relative w-full h-[210px] overflow-hidden rounded-[16px] bg-white flex items-center justify-center mb-3">
                 <img 
                   src={program.image} 
                   alt={program.title} 
-                  className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
               
               {/* Content Section */}
-              <div className="flex flex-col flex-1 px-7 pb-8 pt-0">
-                <h3 className="text-[20px] font-bold text-[#1A1A1A] leading-tight mb-2">
+              <div className="flex flex-col flex-1">
+                <h3 className="text-[18px] font-bold font-montserrat text-[#191919] leading-tight mb-1.5 whitespace-nowrap overflow-hidden text-ellipsis" title={program.title}>
                   {program.title}
                 </h3>
-                <p className="text-[12px] text-zinc-500 font-medium leading-relaxed mb-4 line-clamp-3">
+                <p className="text-[12px] text-zinc-500 font-medium leading-normal h-[54px] line-clamp-3">
                   {program.description}
                 </p>
-                <Link href="/programs" className="mt-auto flex items-center gap-1 text-[#A64AED] font-extrabold text-[14px] hover:underline">
-                  Learn More 
-                  <span className="text-[16px]">→</span>
-                </Link>
               </div>
             </motion.div>
           ))}

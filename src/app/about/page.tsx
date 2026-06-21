@@ -17,7 +17,8 @@ export default function AboutPage() {
         <ApproachSection />
         <WorkProcess />
         <ReadyToBuild />
-        {/* We can potentially add more sections here as we build them */}
+        {/* Empty purple strip above footer */}
+        <div className="w-full h-16 bg-[#D1B9FC]" />
         <Footer />
       </div>
     </main>

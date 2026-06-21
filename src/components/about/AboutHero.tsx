@@ -1,106 +1,220 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
 const AboutHero = () => {
   return (
-    <section className="relative w-full lg:h-[calc(100dvh-78px)] lg:min-h-[650px] bg-white overflow-hidden flex items-center py-10 lg:py-0">
-      <div className="w-full px-6 md:px-12 lg:px-16 xl:px-32 h-full flex flex-col justify-center">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-4 lg:mt-[-30px]">
-          {/* Left Content */}
-          <div className="w-full lg:w-[55%] flex flex-col items-start text-left z-10">
-            <motion.span
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-[#FF9F1C] font-extrabold text-lg md:text-xl mb-3 tracking-wide"
-            >
+    <section className="relative w-full bg-white overflow-hidden">
+      
+      {/* Desktop View: Centered 1440px fixed width layout matching Figma absolute specs */}
+      <div className="hidden lg:block w-full h-[650px] bg-white relative">
+        <div className="w-[1440px] h-full mx-auto relative">
+          
+          {/* Right Image Illustration */}
+          <motion.img
+            initial={{ opacity: 0, scale: 0.98 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            src="/About-hero-bg.png"
+            className="w-[583px] h-[672px] absolute left-[857px] -top-[27px] max-w-none object-contain"
+            alt="Woman on a scooter illustration"
+          />
+
+          {/* Left Content Box */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="w-[605px] h-[451px] absolute left-[101px] top-[111px]"
+          >
+            {/* Tagline */}
+            <p className="text-[#F5A623] font-montserrat text-[28px] font-bold leading-[1.32em] w-[186px] h-[37px] absolute left-0 top-0">
               Who We Are
-            </motion.span>
+            </p>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-[40px] md:text-[50px] lg:text-[56px] xl:text-[64px] font-[900] text-[#1A1A1A] leading-[1.08] mb-6"
-            >
-              <span className="block md:inline lg:block xl:inline">From Mobility to</span>{" "}
-              <span className="text-[#1A1A1A]">Opportunity</span>
-            </motion.h1>
+            {/* Heading */}
+            <h1 className="text-[#191919] font-montserrat text-[55px] font-bold leading-[1.29em] w-[501px] h-[142px] absolute left-0 top-[45px]">
+              From Mobility to Opportunity
+            </h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-lg md:text-[20px] lg:text-[22px] text-zinc-500 font-semibold max-w-[540px] mb-6 leading-[1.4]"
-            >
-              Even Academy was built on a simple premise: women can&apos;t take jobs they can&apos;t reach
-            </motion.p>
+            {/* Subtitle 1 */}
+            <p className="text-[#191919] font-inter text-xl leading-[1.29em] opacity-[59%] w-[605px] h-[52px] absolute left-0 top-[205px]">
+              Even Academy was built on a simple premise: women can’t take jobs they can’t reach
+            </p>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="text-base md:text-lg lg:text-xl text-zinc-400 max-w-[540px] mb-10 leading-relaxed font-medium"
-            >
+            {/* Subtitle 2 */}
+            <p className="text-[#191919] font-inter text-xl leading-snug opacity-[59%] w-[559px] h-[81px] absolute left-0 top-[275px]">
               We began with mobility training, but quickly expanded to skills that matter: technical training, workplace readiness, and career support.
-            </motion.p>
+            </p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="flex flex-wrap items-center gap-5"
-            >
+            {/* Buttons inline block */}
+            <div className="inline-flex justify-center items-center gap-7 absolute left-0 top-[394px] w-full">
+              
               <Link href="/programs">
-                <button className="flex items-center gap-3 px-8 py-4 bg-[#B794F4] text-white rounded-full font-bold text-lg shadow-lg shadow-purple-200 hover:bg-[#a782f0] transition-all transform hover:scale-105 active:scale-95 group">
-                  Our Programs
-                  <svg
-                    className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M7 17L17 7M17 7H7M17 7V17" />
-                  </svg>
+                <button className="cursor-pointer text-nowrap flex p-2.5 justify-center items-center gap-2.5 rounded-[33px] bg-[#AE75DA] hover:bg-[#9c60cc] transition-colors w-[211px] h-[57px] absolute left-0 top-0 text-white font-inter text-xl font-semibold shadow-sm">
+                  <span>our programs</span>
+                  <div className="shrink-0 w-[22px] h-[22px] overflow-hidden relative">
+                    <svg
+                      width="10"
+                      height="10"
+                      viewBox="0 0 10 10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-2 h-2 absolute left-3 top-[3px]"
+                    >
+                      <path
+                        d="M1 8.51667L8.51667 1"
+                        stroke="white"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                    <svg
+                      width="7"
+                      height="7"
+                      viewBox="0 0 7 7"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-1 h-1 absolute left-4 top-0.5"
+                    >
+                      <path
+                        d="M5.4 5.4V1H1"
+                        stroke="white"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                    <svg
+                      width="21"
+                      height="21"
+                      viewBox="0 0 21 21"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-[18px] h-[18px] absolute left-0.5 top-0.5"
+                    >
+                      <path
+                        d="M9.25 1H7.41667C2.83333 1 1 2.83333 1 7.41667V12.9167C1 17.5 2.83333 19.3333 7.41667 19.3333H12.9167C17.5 19.3333 19.3333 17.5 19.3333 12.9167V11.0833"
+                        stroke="white"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </div>
                 </button>
               </Link>
 
               <Link href="/impact">
-                <button className="px-8 py-4 border-2 border-zinc-200 text-zinc-800 rounded-full font-extrabold text-lg hover:bg-zinc-50 hover:border-zinc-300 transition-all transform hover:scale-105 active:scale-95">
-                  See our Impact
+                <button className="cursor-pointer text-nowrap flex p-2.5 justify-center items-center gap-2.5 rounded-[33px] border border-[#191919] hover:bg-zinc-50 transition-colors w-[211px] h-[57px] absolute left-[239px] top-0 text-[#191919] font-inter text-xl font-normal">
+                  see our impact
                 </button>
               </Link>
-            </motion.div>
-          </div>
-
-          {/* Right Image */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="w-full lg:w-[43%] relative flex justify-center lg:justify-end lg:-mr-12 xl:-mr-16"
-          >
-            <div className="relative w-full h-[400px] md:h-[600px] lg:h-[calc(100dvh-120px)] flex items-end">
-              <Image 
-                src="/About-hero-bg.png" 
-                alt="Woman on a scooter illustration"
-                fill
-                className="object-contain object-right-bottom scale-[1.05] md:scale-100 lg:scale-[1.05] origin-bottom-right"
-                priority
-              />
+              
             </div>
           </motion.div>
         </div>
       </div>
+
+      {/* Mobile/Tablet View (Below lg): Responsive centered layout */}
+      <div className="block lg:hidden bg-white py-12 px-6">
+        <div className="flex flex-col items-center gap-10">
+          
+          {/* Content */}
+          <div className="w-full flex flex-col items-center text-center">
+            <p className="text-[#F5A623] font-montserrat text-2xl font-bold mb-3">
+              Who We Are
+            </p>
+            <h1 className="text-[#191919] font-montserrat text-4xl font-bold leading-tight mb-5">
+              From Mobility to Opportunity
+            </h1>
+            <p className="text-[#191919] font-inter text-lg opacity-[59%] mb-4 max-w-[500px]">
+              Even Academy was built on a simple premise: women can’t take jobs they can’t reach
+            </p>
+            <p className="text-[#191919] font-inter text-lg opacity-[59%] mb-8 max-w-[500px]">
+              We began with mobility training, but quickly expanded to skills that matter: technical training, workplace readiness, and career support.
+            </p>
+            
+            {/* Buttons */}
+            <div className="flex flex-col sm:flex-row items-center gap-4 w-full justify-center">
+              <Link href="/programs" className="w-full sm:w-auto flex justify-center">
+                <button className="cursor-pointer text-nowrap flex p-2.5 justify-center items-center gap-2.5 rounded-[33px] bg-[#AE75DA] w-[211px] h-[57px] text-white font-inter text-xl font-semibold">
+                  <span>our programs</span>
+                  <div className="shrink-0 w-[22px] h-[22px] overflow-hidden relative">
+                    <svg
+                      width="10"
+                      height="10"
+                      viewBox="0 0 10 10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-2 h-2 absolute left-3 top-[3px]"
+                    >
+                      <path
+                        d="M1 8.51667L8.51667 1"
+                        stroke="white"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                    <svg
+                      width="7"
+                      height="7"
+                      viewBox="0 0 7 7"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-1 h-1 absolute left-4 top-0.5"
+                    >
+                      <path
+                        d="M5.4 5.4V1H1"
+                        stroke="white"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                    <svg
+                      width="21"
+                      height="21"
+                      viewBox="0 0 21 21"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-[18px] h-[18px] absolute left-0.5 top-0.5"
+                    >
+                      <path
+                        d="M9.25 1H7.41667C2.83333 1 1 2.83333 1 7.41667V12.9167C1 17.5 2.83333 19.3333 7.41667 19.3333H12.9167C17.5 19.3333 19.3333 17.5 19.3333 12.9167V11.0833"
+                        stroke="white"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </div>
+                </button>
+              </Link>
+              <Link href="/impact" className="w-full sm:w-auto flex justify-center">
+                <button className="cursor-pointer text-nowrap flex p-2.5 justify-center items-center gap-2.5 rounded-[33px] border border-[#191919] w-[211px] h-[57px] text-[#191919] font-inter text-xl">
+                  see our impact
+                </button>
+              </Link>
+            </div>
+          </div>
+          
+          {/* Image */}
+          <div className="w-full max-w-[320px] aspect-square relative">
+            <img
+              src="/About-hero-bg.png"
+              alt="Woman on a scooter illustration"
+              className="w-full h-full object-contain"
+            />
+          </div>
+
+        </div>
+      </div>
+      
     </section>
   );
 };
