@@ -6,48 +6,46 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 const AdvisoryHero = () => {
-  const stats = [
-    { value: "2,500+", label: "Training Hours In The Field" },
-    { value: "3+", label: "Published Research Reports" },
-    { value: "10+", label: "Institutional Engagements" },
-    { value: "72%", label: "Average Placement Rate" },
-  ];
-
   return (
-    <section className="relative overflow-hidden pt-12 pb-8 bg-white">
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-4">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-6 mb-2">
+    <section className="relative w-full bg-white lg:min-h-screen flex flex-col justify-center">
+      {/* Hero Section Container */}
+      <div className="max-w-[1440px] w-full mx-auto px-6 md:px-12 lg:px-[120px] pt-[120px] md:pt-[145px] lg:pt-[78px] pb-16 lg:pb-8 flex-grow flex items-center">
+        <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
+          
+          {/* Left: Text Content */}
           <motion.div 
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="flex-1 max-w-[700px]"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="w-full lg:w-[38%] max-w-[500px] text-left"
           >
-            <h1 className="text-[40px] md:text-[48px] lg:text-[56px] font-black text-[#1A1A1A] leading-[1.05] mb-4 tracking-tight">
-              Building Gender-<br />
-              Inclusive Workforces
+            <h1 className="font-montserrat font-[700] text-[28px] sm:text-[44px] md:text-[52px] lg:text-[56px] text-[#1A1A1A] leading-[1.15] mb-6 tracking-tight">
+              <span className="inline-block lg:whitespace-nowrap">Building Gender-</span>
+              <br />
+              <span className="inline-block lg:whitespace-nowrap">Inclusive Workforces</span>
             </h1>
-            <p className="text-zinc-500 text-[15px] md:text-[16px] font-medium leading-relaxed mb-6 max-w-[480px]">
+            <p className="font-inter text-[#4A4A4A] text-[16px] md:text-[18px] font-normal leading-relaxed mb-8 max-w-[480px]">
               We partner with organizations to design inclusive policies, build diverse talent pipelines, and create safe, equitable workplaces where women can grow, lead, and succeed
             </p>
             <Link href="/#contact">
               <motion.button 
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="bg-[#A64AED] hover:bg-[#9333EA] text-white px-8 py-3.5 rounded-[16px] font-black text-[15px] transition-all shadow-xl shadow-[#A64AED]/20"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                className="bg-[#A64AED] hover:bg-[#9333EA] text-white px-10 py-4 rounded-full font-bold text-[16px] transition-all shadow-md shadow-[#A64AED]/20 cursor-pointer"
               >
                 Get In Touch
               </motion.button>
             </Link>
           </motion.div>
 
+          {/* Right: Illustration */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex-1 flex justify-end"
+            className="w-full lg:w-[56%] flex justify-center lg:justify-end"
           >
-            <div className="relative w-full lg:w-[600px] h-[400px] lg:h-[480px]">
+            <div className="relative w-full max-w-[780px] h-[350px] md:h-[520px] lg:h-[620px]">
               <Image 
                 src="/Advisory-side-imd.png"
                 alt="Advisory Illustration"
@@ -57,35 +55,12 @@ const AdvisoryHero = () => {
               />
             </div>
           </motion.div>
-        </div>
 
-        {/* Single Solid Stats Bar */}
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="bg-[#F5EBFF] rounded-[24px] py-10 px-8 flex flex-wrap justify-between items-center relative overflow-hidden"
-        >
-          {stats.map((stat, idx) => (
-            <div key={idx} className="flex-1 min-w-[200px] text-left px-4 relative">
-              <div className="flex flex-col">
-                <span className="text-[44px] md:text-[52px] font-black text-[#1A1A1A] leading-none mb-1">
-                  {stat.value}
-                </span>
-                <span className="text-zinc-600 text-[14px] font-bold tracking-tight leading-tight">
-                  {stat.label}
-                </span>
-              </div>
-              {idx !== stats.length - 1 && (
-                <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 w-[1px] h-10 bg-zinc-400/40" />
-              )}
-            </div>
-          ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
 };
 
 export default AdvisoryHero;
+

@@ -6,14 +6,14 @@ import { motion } from "framer-motion";
 const ProgramHero = () => {
   return (
     <section className="w-full bg-white overflow-hidden min-h-[calc(100vh-78px)] flex items-center py-16 lg:py-0">
-      <div className="max-w-[1550px] w-full mx-auto px-6 md:px-12 lg:px-[80px]">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
+      <div className="max-w-[1280px] w-full mx-auto px-6 md:px-12 lg:px-[60px]">
+        <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
           {/* Left Content */}
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="w-full lg:w-[600px] xl:w-[650px] shrink-0 text-left z-10"
+            className="w-full lg:w-[500px] xl:w-[540px] shrink-0 text-left z-10"
           >
             <motion.span 
               initial={{ opacity: 0, y: 20 }}
@@ -28,7 +28,7 @@ const ProgramHero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.5 }}
-              className="font-montserrat text-[44px] sm:text-[54px] md:text-[64px] lg:text-[76px] font-bold text-[#1A1A1A] leading-[1.15] mb-6 tracking-tight"
+              className="font-montserrat text-[36px] sm:text-[46px] md:text-[54px] lg:text-[64px] font-bold text-[#1A1A1A] leading-[1.15] mb-6 tracking-tight"
             >
               <span className="block md:inline-block whitespace-nowrap">Four Programs.</span><br />
               <span className="block md:inline-block whitespace-nowrap">One Mission</span>
@@ -53,7 +53,7 @@ const ProgramHero = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="flex-1 w-full flex justify-center"
           >
-            <div className="relative w-full max-w-[700px] lg:max-w-none mx-auto lg:scale-[2.1] lg:translate-x-4 lg:-translate-y-6">
+            <div className="relative w-full max-w-[700px] lg:max-w-none mx-auto lg:scale-[2.3] lg:translate-x-[-15px] lg:-translate-y-6">
               <img 
                 src="/program-hero-side.png" 
                 alt="Program Hero Illustration" 

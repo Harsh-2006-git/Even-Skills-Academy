@@ -55,18 +55,18 @@ const AdvisoryServices = () => {
   ];
 
   return (
-    <section className="bg-[#F5EBFF] py-20">
+    <section className="bg-[#E9D5FF] py-16">
       <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-[42px] md:text-[52px] font-black text-[#1A1A1A] mb-4">
+        <div className="text-center mb-12">
+          <h2 className="text-[36px] md:text-[44px] font-bold text-[#1A1A1A] mb-4">
             Our Services
           </h2>
-          <p className="text-zinc-600 text-[18px] font-medium max-w-[700px] mx-auto leading-relaxed">
+          <p className="text-zinc-600 text-[16px] md:text-[18px] font-medium max-w-[700px] mx-auto leading-relaxed">
             Every engagement is evidence-based, co-designed with your team, and measured against real outcomes not metrics.
           </p>
         </div>
 
-        <div className="grid grid-cols-12 gap-8">
+        <div className="grid grid-cols-12 gap-6">
           {services.map((service, idx) => (
             <motion.div
               key={idx}
@@ -76,32 +76,32 @@ const AdvisoryServices = () => {
               transition={{ duration: 0.6, delay: idx * 0.1 }}
               className={`
                 ${service.span} 
-                rounded-[32px] p-10 flex flex-col justify-between h-full min-h-[400px]
+                rounded-[24px] p-6 md:p-8 flex flex-col justify-between h-full min-h-[300px]
                 ${service.variant === "purple" 
                   ? "bg-[#A64AED] text-white" 
                   : "bg-white text-[#1A1A1A] shadow-sm shadow-[#A64AED]/5 border border-[#1A1A1A]/5"}
               `}
             >
               <div>
-                <div className={`w-12 h-12 rounded-[14px] flex items-center justify-center mb-10 ${service.variant === 'purple' ? 'bg-white/20' : 'bg-[#F3E8FF]'}`}>
+                <div className={`w-10 h-10 rounded-[10px] flex items-center justify-center mb-6 ${service.variant === 'purple' ? 'bg-white/20' : 'bg-[#F3E8FF]'}`}>
                   <service.icon 
-                    className={`w-6 h-6 ${service.variant === 'purple' ? 'text-white' : 'text-[#A64AED]'}`} 
+                    className={`w-5 h-5 ${service.variant === 'purple' ? 'text-white' : 'text-[#A64AED]'}`} 
                   />
                 </div>
-                <h3 className={`text-[28px] lg:text-[32px] font-black leading-tight mb-6 ${service.variant === 'purple' ? 'text-white' : 'text-[#1A1A1A]'}`}>
+                <h3 className={`text-[20px] md:text-[22px] lg:text-[24px] font-[800] leading-tight mb-4 ${service.variant === 'purple' ? 'text-white' : 'text-[#1A1A1A]'}`}>
                   {service.title}
                 </h3>
-                <p className={`text-[16px] lg:text-[18px] font-medium leading-relaxed mb-10 ${service.variant === 'purple' ? 'text-white/90' : 'text-zinc-500'}`}>
+                <p className={`text-[14px] md:text-[15px] font-normal leading-relaxed mb-6 ${service.variant === 'purple' ? 'text-white/90' : 'text-zinc-500'}`}>
                   {service.desc}
                 </p>
               </div>
 
               <div className={`
-                px-6 py-4 rounded-[16px] flex items-center gap-4 text-[13px] font-bold tracking-tight
+                px-4 py-3 rounded-[12px] flex items-center gap-3 text-[12px] font-bold tracking-tight
                 ${service.variant === 'purple' ? 'bg-white text-[#1A1A1A]' : 'bg-[#E9E4FF] text-[#A64AED]'}
               `}>
-                <span className="opacity-60 uppercase text-[10px] tracking-widest whitespace-nowrap">Deliverable</span>
-                <div className="w-1.5 h-1.5 rounded-full bg-current opacity-20 hidden sm:block"></div>
+                <span className="opacity-60 uppercase text-[9px] tracking-widest whitespace-nowrap">Deliverable</span>
+                <div className="w-1 h-1 rounded-full bg-current opacity-20 hidden sm:block"></div>
                 <span className={`leading-tight ${service.variant === 'purple' ? 'text-[#1A1A1A]' : 'text-zinc-600'}`}>{service.deliverable}</span>
               </div>
             </motion.div>

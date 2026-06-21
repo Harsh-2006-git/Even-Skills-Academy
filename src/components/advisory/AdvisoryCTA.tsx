@@ -7,6 +7,9 @@ import { motion } from "framer-motion";
 const AdvisoryCTA = () => {
   return (
     <section className="bg-white py-20 relative overflow-hidden">
+      {/* Top Ribbon (Divider) */}
+      <div className="absolute top-0 left-0 w-full h-[48px] bg-[#E9D5FF]" />
+
       {/* Decorative Blobs */}
       <div className="absolute top-0 left-[-100px] w-[300px] h-[300px] bg-[#A64AED] opacity-5 blur-[100px] rounded-full" />
       <div className="absolute bottom-0 right-[-100px] w-[300px] h-[300px] bg-[#A64AED] opacity-10 blur-[100px] rounded-full" />
@@ -32,7 +35,7 @@ const AdvisoryCTA = () => {
         </Link>
       </div>
 
-      {/* Missing Paatty (Bottom Ribbon) */}
+      {/* Bottom Ribbon */}
       <div className="absolute bottom-0 left-0 w-full h-[48px] bg-[#E9D5FF]" />
     </section>
   );

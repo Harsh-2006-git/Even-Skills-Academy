@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
 
@@ -19,33 +18,32 @@ const PartnerTestimonial = ({ quote, authorTitle, company, highlighted, delay }:
     whileInView={{ opacity: 1, scale: 1 }}
     viewport={{ once: true }}
     transition={{ duration: 0.5, delay }}
-    className={`p-10 rounded-[32px] flex flex-col justify-between min-h-[411px] transition-all duration-300 ${
+    className={`p-6 md:p-8 rounded-[24px] flex flex-col justify-between min-h-[320px] transition-all duration-300 ${
       highlighted 
-        ? 'bg-[#F0DEFF] shadow-xl shadow-purple-500/10' 
+        ? 'bg-[#F0DEFF] shadow-lg shadow-purple-500/5' 
         : 'bg-white border border-[#C6C6CD]/30 hover:border-[#A64AED]/50'
     }`}
   >
     <div>
-      <Quote size={40} className="text-[#A64AED]/30 mb-6" fill="currentColor" />
-      <p className="text-[#1A1A1A] text-[18px] font-medium leading-relaxed mb-8">
+      <Quote size={32} className="text-[#A64AED]/30 mb-4" fill="currentColor" />
+      <p className="text-[#1A1A1A] text-[16px] font-medium leading-relaxed mb-6">
         "{quote}"
       </p>
     </div>
 
-    <div className="flex items-center gap-4 pt-6 border-t border-[#1A1A1A]/5">
-      <div className={`w-12 h-12 rounded-full flex items-center justify-center text-white font-black overflow-hidden ${
+    <div className="flex items-center gap-4 pt-5 border-t border-[#1A1A1A]/5">
+      <div className={`w-10 h-10 rounded-full flex items-center justify-center text-white font-bold overflow-hidden ${
         highlighted ? 'bg-[#A64AED]' : 'bg-[#131B2E]'
       }`}>
         <div className="w-full h-full relative">
-           {/* Placeholder for avatar, could be letter or icon as in screenshot */}
            <div className="flex items-center justify-center w-full h-full text-[14px]">
              {company[0]}
            </div>
         </div>
       </div>
       <div>
-        <h4 className="text-[16px] font-black text-[#1A1A1A] leading-tight">{authorTitle}</h4>
-        <p className="text-[#6B7280] text-[14px] font-medium transition-colors group-hover:text-[#A64AED]">
+        <h4 className="text-[15px] font-bold text-[#1A1A1A] leading-tight">{authorTitle}</h4>
+        <p className="text-[#6B7280] text-[13px] font-medium">
           {company}
         </p>
       </div>
@@ -55,19 +53,19 @@ const PartnerTestimonial = ({ quote, authorTitle, company, highlighted, delay }:
 
 const ImpactPartners = () => {
   return (
-    <section className="bg-[#FDFDFD] py-32 overflow-hidden">
+    <section className="bg-[#FDFDFD] py-16 md:py-20 overflow-hidden">
       <div className="max-w-[1280px] mx-auto px-6 lg:px-12">
         <motion.h2 
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-[48px] md:text-[56px] font-black text-[#1A1A1A] text-center mb-20 relative"
+          className="text-[36px] md:text-[48px] font-bold text-[#1A1A1A] text-center mb-12 relative"
         >
           What Our Partners Say
-          <span className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-24 h-1.5 bg-[#A64AED] rounded-full opacity-30"></span>
+          <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-16 h-1 bg-[#A64AED] rounded-full opacity-30"></span>
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-center max-w-[1184px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch max-w-[1184px] mx-auto">
           <PartnerTestimonial 
             quote="Even Academy doesn't just send us resumes. They send us job-ready candidates who stay."
             authorTitle="HR Head"
