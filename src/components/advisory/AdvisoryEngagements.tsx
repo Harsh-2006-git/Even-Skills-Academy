@@ -28,13 +28,13 @@ const AdvisoryEngagements = () => {
   ];
 
   return (
-    <section className="bg-[#E9D8FF] py-24">
+    <section className="bg-[#E9D8FF] py-16 md:py-24">
       <div className="max-w-[1216px] mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-[48px] md:text-[56px] font-black text-[#1A1A1A] mb-4">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-[32px] md:text-[48px] lg:text-[56px] font-bold text-[#1A1A1A] mb-4 leading-tight">
             Recent Engagements
           </h2>
-          <p className="text-zinc-600 text-[18px] max-w-[700px] mx-auto leading-relaxed">
+          <p className="text-zinc-600 text-[16px] md:text-[18px] max-w-[700px] mx-auto leading-relaxed">
             Partnering with organizations to drive real impact through training, consulting, and inclusive workforce solutions
           </p>
         </div>
@@ -47,21 +47,21 @@ const AdvisoryEngagements = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="bg-white rounded-[48px] p-12 flex flex-col items-start shadow-xl shadow-purple-900/5 hover:shadow-purple-900/10 transition-all border border-transparent hover:border-[#A64AED]/20 group"
+              className="bg-white rounded-[24px] p-6 md:p-10 flex flex-col items-start shadow-xl shadow-purple-900/5 hover:shadow-purple-900/10 transition-all border border-transparent hover:border-[#A64AED]/20 group"
             >
-              <div className="w-14 h-14 rounded-full bg-[#A64AED] flex items-center justify-center text-white text-[24px] font-black mb-8 shadow-lg shadow-[#A64AED]/30">
+              <div className="w-12 h-12 rounded-full bg-[#A64AED] flex items-center justify-center text-white text-[20px] font-bold mb-6 shadow-lg shadow-[#A64AED]/20">
                 {item.initial}
               </div>
 
-              <h3 className="text-[24px] font-black text-[#1A1A1A] mb-4">
+              <h3 className="text-[20px] md:text-[24px] font-bold text-[#1A1A1A] mb-3 leading-tight">
                 {item.title}
               </h3>
               
-              <p className="text-zinc-500 text-[15px] font-medium leading-relaxed mb-10 flex-grow">
+              <p className="text-zinc-500 text-[14.5px] font-medium leading-relaxed mb-6 flex-grow">
                 {item.desc}
               </p>
 
-              <Link href={item.link} className="flex items-center gap-2 text-[#A64AED] font-black text-[13px] tracking-widest uppercase group/btn transition-colors hover:text-[#1A1A1A]">
+              <Link href={item.link} className="flex items-center gap-2 text-[#A64AED] font-bold text-[13px] tracking-widest uppercase group/btn transition-colors hover:text-[#1A1A1A]">
                 View Project
                 <MoveRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
               </Link>

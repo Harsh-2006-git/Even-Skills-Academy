@@ -13,9 +13,10 @@ interface StoryCardProps {
   quote: string;
   transitionData?: { from: string; to: string } | { before: string; after: string };
   delay: number;
+  imagePosition?: string;
 }
 
-const VandanaCard = ({ name, designation, image, domain, quote, transitionData, delay }: StoryCardProps) => {
+const VandanaCard = ({ name, designation, image, domain, quote, transitionData, delay, imagePosition }: StoryCardProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -25,14 +26,14 @@ const VandanaCard = ({ name, designation, image, domain, quote, transitionData, 
       className="bg-white rounded-[24px] overflow-hidden shadow-sm flex flex-col lg:flex-row"
     >
       {/* Image Area */}
-      <div className="relative bg-white lg:w-[45%] h-[320px] lg:h-auto">
+      <div className="relative bg-white lg:w-[45%] h-[320px] lg:h-auto overflow-hidden">
         <Image 
           src={image} 
           alt={name} 
           fill 
-          className="object-contain p-4 grayscale hover:grayscale-0 transition-all duration-500"
+          className={`object-cover transition-transform duration-700 hover:scale-105 ${imagePosition || "object-center"}`}
         />
-        <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full shadow-sm">
+        <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full shadow-sm z-20">
           <p className="text-[#6B7280] text-[12px] font-bold tracking-wider uppercase mb-0.5">SKILL DOMAIN</p>
           <p className="text-[#1A1A1A] text-[14px] font-bold">{domain}</p>
         </div>
@@ -82,76 +83,76 @@ const VandanaCard = ({ name, designation, image, domain, quote, transitionData, 
   );
 };
 
-const GridStoryCard = ({ name, designation, image, domain, quote, transitionData, delay }: StoryCardProps) => {
+const GridStoryCard = ({ name, designation, image, domain, quote, transitionData, delay, imagePosition }: StoryCardProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay }}
-      className="bg-white rounded-[24px] overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-100 flex flex-col"
+      className="bg-white rounded-[24px] overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-100 flex flex-col md:flex-row"
     >
       {/* Image Area */}
-      <div className="relative w-full h-[250px] overflow-hidden">
+      <div className="relative w-full md:w-[38%] h-[280px] md:h-auto overflow-hidden">
         <Image 
           src={image} 
           alt={name} 
           fill 
-          className="object-cover transition-transform duration-700 hover:scale-105"
+          className={`object-cover transition-transform duration-700 hover:scale-105 ${imagePosition || "object-center"}`}
         />
         {/* Dark Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-transparent z-10 pointer-events-none" />
         
         {/* Skill Domain Overlay */}
-        <div className="absolute bottom-6 left-6 text-white z-20 pointer-events-none">
-          <p className="text-[#c084fc] text-[11px] font-bold tracking-[0.15em] uppercase mb-1">SKILL DOMAIN</p>
-          <p className="text-white text-[18px] font-bold leading-tight">{domain}</p>
+        <div className="absolute bottom-4 left-4 text-white z-20 pointer-events-none">
+          <p className="text-[#c084fc] text-[9px] font-bold tracking-[0.15em] uppercase mb-0.5">SKILL DOMAIN</p>
+          <p className="text-white text-[15px] font-bold leading-tight">{domain}</p>
         </div>
       </div>
 
       {/* Content Area */}
-      <div className="p-6 md:p-8 flex-1 flex flex-col justify-between">
+      <div className="p-5 md:p-6 flex-1 flex flex-col justify-between md:max-w-[62%]">
         <div>
           {/* Profile Header */}
-          <div className="flex items-center gap-4 mb-6">
-            <div className="w-12 h-12 rounded-full bg-[#A64AED] flex items-center justify-center text-white text-[20px] font-black">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-9 h-9 rounded-full bg-[#A64AED] flex items-center justify-center text-white text-[15px] font-black">
               {name[0]}
             </div>
             <div>
-              <h4 className="text-[22px] font-bold text-[#111827] leading-tight">{name}</h4>
-              <p className="text-[#6B7280] text-[14px] mt-0.5 font-medium">{designation}</p>
+              <h4 className="text-[18px] font-bold text-[#111827] leading-tight">{name}</h4>
+              <p className="text-[#6B7280] text-[12.5px] mt-0.5 font-medium">{designation}</p>
             </div>
           </div>
 
           {/* Transition Block */}
           {transitionData && (
-            <div className="bg-[#F2F3FF] rounded-[16px] p-4 mb-6 border border-[#E0E4FF]/40">
+            <div className="bg-[#F5F6FF] rounded-[12px] p-3 mb-4 border border-[#E0E4FF]/30">
               <div>
-                <div className="flex items-center gap-1.5 mb-2 text-[#76777D]">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5">
+                <div className="flex items-center gap-1.5 mb-1.5 text-[#76777D]">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5">
                     <path d="M16 3 21 8 16 13" />
                     <path d="M21 8H3" />
                     <path d="m8 21-5-5 5-5" />
                     <path d="M3 16h18" />
                   </svg>
-                  <span className="text-[10px] font-bold tracking-[0.1em] uppercase">TRANSITION</span>
+                  <span className="text-[9.5px] font-bold tracking-[0.1em] uppercase">TRANSITION</span>
                 </div>
-                <p className="text-[#374151] text-[13.5px] leading-relaxed">
+                <p className="text-[#374151] text-[12.5px] leading-relaxed">
                   <span className="font-semibold text-[#6B7280]">From:</span> {(transitionData as any).from}<br />
-                  <span className="font-semibold text-[#9863FF] mt-1 inline-block">To:</span> {(transitionData as any).to}
+                  <span className="font-semibold text-[#9863FF] mt-0.5 inline-block">To:</span> {(transitionData as any).to}
                 </p>
               </div>
             </div>
           )}
 
           {/* Quote */}
-          <p className="text-[#374151] text-[16px] md:text-[17px] leading-relaxed mb-6 font-normal">
+          <p className="text-[#374151] text-[14px] leading-relaxed mb-4 font-normal">
             &quot;{quote}&quot;
           </p>
         </div>
 
         {/* Action Link */}
-        <button className="flex items-center gap-2 text-[#9863FF] hover:text-[#7C3AED] font-bold text-[14px] transition-colors group w-fit">
+        <button className="flex items-center gap-2 text-[#9863FF] hover:text-[#7C3AED] font-semibold text-[13px] transition-colors group w-fit">
           Read full interview <MoveRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
         </button>
       </div>
@@ -167,7 +168,7 @@ const ImpactStories = () => {
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-[48px] md:text-[60px] font-bold text-[#1A1A1A] text-center mb-12 tracking-[-0.03em]"
+          className="text-[32px] sm:text-[40px] md:text-[60px] font-bold text-[#1A1A1A] text-center mb-12 tracking-[-0.03em] leading-tight"
         >
           Stories from the Field
         </motion.h2>
@@ -177,7 +178,7 @@ const ImpactStories = () => {
           <VandanaCard 
             name="Vandana"
             designation="Dark Store Associate at Zepto"
-            image="/mobility.png"
+            image="/VandanaAtZepto.jpg"
             domain="Mobility + Platform Economy"
             quote="I was scared of traffic. Now I ride to work every day, navigating the city with confidence I never knew I possessed."
             transitionData={{
@@ -192,7 +193,7 @@ const ImpactStories = () => {
             <GridStoryCard 
               name="Tanishka"
               designation="Assembly Line Operator at Ola Electric"
-              image="/TanishkaInTheFactory.png"
+              image="/TanishkaOlaElectric.png"
               domain="EV & Green Energy"
               quote="I never thought I could work with machines. Now I'm teaching my younger sister to think bigger."
               transitionData={{
@@ -200,11 +201,12 @@ const ImpactStories = () => {
                 to: "High-precision manufacturing"
               }}
               delay={0.2}
+              imagePosition="object-top"
             />
             <GridStoryCard 
               name="Priya"
               designation="Remote Customer Support"
-              image="/PriyaWorkingRemotely.png"
+              image="/PriyaRemoteSupport.jpg"
               domain="AI & Digital Tech"
               quote="I work from home now, but it's real work with real pay. My in-laws respect me more."
               transitionData={{

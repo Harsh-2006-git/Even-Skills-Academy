@@ -99,7 +99,7 @@ const ImpactStats = () => {
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-[48px] md:text-[56px] font-bold text-[#1A1A1A] text-center mb-10"
+          className="text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] font-bold text-[#1A1A1A] text-center mb-10 leading-tight"
         >
           Empowering Women at Scale
         </motion.h2>

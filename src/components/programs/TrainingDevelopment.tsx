@@ -126,13 +126,13 @@ const TrainingDevelopment = () => {
       <div className="max-w-[1440px] w-full mx-auto px-6 md:px-20 lg:px-[120px]">
         
         {/* Top Section */}
-        <div className="flex flex-col lg:flex-row justify-between items-start gap-16 mb-24">
+        <div className="flex flex-col lg:flex-row justify-between items-start gap-8 lg:gap-16 mb-12 sm:mb-20">
           <div className="max-w-[600px]">
             <motion.h2 
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="text-[48px] md:text-[56px] font-[900] text-[#1A1A1A] mb-8 leading-[1.1] tracking-tighter"
+              className="text-[26px] sm:text-[38px] md:text-[56px] font-[700] text-[#1A1A1A] mb-4 sm:mb-6 leading-[1.1] tracking-tighter"
             >
               Training & Skill Development At Even Academy
             </motion.h2>
@@ -141,13 +141,13 @@ const TrainingDevelopment = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-[18px] md:text-[20px] text-zinc-600 font-medium leading-relaxed tracking-tight"
+              className="text-[15px] sm:text-[17px] md:text-[20px] text-zinc-600 font-medium leading-relaxed tracking-tight"
             >
               Over <span className="text-[#1A1A1A] font-bold">4,400+ women</span> trained across four modules all from resource-poor communities, all now working with confidence.
             </motion.p>
           </div>
 
-          <div className="grid grid-cols-2 gap-10 w-full lg:w-auto">
+          <div className="grid grid-cols-2 gap-3 sm:gap-6 md:gap-10 w-full lg:w-auto">
             {mainStats.map((stat, idx) => (
               <motion.div 
                 key={idx}
@@ -156,12 +156,12 @@ const TrainingDevelopment = () => {
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
                 whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                className="bg-[#F3E8FF] p-8 rounded-[24px] min-w-[200px] flex flex-col items-center justify-center text-center shadow-sm"
+                className="bg-[#F3E8FF] p-3.5 sm:p-8 rounded-[20px] sm:rounded-[24px] w-full md:min-w-[180px] flex flex-col items-center justify-center text-center shadow-sm"
               >
-                <span className="text-[28px] font-black text-[#1A1A1A] mb-1">
+                <span className="text-[20px] sm:text-[24px] md:text-[28px] font-black text-[#1A1A1A] mb-0.5">
                   <AnimatedNumber value={stat.value} />
                 </span>
-                <span className="text-zinc-600 font-bold text-[14px] uppercase tracking-wider">{stat.label}</span>
+                <span className="text-zinc-600 font-bold text-[10.5px] sm:text-[12px] md:text-[14px] uppercase tracking-wide leading-tight">{stat.label}</span>
               </motion.div>
             ))}
           </div>
@@ -176,26 +176,26 @@ const TrainingDevelopment = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="bg-[#F9F7FF] p-7 rounded-[32px] flex flex-col min-h-[380px] relative overflow-hidden"
+              className="bg-[#F9F7FF] p-5 sm:p-7 rounded-[24px] sm:rounded-[32px] flex flex-col min-h-[320px] sm:min-h-[380px] relative overflow-hidden"
             >
               {/* Top Row: Icon and Badge */}
-              <div className="flex justify-between items-start mb-6">
-                <div className="bg-[#A64AED] p-3 rounded-[18px]">
+              <div className="flex justify-between items-start mb-4 sm:mb-6">
+                <div className="bg-[#A64AED] p-2.5 sm:p-3 rounded-[14px] sm:rounded-[18px]">
                   {module.icon}
                 </div>
-                <div className="bg-[#EFEDF5] px-3.5 py-1.5 rounded-full">
-                  <span className="text-[11px] font-black text-zinc-600 tracking-tight">{module.badge}</span>
+                <div className="bg-[#EFEDF5] px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full">
+                  <span className="text-[10px] sm:text-[11px] font-black text-zinc-600 tracking-tight">{module.badge}</span>
                 </div>
               </div>
 
               {/* Title and Stats */}
-              <div className="mb-10">
-                <span className="text-zinc-500 font-bold text-[15px] tracking-tight">{module.title}</span>
-                <div className="flex flex-col mt-3">
-                  <span className="text-[42px] font-black text-[#1A1A1A] leading-[0.8]">
+              <div className="mb-6 sm:mb-10">
+                <span className="text-zinc-500 font-bold text-[13.5px] sm:text-[15px] tracking-tight">{module.title}</span>
+                <div className="flex flex-col mt-2 sm:mt-3">
+                  <span className="text-[32px] sm:text-[42px] font-black text-[#1A1A1A] leading-[0.8]">
                     <AnimatedNumber value={module.count} />
                   </span>
-                  <span className="text-[32px] font-bold text-[#1A1A1A] mt-2">{module.unit}</span>
+                  <span className="text-[22px] sm:text-[32px] font-bold text-[#1A1A1A] mt-1 sm:mt-2">{module.unit}</span>
                 </div>
               </div>
 

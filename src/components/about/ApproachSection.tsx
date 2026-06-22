@@ -94,7 +94,7 @@ const ApproachCard = ({ card, index }: ApproachCardProps) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="relative w-[343px] h-[281px] rounded-[27px] border-2 border-[#A64AED] bg-[#FDFDFD] overflow-hidden shadow-sm mx-auto group hover:shadow-md hover:border-[#ae75da] transition-all duration-300 select-none flex flex-col items-center"
+      className="relative w-full max-w-[343px] h-[281px] rounded-[27px] border-2 border-[#A64AED] bg-[#FDFDFD] overflow-hidden shadow-sm mx-auto group hover:shadow-md hover:border-[#ae75da] transition-all duration-300 select-none flex flex-col items-center"
     >
       {/* Centered Image Container at the top */}
       <div className="w-full h-[135px] flex items-center justify-center relative pt-4 overflow-visible">

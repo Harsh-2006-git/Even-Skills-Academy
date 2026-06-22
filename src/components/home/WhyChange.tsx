@@ -74,7 +74,7 @@ const WhyChange = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-[32px] md:text-[50px] font-montserrat font-bold text-[#191919] leading-tight tracking-tight whitespace-normal md:whitespace-nowrap"
+          className="text-[26px] sm:text-[32px] md:text-[50px] font-montserrat font-bold text-[#191919] leading-tight tracking-tight whitespace-normal md:whitespace-nowrap"
         >
           Why Women’s Access to Work Must Change
         </motion.h2>

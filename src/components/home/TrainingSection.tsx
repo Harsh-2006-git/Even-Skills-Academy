@@ -7,40 +7,40 @@ const TrainingSection = () => {
   return (
     <section className="w-full bg-[#E5D5FC] pt-12 pb-24 md:pt-16 md:pb-32 flex items-center justify-center overflow-hidden">
       <div className="max-w-[1440px] w-full mx-auto px-6 md:px-20 lg:px-[120px] flex flex-col gap-8 md:gap-10">
-        
+
         {/* Header Section */}
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 lg:gap-12 w-full">
           {/* Left Column: Heading and Subtitle */}
-          <div className="flex flex-col items-start gap-5 flex-1 pr-4">
-            <h2 className="text-[#000000] font-montserrat text-3xl md:text-[38px] font-bold leading-[1.2] w-full tracking-tight pb-2">
+          <div className="flex flex-col items-start gap-4 flex-1 pr-4">
+            <h2 className="text-[#000000] font-montserrat text-2xl sm:text-3xl md:text-[38px] font-bold leading-[1.2] w-full tracking-tight pb-2">
               Training &amp; Skill Development <br className="hidden md:inline" /> At Even Academy
             </h2>
-            <p className="text-[#191919] font-inter text-base md:text-lg font-medium leading-[1.3em] opacity-[90%] max-w-[550px]">
+            <p className="text-[#191919] font-inter text-sm sm:text-base md:text-lg font-medium leading-[1.3em] opacity-[90%] max-w-[550px]">
               Over <strong className="font-extrabold text-black">4,400+ women</strong> trained across four modules all from resource-poor
               communities, all now working with confidence.
             </p>
           </div>
 
           {/* Right Column: 2x2 Stats Badges Grid */}
-          <div className="grid grid-cols-2 gap-3.5 w-full lg:w-[476px] shrink-0">
-            <div className="text-nowrap flex p-2 justify-center items-center rounded-[18px] bg-[rgba(253,253,253,0.74)] w-full h-[68px] shadow-sm select-none">
-              <p className="text-[#191919] font-inter text-[14px] md:text-[15px] font-bold leading-tight w-fit text-center">
+          <div className="grid grid-cols-2 gap-2.5 sm:gap-3.5 w-full lg:w-[476px] shrink-0">
+            <div className="flex p-2.5 justify-center items-center rounded-[12px] sm:rounded-[18px] bg-[rgba(253,253,253,0.74)] w-full h-[54px] sm:h-[68px] shadow-sm select-none">
+              <p className="text-[#191919] font-inter text-[11px] sm:text-[14px] md:text-[15px] font-bold leading-tight text-center">
                 4,400+ Total Trained
               </p>
             </div>
-            <div className="text-nowrap flex p-2 justify-center items-center rounded-[18px] bg-[rgba(253,253,253,0.74)] w-full h-[68px] shadow-sm select-none">
-              <p className="text-[#191919] font-inter text-[14px] md:text-[15px] font-bold leading-tight w-fit text-center">
+            <div className="flex p-2.5 justify-center items-center rounded-[12px] sm:rounded-[18px] bg-[rgba(253,253,253,0.74)] w-full h-[54px] sm:h-[68px] shadow-sm select-none">
+              <p className="text-[#191919] font-inter text-[11px] sm:text-[14px] md:text-[15px] font-bold leading-tight text-center">
                 10+ Cities Active
               </p>
             </div>
-            <div className="text-nowrap flex p-2 justify-center items-center rounded-[18px] bg-[rgba(253,253,253,0.74)] w-full h-[68px] shadow-sm select-none">
-              <p className="text-[#191919] font-inter text-[14px] md:text-[15px] font-bold leading-tight w-fit text-center">
+            <div className="flex p-2.5 justify-center items-center rounded-[12px] sm:rounded-[18px] bg-[rgba(253,253,253,0.74)] w-full h-[54px] sm:h-[68px] shadow-sm select-none">
+              <p className="text-[#191919] font-inter text-[11px] sm:text-[14px] md:text-[15px] font-bold leading-tight text-center">
                 4 Training Modules
               </p>
             </div>
-            <div className="text-nowrap flex p-2 justify-center items-center rounded-[18px] bg-[rgba(253,253,253,0.74)] w-full h-[68px] shadow-sm select-none">
-              <p className="text-[#191919] font-inter text-[14px] md:text-[15px] font-bold leading-tight w-fit text-center">
-                72% Avg Placement Rate
+            <div className="flex p-2.5 justify-center items-center rounded-[12px] sm:rounded-[18px] bg-[rgba(253,253,253,0.74)] w-full h-[54px] sm:h-[68px] shadow-sm select-none">
+              <p className="text-[#191919] font-inter text-[11px] sm:text-[14px] md:text-[15px] font-bold leading-tight text-center">
+                72% Avg Placement
               </p>
             </div>
           </div>
@@ -54,17 +54,15 @@ const TrainingSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
-            className="rounded-2xl border border-[rgba(198,198,205,0.10)] bg-[#F9F1FF] shadow-[0_1px_2px_0_rgba(0,0,0,0.05)] w-full h-[270px] p-4 flex flex-col justify-between relative overflow-hidden"
+            className="rounded-2xl border border-[rgba(198,198,205,0.10)] bg-[#F9F1FF] shadow-[0_1px_2px_0_rgba(0,0,0,0.05)] w-full h-[230px] sm:h-[270px] p-3.5 sm:p-4 flex flex-col justify-between relative overflow-hidden"
           >
             {/* Top row */}
             <div className="flex justify-between items-center w-full">
               <svg
-                width="42"
-                height="40"
                 viewBox="0 0 42 40"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className="flex p-3 flex-col items-start rounded-xl bg-[#A64AED] w-[42px] h-[40px] shrink-0"
+                className="flex p-2.5 sm:p-3 flex-col items-start rounded-xl bg-[#A64AED] w-[34px] h-[32px] sm:w-[42px] sm:h-[40px] shrink-0"
               >
                 <rect width="42" height="40" rx="12" fill="#A64AED" />
                 <path
@@ -80,17 +78,17 @@ const TrainingSection = () => {
             </div>
 
             {/* Middle Content */}
-            <div className="flex flex-col items-start mt-2 w-full">
-              <p className="text-[#191919] font-inter text-sm font-medium leading-5 opacity-[66%] h-5">
+            <div className="flex flex-col items-start mt-1 sm:mt-2 w-full">
+              <p className="text-[#191919] font-inter text-[12px] sm:text-sm font-medium leading-5 opacity-[66%] h-4 sm:h-5">
                 Mobility
               </p>
-              <p className="text-[#191919] font-inter text-2xl font-bold leading-7 mt-0.5">
+              <p className="text-[#191919] font-inter text-[18px] sm:text-2xl font-bold leading-7 mt-0.5">
                 1,200 women
               </p>
             </div>
 
             {/* Chart Area */}
-            <div className="flex justify-between items-end gap-1.5 w-full h-[88px] mt-auto px-1 select-none">
+            <div className="flex justify-between items-end gap-1 sm:gap-1.5 w-full h-[60px] sm:h-[88px] mt-auto px-1 select-none">
               <div className="rounded-t-[4px] opacity-[41%] bg-[#A64AED] w-[14%] h-5"></div>
               <div className="rounded-t-[4px] opacity-[41%] bg-[#A64AED] w-[14%] h-[36px]"></div>
               <div className="rounded-t-[4px] bg-[#A64AED] w-[14%] h-[68px]"></div>
@@ -105,17 +103,15 @@ const TrainingSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.1 }}
-            className="rounded-2xl border border-[rgba(198,198,205,0.10)] bg-[#F9F1FF] shadow-[0_1px_2px_0_rgba(0,0,0,0.05)] w-full h-[270px] p-4 flex flex-col justify-between relative overflow-hidden"
+            className="rounded-2xl border border-[rgba(198,198,205,0.10)] bg-[#F9F1FF] shadow-[0_1px_2px_0_rgba(0,0,0,0.05)] w-full h-[230px] sm:h-[270px] p-3.5 sm:p-4 flex flex-col justify-between relative overflow-hidden"
           >
             {/* Top row */}
             <div className="flex justify-between items-center w-full">
               <svg
-                width="40"
-                height="44"
                 viewBox="0 0 40 44"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className="flex p-3 flex-col items-start rounded-xl bg-[#A64AED] w-fit"
+                className="flex p-2.5 sm:p-3 flex-col items-start rounded-xl bg-[#A64AED] w-[32px] h-[36px] sm:w-[40px] sm:h-[44px] shrink-0"
               >
                 <rect width="40" height="44" rx="12" fill="#A64AED" />
                 <path
@@ -140,21 +136,21 @@ const TrainingSection = () => {
             </div>
 
             {/* Middle Content */}
-            <div className="flex flex-col items-start mt-2 w-full">
-              <p className="text-[#191919] font-inter text-sm font-medium leading-5 opacity-[66%] h-5">
+            <div className="flex flex-col items-start mt-1 sm:mt-2 w-full">
+              <p className="text-[#191919] font-inter text-[12px] sm:text-sm font-medium leading-5 opacity-[66%] h-4 sm:h-5">
                 Self-Defense
               </p>
-              <p className="text-[#191919] font-inter text-2xl font-semibold leading-7 mt-0.5">
+              <p className="text-[#191919] font-inter text-[18px] sm:text-2xl font-semibold leading-7 mt-0.5">
                 700 women
               </p>
             </div>
 
             {/* Chart Area with '70%' indicator */}
-            <div className="relative flex flex-col justify-end w-full h-[110px] mt-auto select-none">
-              <span className="absolute right-[4%] top-[-22px] text-[#191919] font-workSans text-sm font-bold w-11 text-center">
+            <div className="relative flex flex-col justify-end w-full h-[80px] sm:h-[110px] mt-auto select-none">
+              <span className="absolute right-[4%] top-[-18px] sm:top-[-22px] text-[#191919] font-workSans text-xs sm:text-sm font-bold w-11 text-center">
                 70%
               </span>
-              <div className="flex justify-between items-end gap-1.5 w-full h-[88px] px-1">
+              <div className="flex justify-between items-end gap-1 sm:gap-1.5 w-full h-[60px] sm:h-[88px] px-1">
                 <div className="rounded-t-[4px] opacity-[41%] bg-[#A64AED] w-[14%] h-5"></div>
                 <div className="rounded-t-[4px] opacity-[41%] bg-[#A64AED] w-[14%] h-[36px]"></div>
                 <div className="rounded-t-[4px] bg-[#DDC6EF] w-[14%] h-[68px]"></div>
@@ -170,17 +166,15 @@ const TrainingSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.2 }}
-            className="rounded-2xl border border-[rgba(198,198,205,0.10)] bg-[#F9F1FF] shadow-[0_1px_2px_0_rgba(0,0,0,0.05)] w-full h-[270px] p-4 flex flex-col justify-between relative overflow-hidden"
+            className="rounded-2xl border border-[rgba(198,198,205,0.10)] bg-[#F9F1FF] shadow-[0_1px_2px_0_rgba(0,0,0,0.05)] w-full h-[230px] sm:h-[270px] p-3.5 sm:p-4 flex flex-col justify-between relative overflow-hidden"
           >
             {/* Top row */}
             <div className="flex justify-between items-center w-full">
               <svg
-                width="44"
-                height="44"
                 viewBox="0 0 44 44"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className="flex p-3 flex-col items-start rounded-xl bg-[#A64AED] w-[44px] h-[44px] shrink-0"
+                className="flex p-2.5 sm:p-3 flex-col items-start rounded-xl bg-[#A64AED] w-[34px] h-[34px] sm:w-[44px] sm:h-[44px] shrink-0"
               >
                 <rect width="44" height="44" rx="12" fill="#A64AED" />
                 <path
@@ -196,24 +190,24 @@ const TrainingSection = () => {
             </div>
 
             {/* Middle Content */}
-            <div className="flex flex-col items-start mt-2 w-full">
-              <p className="text-[#191919] font-inter text-sm font-medium leading-5 opacity-[66%] h-5">
+            <div className="flex flex-col items-start mt-1 sm:mt-2 w-full">
+              <p className="text-[#191919] font-inter text-[12px] sm:text-sm font-medium leading-5 opacity-[66%] h-4 sm:h-5">
                 Logistics-Specific
               </p>
-              <p className="text-[#131B2E] font-inter text-2xl font-bold leading-7 mt-0.5">
+              <p className="text-[#131B2E] font-inter text-[18px] sm:text-2xl font-bold leading-7 mt-0.5">
                 2,000 women
               </p>
             </div>
 
             {/* Progress Bars */}
-            <div className="flex flex-col gap-3 w-full mt-auto mb-2 px-1 select-none">
+            <div className="flex flex-col gap-2 sm:gap-3 w-full mt-auto mb-2 px-1 select-none">
               <div className="w-full">
-                <div className="h-2 w-full rounded-full bg-[#E2E7FF] overflow-hidden">
+                <div className="h-1.5 sm:h-2 w-full rounded-full bg-[#E2E7FF] overflow-hidden">
                   <div className="h-full rounded-full bg-[#A64AED]" style={{ width: "85%" }} />
                 </div>
               </div>
               <div className="w-full">
-                <div className="h-2 w-full rounded-full bg-[#E2E7FF] overflow-hidden">
+                <div className="h-1.5 sm:h-2 w-full rounded-full bg-[#E2E7FF] overflow-hidden">
                   <div className="h-full rounded-full bg-[#F5A623]" style={{ width: "45%" }} />
                 </div>
               </div>
@@ -226,17 +220,15 @@ const TrainingSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.3 }}
-            className="rounded-2xl border border-[rgba(198,198,205,0.10)] bg-[#F9F1FF] shadow-[0_1px_2px_0_rgba(0,0,0,0.05)] w-full h-[270px] p-4 flex flex-col justify-between relative overflow-hidden"
+            className="rounded-2xl border border-[rgba(198,198,205,0.10)] bg-[#F9F1FF] shadow-[0_1px_2px_0_rgba(0,0,0,0.05)] w-full h-[230px] sm:h-[270px] p-3.5 sm:p-4 flex flex-col justify-between relative overflow-hidden"
           >
             {/* Top row */}
             <div className="flex justify-between items-center w-full">
               <svg
-                width="44"
-                height="44"
                 viewBox="0 0 44 44"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className="flex p-3 flex-col items-start rounded-xl bg-[#A64AED] w-fit"
+                className="flex p-2.5 sm:p-3 flex-col items-start rounded-xl bg-[#A64AED] w-[34px] h-[34px] sm:w-[44px] sm:h-[44px] shrink-0"
               >
                 <rect width="43.0118" height="44" rx="12" fill="#A64AED" />
                 <path
@@ -252,17 +244,17 @@ const TrainingSection = () => {
             </div>
 
             {/* Middle Content */}
-            <div className="flex flex-col items-start mt-2 w-full">
-              <p className="text-[#191919] font-inter text-sm font-medium leading-5 opacity-[66%] h-5">
+            <div className="flex flex-col items-start mt-1 sm:mt-2 w-full">
+              <p className="text-[#191919] font-inter text-[12px] sm:text-sm font-medium leading-5 opacity-[66%] h-4 sm:h-5">
                 Soft Skills
               </p>
-              <p className="text-[#131B2E] font-inter text-2xl font-bold leading-7 mt-0.5">
+              <p className="text-[#131B2E] font-inter text-[18px] sm:text-2xl font-bold leading-7 mt-0.5">
                 500 women
               </p>
             </div>
 
             {/* Path Chart */}
-            <div className="w-full mt-auto mb-1 h-[88px] select-none">
+            <div className="w-full mt-auto mb-1 h-[60px] sm:h-[88px] select-none">
               <svg
                 width="100%"
                 height="100%"

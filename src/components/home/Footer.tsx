@@ -5,15 +5,15 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-white pt-12 pb-6 border-t border-[#F3E8FF]">
+    <footer className="w-full bg-white pt-8 pb-6 sm:pt-12 border-t border-[#F3E8FF]">
       <div className="max-w-[1440px] w-full mx-auto px-6 md:px-12 lg:px-[120px]">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 mb-8 sm:mb-12">
 
           {/* Column 1: Logo & Mission */}
-          <div className="lg:col-span-4 space-y-4">
+          <div className="lg:col-span-8 space-y-4">
             <Link href="/" className="flex items-center">
-              <div className="flex flex-col leading-[0.95] font-[900] tracking-tighter text-[#1A1A1A] text-[24px]">
+              <div className="flex flex-col leading-[0.95] font-[900] tracking-tighter text-[#1A1A1A] text-[19px] sm:text-[24px]">
                 <span className="flex items-baseline">
                   <span className="text-[#A64AED]">E</span>ven
                 </span>
@@ -25,43 +25,8 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Column 2: Quick Links */}
-          <div className="lg:col-span-2 space-y-4">
-            <h4 className="text-[13px] font-bold text-[#1A1A1A] tracking-[0.1em] uppercase">
-              QUICK LINKS
-            </h4>
-            <ul className="space-y-2.5">
-              {["Home", "About", "Programs", "Advisory", "Impact"].map((item) => (
-                <li key={item}>
-                  <Link
-                    href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                    className="text-[14px] font-medium text-[#6B7280] hover:text-[#A64AED] transition-colors"
-                  >
-                    {item}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Column 3: Resources */}
-          <div className="lg:col-span-3 space-y-4">
-            <h4 className="text-[13px] font-bold text-[#1A1A1A] tracking-[0.1em] uppercase">
-              RESOURCES
-            </h4>
-            <ul className="space-y-2.5">
-              {["Green Energy", "Mobility Training", "Platform Economy Skills", "Ai Labs"].map((item) => (
-                <li key={item}>
-                  <Link href="#" className="text-[14px] font-medium text-[#6B7280] hover:text-[#A64AED] transition-colors">
-                    {item}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Column 4: Connect */}
-          <div className="lg:col-span-3 space-y-4">
+          {/* Column 2: Connect */}
+          <div className="lg:col-span-4 space-y-4">
             <h4 className="text-[13px] font-bold text-[#1A1A1A] tracking-[0.1em]">
               Connect
             </h4>

@@ -37,7 +37,7 @@ const ProgramsSection = () => {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="text-[40px] md:text-[52px] font-montserrat font-bold text-[#191919] tracking-tight"
+            className="text-[24px] sm:text-[40px] md:text-[52px] font-montserrat font-bold text-[#191919] tracking-tight"
           >
             Our Programs
           </motion.h2>
@@ -46,13 +46,14 @@ const ProgramsSection = () => {
             <motion.button
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              className="flex items-center gap-2.5 px-5 py-2 bg-[#AE75DA] text-white rounded-full font-bold text-[16px] shadow-sm transition-all hover:bg-[#9d60cc]"
+              className="flex items-center gap-1.5 sm:gap-2.5 px-3 py-1.5 sm:px-5 sm:py-2 bg-[#AE75DA] text-white rounded-full font-bold text-[13px] sm:text-[16px] shadow-sm transition-all hover:bg-[#9d60cc] cursor-pointer"
             >
               View All
-              <div className="bg-white rounded-full w-6 h-6 flex items-center justify-center">
+              <div className="bg-white rounded-full w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center">
                 <svg 
-                  width="12" height="12" viewBox="0 0 24 24" fill="none" 
+                  viewBox="0 0 24 24" fill="none" 
                   stroke="#AE75DA" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round"
+                  className="w-2.5 h-2.5 sm:w-3 sm:h-3"
                 >
                   <path d="M7 7h10v10" />
                   <path d="M7 17 17 7" />

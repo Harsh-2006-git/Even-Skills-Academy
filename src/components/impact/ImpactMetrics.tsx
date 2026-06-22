@@ -98,14 +98,14 @@ const ImpactMetrics = () => {
     <section className="bg-[#FDFDFD] py-24">
       <div className="max-w-[1280px] mx-auto px-6 lg:px-12">
         {/* Header Section */}
-        <div className="max-w-[768px] mx-auto text-center mb-20 space-y-4">
-          <p className="text-[#A64AED] font-bold tracking-[0.2em] text-[14px] uppercase">
+        <div className="max-w-[768px] mx-auto text-center mb-16 space-y-4">
+          <p className="text-[#A64AED] font-bold tracking-[0.2em] text-[13px] uppercase">
             TRACKING SUCCESS
           </p>
-          <h2 className="text-[48px] md:text-[56px] font-bold text-[#1A1A1A] leading-tight">
+          <h2 className="text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] font-bold text-[#1A1A1A] leading-tight">
             Our Performance Metrics
           </h2>
-          <p className="text-[#6B7280] text-[18px] leading-relaxed">
+          <p className="text-[#6B7280] text-[16px] md:text-[18px] leading-relaxed">
             Six metrics, tracked longitudinally. Transparent data, no cherry-picking. We measure the long-term impact of our programs on women's lives and careers.
           </p>
         </div>

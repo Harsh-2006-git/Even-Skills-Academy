@@ -9,17 +9,24 @@ const Hero = () => {
     <section className="relative w-full h-[calc(100vh-78px)] overflow-hidden bg-[#1A0B2E]">
       {/* Background Image Wrapper */}
       <div className="absolute inset-0 z-0">
+        {/* Mobile/Tablet Image */}
+        <img
+          src="/Hero-Mobile.jpg"
+          alt="Making the Gig Economy Work for Women"
+          className="w-full h-full object-cover object-center scale-[1.08] lg:hidden"
+        />
+        {/* Desktop Image */}
         <img
           src="/Hero-New_One.jpg"
           alt="Making the Gig Economy Work for Women"
-          className="w-full h-full object-cover sm:object-center"
+          className="w-full h-full object-cover object-center hidden lg:block"
         />
         {/* Smooth Purple Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#2D1B4E]/60 to-[#1A0B2E]/90" />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex h-full items-end sm:items-center justify-center text-center px-6 max-w-[1440px] mx-auto pb-32 sm:pb-0">
+      <div className="relative z-10 flex h-full items-end sm:items-center justify-center text-center px-6 max-w-[1440px] mx-auto pb-44 sm:pb-0">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -39,7 +46,7 @@ const Hero = () => {
         animate={{ x: "100vw" }}
         transition={{ 
           repeat: Infinity,
-          duration: 15,
+          duration: 9,
           ease: "linear",
           repeatType: "loop"
         }}

@@ -116,7 +116,7 @@ const ModuleBlock = ({ data }: { data: typeof modules[0] }) => {
           {/* Features Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
             {data.features.map((feature, idx) => (
-              <div key={idx} className="flex items-center gap-3 p-1 rounded-[16px] border border-[#A64AED] bg-white h-[70px] shadow-sm hover:shadow-md transition-shadow">
+              <div key={idx} className="flex items-center gap-3 p-1 px-2 rounded-[16px] border border-[#A64AED] bg-white min-h-[70px] h-auto py-1.5 shadow-sm hover:shadow-md transition-shadow">
                 <div className="relative w-[60px] h-[54px] flex-shrink-0">
                   <Image 
                     src={feature.icon} 
