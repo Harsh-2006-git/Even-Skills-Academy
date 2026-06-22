@@ -100,9 +100,10 @@ const Navbar = () => {
         initial={false}
         animate={{ x: isOpen ? 0 : "100%" }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        className="fixed inset-0 z-[90] bg-white flex flex-col pt-24 px-8 lg:hidden"
+        className="fixed inset-0 z-[90] bg-white flex flex-col justify-between pt-[116px] pb-10 px-6 lg:hidden"
       >
-        <div className="flex flex-col gap-6">
+        {/* Navigation Links */}
+        <div className="flex flex-col gap-2">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
@@ -110,19 +111,28 @@ const Navbar = () => {
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className={`text-2xl transition-colors ${
-                  isActive ? "text-[#A64AED] font-[900]" : "text-zinc-600 font-bold"
+                className={`text-xl transition-colors py-2 px-4 rounded-xl flex items-center justify-between ${
+                  isActive 
+                    ? "text-[#A64AED] font-extrabold bg-[#A64AED]/5" 
+                    : "text-zinc-700 font-semibold hover:text-[#A64AED] hover:bg-zinc-50"
                 }`}
               >
-                {link.name}
+                <span>{link.name}</span>
+                {isActive && (
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#A64AED]" />
+                )}
               </Link>
             );
           })}
+        </div>
+
+        {/* CTA Button at Bottom */}
+        <div className="w-full">
           <Link href="/#contact" onClick={() => setIsOpen(false)} className="w-full block">
-            <button className="flex items-center justify-center gap-3 px-8 py-3.5 bg-[#A64AED] text-white rounded-full font-bold text-lg mt-4 shadow-lg w-full">
-              <div className="relative w-[26px] h-[26px] bg-white rounded-[6px] flex items-center justify-center shadow-sm">
+            <button className="flex items-center justify-center gap-3 px-6 py-4 bg-[#A64AED] text-white rounded-full font-bold text-base shadow-lg hover:bg-[#9333EA] transition-all w-full cursor-pointer">
+              <div className="relative w-[24px] h-[24px] bg-white rounded-[6px] flex items-center justify-center shadow-sm">
                 <svg 
-                  width="12" height="12" viewBox="0 0 24 24" fill="none" 
+                  width="11" height="11" viewBox="0 0 24 24" fill="none" 
                   stroke="#A64AED" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round"
                 >
                   <path d="M4 9l8 6 8-6" />
