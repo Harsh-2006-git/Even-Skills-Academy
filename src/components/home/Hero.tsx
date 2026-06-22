@@ -6,9 +6,9 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <section className="relative w-full h-[calc(100vh-78px)] overflow-hidden bg-[#1A0B2E]">
+    <section className="relative w-full h-[calc(100dvh-78px)] sm:h-[calc(100vh-78px)] overflow-hidden bg-[#1A0B2E]">
       {/* Background Image Wrapper */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 overflow-hidden">
         {/* Mobile/Tablet Image */}
         <img
           src="/Hero-Mobile.jpg"
@@ -34,8 +34,10 @@ const Hero = () => {
           className="flex flex-col items-center"
         >
           {/* Main Title From Image */}
-          <h1 className="text-[32px] sm:text-[40px] md:text-[56px] lg:text-[72px] leading-[1.1] font-bold text-white max-w-4xl tracking-tight drop-shadow-xl">
-            Making the Gig Economy <br className="hidden md:block" /> Work for Women
+          <h1 className="text-[38px] sm:text-[44px] md:text-[56px] lg:text-[72px] leading-[1.1] font-bold text-white max-w-4xl tracking-tight drop-shadow-xl">
+            Making the <br className="block md:hidden" />
+            Gig Economy <br />
+            Work for Women
           </h1>
         </motion.div>
       </div>
