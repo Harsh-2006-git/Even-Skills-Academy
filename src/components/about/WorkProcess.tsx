@@ -6,16 +6,16 @@ import { motion } from "framer-motion";
 
 const WorkProcess = () => {
   return (
-    <section className="bg-[#D3B8FC] pt-12 pb-10 lg:pt-14 lg:pb-12 overflow-hidden relative">
+    <section className="bg-[#D3B8FC] pt-8 pb-8 lg:pt-14 lg:pb-12 overflow-hidden relative">
       <div className="max-w-[1440px] w-full mx-auto px-6 md:px-20 lg:px-[120px] relative z-10 flex flex-col items-center">
 
         {/* Header Section */}
-        <div className="text-center mb-10 flex flex-col items-center">
+        <div className="text-center mb-6 lg:mb-10 flex flex-col items-center">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-[#000] font-montserrat text-4xl md:text-[65px] font-bold leading-[1.29em] text-center"
+            className="text-[#000] font-montserrat text-3xl md:text-[65px] font-bold leading-[1.29em] text-center"
           >
             How We Work
           </motion.h2>
@@ -174,13 +174,13 @@ const WorkProcess = () => {
         </div>
 
         {/* Mobile / Tablet View (Clean Vertical Process Flow) */}
-        <div className="block lg:hidden w-full max-w-md flex flex-col gap-10 mt-6 relative select-none">
+        <div className="block lg:hidden w-full max-w-md flex flex-col gap-8 mt-4 relative select-none">
           {/* Vertical Connecting Line */}
-          <div className="absolute top-[36px] bottom-[36px] left-[45px] w-[3px] bg-[#191919] pointer-events-none" />
+          <div className="absolute top-[26px] bottom-[26px] left-[35px] w-[3px] bg-[#191919] pointer-events-none" />
 
           {/* Badge */}
-          <div className="flex p-2 justify-center items-center rounded-[13px] border-2 border-[#191919] bg-[#A64AED] w-full py-3 shadow-md mb-4 text-center">
-            <p className="text-[#FDFDFD] font-inter text-2xl font-medium leading-none">
+          <div className="flex p-2 justify-center items-center rounded-[10px] border-2 border-[#191919] bg-[#A64AED] w-full py-2.5 shadow-md mb-2 text-center">
+            <p className="text-[#FDFDFD] font-inter text-lg sm:text-xl font-medium leading-none">
               From Learning to Earning
             </p>
           </div>
@@ -221,12 +221,12 @@ const WorkProcess = () => {
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               className="flex items-start gap-5 relative z-10 w-full"
             >
-              <div className="w-[90px] h-[90px] shrink-0 flex items-center justify-center bg-white border-2 border-[#191919] rounded-[26px] shadow-sm">
-                <img src={step.icon} className="w-[50px] h-[50px] object-contain" alt={step.title} />
+              <div className="w-[70px] h-[70px] shrink-0 flex items-center justify-center bg-white border-2 border-[#191919] rounded-[20px] shadow-sm">
+                <img src={step.icon} className="w-[38px] h-[38px] object-contain" alt={step.title} />
               </div>
-              <div className="flex flex-col pt-2 text-left">
-                <h3 className="text-[#191919] font-inter text-2xl font-bold mb-1 leading-none">{step.title}</h3>
-                <p className="text-[#191919] font-inter text-sm opacity-75 leading-relaxed">{step.desc}</p>
+              <div className="flex flex-col pt-1 text-left">
+                <h3 className="text-[#191919] font-inter text-lg sm:text-xl font-bold mb-1 leading-none">{step.title}</h3>
+                <p className="text-[#191919] font-inter text-[13px] sm:text-sm opacity-75 leading-relaxed">{step.desc}</p>
               </div>
             </motion.div>
           ))}
@@ -235,8 +235,8 @@ const WorkProcess = () => {
         {/* CTA Button */}
         <div className="text-center mt-6 lg:mt-8 w-full flex justify-center">
           <Link href="/impact">
-            <button className="cursor-pointer text-nowrap inline-flex items-center justify-center rounded-[33px] border border-[#A64AED] bg-[#FDFDFD] hover:bg-zinc-50 transition-colors w-[241px] h-[57px] shadow-sm">
-              <span className="text-[#191919] font-inter text-xl font-semibold">
+            <button className="cursor-pointer text-nowrap inline-flex items-center justify-center rounded-[25px] border border-[#A64AED] bg-[#FDFDFD] hover:bg-zinc-50 transition-colors w-[200px] h-[48px] shadow-sm">
+              <span className="text-[#191919] font-inter text-base font-semibold">
                 Explore Our Impact
               </span>
             </button>

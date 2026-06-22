@@ -26,28 +26,28 @@ const VandanaCard = ({ name, designation, image, domain, quote, transitionData, 
       className="bg-white rounded-[24px] overflow-hidden shadow-sm flex flex-col lg:flex-row"
     >
       {/* Image Area */}
-      <div className="relative bg-white lg:w-[45%] h-[320px] lg:h-auto overflow-hidden">
+      <div className="relative bg-white lg:w-[45%] h-[220px] sm:h-[280px] lg:h-auto overflow-hidden">
         <Image 
           src={image} 
           alt={name} 
           fill 
           className={`object-cover transition-transform duration-700 hover:scale-105 ${imagePosition || "object-center"}`}
         />
-        <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full shadow-sm z-20">
-          <p className="text-[#6B7280] text-[12px] font-bold tracking-wider uppercase mb-0.5">SKILL DOMAIN</p>
-          <p className="text-[#1A1A1A] text-[14px] font-bold">{domain}</p>
+        <div className="absolute bottom-4 left-4 lg:bottom-6 lg:left-6 bg-white/90 backdrop-blur-md px-3.5 py-1.5 lg:px-4 lg:py-2 rounded-full shadow-sm z-20">
+          <p className="text-[#6B7280] text-[10px] lg:text-[12px] font-bold tracking-wider uppercase mb-0.5">SKILL DOMAIN</p>
+          <p className="text-[#1A1A1A] text-[12.5px] lg:text-[14px] font-bold">{domain}</p>
         </div>
       </div>
 
       {/* Content Area */}
-      <div className="p-6 md:p-8 flex-1 flex flex-col justify-between lg:max-w-[55%]">
+      <div className="p-5 md:p-8 flex-1 flex flex-col justify-between lg:max-w-[55%]">
         <div>
           <div className="flex items-center gap-4 mb-5">
             <div className="w-12 h-12 rounded-full bg-[#A64AED] flex items-center justify-center text-white text-[20px] font-black">
               {name[0]}
             </div>
             <div>
-              <h4 className="text-[24px] font-bold text-[#1A1A1A] leading-tight">{name}</h4>
+              <h4 className="text-[20px] sm:text-[24px] font-bold text-[#1A1A1A] leading-tight">{name}</h4>
               <p className="text-[#A64AED] text-[14px] font-medium">{designation}</p>
             </div>
           </div>
@@ -69,7 +69,7 @@ const VandanaCard = ({ name, designation, image, domain, quote, transitionData, 
             </div>
           )}
 
-          <blockquote className="text-[18px] text-[#4B5563] leading-relaxed italic mb-5 relative">
+          <blockquote className="text-[15px] sm:text-[18px] text-[#4B5563] leading-relaxed italic mb-5 relative">
             <span className="absolute -left-4 top-0 w-1 h-full bg-[#A64AED] opacity-30 rounded-full"></span>
             "{quote}"
           </blockquote>
@@ -93,7 +93,7 @@ const GridStoryCard = ({ name, designation, image, domain, quote, transitionData
       className="bg-white rounded-[24px] overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-100 flex flex-col md:flex-row"
     >
       {/* Image Area */}
-      <div className="relative w-full md:w-[38%] h-[280px] md:h-auto overflow-hidden">
+      <div className="relative w-full md:w-[38%] h-[200px] sm:h-[250px] md:h-auto overflow-hidden">
         <Image 
           src={image} 
           alt={name} 
@@ -162,13 +162,13 @@ const GridStoryCard = ({ name, designation, image, domain, quote, transitionData
 
 const ImpactStories = () => {
   return (
-    <section className="bg-[#E9D5FF] py-16 md:py-20 overflow-hidden">
+    <section className="bg-[#E9D5FF] py-12 md:py-20 overflow-hidden">
       <div className="max-w-[1280px] mx-auto px-6 lg:px-12">
         <motion.h2 
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-[32px] sm:text-[40px] md:text-[60px] font-bold text-[#1A1A1A] text-center mb-12 tracking-[-0.03em] leading-tight"
+          className="text-[26px] sm:text-[36px] md:text-[48px] lg:text-[60px] font-bold text-[#1A1A1A] text-center mb-8 md:mb-12 tracking-[-0.03em] leading-tight"
         >
           Stories from the Field
         </motion.h2>

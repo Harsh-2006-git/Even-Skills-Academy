@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const VisionSection = () => {
   return (
-    <section className="relative w-full bg-[#D3B8FC] py-8 lg:py-12 overflow-hidden">
+    <section className="relative w-full bg-[#D3B8FC] py-6 sm:py-8 lg:py-12 overflow-hidden">
       {/* Decorative Icons */}
       <motion.div
         initial={{ opacity: 0, x: -30 }}
@@ -43,7 +43,7 @@ const VisionSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-[#000000] font-montserrat text-3xl md:text-[40px] font-bold leading-[1.29em] mb-6 tracking-wide"
+            className="text-[#000000] font-montserrat text-2xl md:text-[40px] font-bold leading-[1.29em] mb-4 tracking-wide"
           >
             OUR VISION
           </motion.p>
@@ -53,7 +53,7 @@ const VisionSection = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="text-[#000000] font-inter text-xl md:text-[38px] font-medium leading-[1.29em]"
+            className="text-[#000000] font-inter text-base sm:text-lg md:text-[38px] font-medium leading-[1.29em]"
           >
             “A workforce where women's participation isn't aspirational — it's operational.”
           </motion.p>

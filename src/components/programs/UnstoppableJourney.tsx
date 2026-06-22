@@ -70,32 +70,37 @@ const UnstoppableJourney = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1, duration: 0.5 }}
-                className="flex flex-col items-center text-center"
+                className="flex flex-row items-start gap-4 md:gap-0 md:flex-col md:items-center md:text-center relative"
               >
                 {/* Visual indicator (Dot on line) */}
-                <div className="relative z-10 mb-0">
-                  <div className="w-6 h-6 rounded-full border border-black bg-[#A64AED] flex items-center justify-center shadow-sm">
+                <div className="flex flex-col items-center shrink-0 relative">
+                  <div className="w-6 h-6 rounded-full border border-black bg-[#A64AED] flex items-center justify-center shadow-sm z-10">
                     <div className="w-[11px] h-[11px] rounded-full bg-[#191919]" />
                   </div>
-                </div>
-
-                {/* Vertical Connector Line */}
-                <div className="w-[2px] h-[42px] bg-gradient-to-b from-[#191919]/40 to-transparent mb-3" />
-
-                {/* Step badge */}
-                <div className="bg-white px-7 py-2 rounded-full mb-5 shadow-sm border border-black/5 flex items-center justify-center">
-                  <span className="text-[#A64AED] font-bold text-[14px] tracking-wider whitespace-nowrap">
-                    {item.step}
-                  </span>
+                  {idx < steps.length - 1 && (
+                    <div className="absolute top-3 left-[11px] w-[2px] h-[calc(100%+48px)] border-l-2 border-dotted border-black/20 z-0 md:hidden" />
+                  )}
+                  {/* Vertical Connector Line */}
+                  <div className="hidden md:block w-[2px] h-[42px] bg-gradient-to-b from-[#191919]/40 to-transparent mb-3" />
                 </div>
 
                 {/* Content */}
-                <h3 className="text-[20px] md:text-[22px] font-bold font-inter text-[#1A1A1A] mb-3 tracking-tight leading-tight">
-                  {item.title}
-                </h3>
-                <p className="text-[14px] md:text-[15px] text-[#1A1A1A] font-normal leading-[1.4] max-w-[250px] opacity-75">
-                  {item.description}
-                </p>
+                <div className="flex-1 flex flex-col items-start md:items-center">
+                  {/* Step badge */}
+                  <div className="bg-white px-5 py-1.5 md:px-7 md:py-2 rounded-full mb-3 md:mb-5 shadow-sm border border-black/5 flex items-center justify-center w-fit">
+                    <span className="text-[#A64AED] font-bold text-[13px] md:text-[14px] tracking-wider whitespace-nowrap">
+                      {item.step}
+                    </span>
+                  </div>
+
+                  {/* Title & Description */}
+                  <h3 className="text-[20px] md:text-[22px] font-bold font-inter text-[#1A1A1A] mb-2 md:mb-3 tracking-tight leading-tight text-left md:text-center">
+                    {item.title}
+                  </h3>
+                  <p className="text-[14px] md:text-[15px] text-[#1A1A1A] font-normal leading-[1.4] max-w-none md:max-w-[250px] opacity-75 text-left md:text-center">
+                    {item.description}
+                  </p>
+                </div>
               </motion.div>
             ))}
           </div>

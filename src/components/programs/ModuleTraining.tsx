@@ -172,7 +172,7 @@ const ModuleBlock = ({ data }: { data: typeof modules[0] }) => {
 
 const ModuleTraining = () => {
   return (
-    <section className="w-full bg-[#E5D1FF] py-24 md:py-32 flex flex-col items-center">
+    <section className="w-full bg-[#E5D1FF] pt-8 pb-24 md:pt-12 md:pb-32 flex flex-col items-center">
       <div className="max-w-[1550px] w-full mx-auto px-6 md:px-12 lg:px-16">
         {/* Section Header */}
         <div className="text-center mb-24 lg:mb-32">
@@ -180,7 +180,7 @@ const ModuleTraining = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-[36px] sm:text-[44px] md:text-[52px] lg:text-[58px] font-bold font-montserrat text-[#1A1A1A] leading-[1.2] tracking-tight w-full"
+            className="text-[30px] sm:text-[38px] md:text-[46px] lg:text-[52px] font-semibold font-montserrat text-[#1A1A1A] leading-[1.2] tracking-tight w-full"
           >
             Empowering Excellence through<br className="hidden md:inline" /> Curated Training.
           </motion.h2>

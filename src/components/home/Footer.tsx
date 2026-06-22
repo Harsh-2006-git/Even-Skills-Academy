@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 mb-8 sm:mb-12">
 
           {/* Column 1: Logo & Mission */}
-          <div className="lg:col-span-8 space-y-4">
+          <div className="lg:col-span-4 space-y-4">
             <Link href="/" className="flex items-center">
               <div className="flex flex-col leading-[0.95] font-[900] tracking-tighter text-[#1A1A1A] text-[19px] sm:text-[24px]">
                 <span className="flex items-baseline">
@@ -25,9 +25,72 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Column 2: Connect */}
-          <div className="lg:col-span-4 space-y-4">
-            <h4 className="text-[13px] font-bold text-[#1A1A1A] tracking-[0.1em]">
+          {/* Column 2: Quick Links */}
+          <div className="hidden md:block lg:col-span-2 space-y-4">
+            <h4 className="text-[13px] font-bold text-[#1A1A1A] tracking-[0.1em] uppercase">
+              Quick Links
+            </h4>
+            <ul className="space-y-2.5">
+              <li>
+                <Link href="/" className="text-[14px] text-[#6B7280] hover:text-[#A64AED] transition-colors">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="text-[14px] text-[#6B7280] hover:text-[#A64AED] transition-colors">
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link href="/programs" className="text-[14px] text-[#6B7280] hover:text-[#A64AED] transition-colors">
+                  Programs
+                </Link>
+              </li>
+              <li>
+                <Link href="/advisory" className="text-[14px] text-[#6B7280] hover:text-[#A64AED] transition-colors">
+                  Advisory
+                </Link>
+              </li>
+              <li>
+                <Link href="/impact" className="text-[14px] text-[#6B7280] hover:text-[#A64AED] transition-colors">
+                  Impact
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 3: Resources */}
+          <div className="hidden md:block lg:col-span-3 space-y-4">
+            <h4 className="text-[13px] font-bold text-[#1A1A1A] tracking-[0.1em] uppercase">
+              Resources
+            </h4>
+            <ul className="space-y-2.5">
+              <li>
+                <Link href="/programs" className="text-[14px] text-[#6B7280] hover:text-[#A64AED] transition-colors">
+                  Green Energy
+                </Link>
+              </li>
+              <li>
+                <Link href="/programs" className="text-[14px] text-[#6B7280] hover:text-[#A64AED] transition-colors">
+                  Mobility Training
+                </Link>
+              </li>
+              <li>
+                <Link href="/programs" className="text-[14px] text-[#6B7280] hover:text-[#A64AED] transition-colors">
+                  Platform Economy Skills
+                </Link>
+              </li>
+              <li>
+                <Link href="/programs" className="text-[14px] text-[#6B7280] hover:text-[#A64AED] transition-colors">
+                  Ai Labs
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 4: Connect */}
+          <div className="lg:col-span-3 space-y-4">
+            <h4 className="text-[13px] font-bold text-[#1A1A1A] tracking-[0.1em] uppercase">
               Connect
             </h4>
             <div className="space-y-3">
@@ -47,7 +110,7 @@ const Footer = () => {
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M11 17 6.26 12.26a3 3 0 0 1 0-4.24l.18-.18a3 3 0 0 1 4.24 0L13.25 10.4" />
                     <path d="m13.25 10.4 2.15 2.15a3 3 0 0 1 0 4.24l-.18.18a3 3 0 0 1-4.24 0L8.4 14.3" />
-                    <path d="m16 8 2.5-2.5a3 3 0 0 1 4.2 0l.2.2a3 3 0 0 1 0 4.2L19 13.5" />
+                    <path d="m16 8 2.5-2.5a3 3 0 0 1-4.2 0l.2.2a3 3 0 0 1 0 4.2L19 13.5" />
                     <path d="m8 16-2.5 2.5a3 3 0 0 1-4.2 0l-.2-.2a3 3 0 0 1 0-4.2L4 11.5" />
                   </svg>
                 </div>

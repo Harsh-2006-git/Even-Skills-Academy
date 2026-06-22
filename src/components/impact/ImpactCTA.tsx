@@ -6,13 +6,13 @@ import { motion } from "framer-motion";
 
 const ImpactCTA = () => {
   return (
-    <section className="bg-[#E9D5FF] py-12 md:py-16">
-      <div className="max-w-[1280px] mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-8">
+    <section className="bg-[#E9D5FF] py-10 md:py-16">
+      <div className="max-w-[1280px] mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8">
         <div className="text-center md:text-left">
-          <h2 className="text-[32px] md:text-[40px] font-bold text-[#1A1A1A] leading-tight mb-2">
+          <h2 className="text-[26px] sm:text-[32px] md:text-[40px] font-bold text-[#1A1A1A] leading-tight mb-2">
             Build Inclusive Workforces
           </h2>
-          <p className="text-[#4B5563] text-[16px] md:text-[18px] font-normal leading-relaxed max-w-[550px]">
+          <p className="text-[#4B5563] text-[15px] md:text-[18px] font-normal leading-relaxed max-w-[550px]">
             Empower women. Strengthen teams. Drive real impact.
           </p>
         </div>

@@ -38,15 +38,15 @@ const approachCards = [
 
 const ApproachSection = () => {
   return (
-    <section className="bg-white py-16 lg:py-24 overflow-hidden">
+    <section className="bg-white py-10 lg:py-24 overflow-hidden">
       <div className="max-w-[1440px] w-full mx-auto px-6 md:px-20 lg:px-[120px]">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-[#000] font-montserrat text-4xl md:text-5xl font-bold leading-[1.29em]"
+            className="text-[#000] font-montserrat text-3xl md:text-5xl font-bold leading-[1.29em]"
           >
             Our Approach
           </motion.h2>
@@ -94,27 +94,27 @@ const ApproachCard = ({ card, index }: ApproachCardProps) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="relative w-full max-w-[343px] h-[281px] rounded-[27px] border-2 border-[#A64AED] bg-[#FDFDFD] overflow-hidden shadow-sm mx-auto group hover:shadow-md hover:border-[#ae75da] transition-all duration-300 select-none flex flex-col items-center"
+      className="relative w-full max-w-[343px] h-[236px] sm:h-[281px] rounded-[20px] sm:rounded-[27px] border-2 border-[#A64AED] bg-[#FDFDFD] overflow-hidden shadow-sm mx-auto group hover:shadow-md hover:border-[#ae75da] transition-all duration-300 select-none flex flex-col items-center"
     >
       {/* Centered Image Container at the top */}
-      <div className="w-full h-[135px] flex items-center justify-center relative pt-4 overflow-visible">
+      <div className="w-full h-[105px] sm:h-[135px] flex items-center justify-center relative pt-3 sm:pt-4 overflow-visible">
         <div className="relative w-full h-full flex items-center justify-center">
           <img
             src={image}
             alt={title}
-            className="object-contain max-h-[115px] max-w-[280px] w-auto transition-transform duration-300 group-hover:scale-105"
+            className="object-contain max-h-[85px] sm:max-h-[115px] max-w-[280px] w-auto transition-transform duration-300 group-hover:scale-105"
             style={{ transform: `scale(${imageScale})` }}
           />
         </div>
       </div>
 
       {/* Title */}
-      <h3 className="text-[#191919] font-inter text-[25px] font-bold leading-[1.29em] text-center mt-1 px-4">
+      <h3 className="text-[#191919] font-inter text-[19px] sm:text-[25px] font-bold leading-[1.29em] text-center mt-0.5 sm:mt-1 px-4">
         {title}
       </h3>
 
       {/* Description */}
-      <p className="text-[#191919] font-inter text-[15px] leading-[1.32em] opacity-95 text-center mt-1.5 px-6 line-clamp-3">
+      <p className="text-[#191919] font-inter text-[13px] sm:text-[15px] leading-[1.32em] opacity-95 text-center mt-1 sm:mt-1.5 px-4 sm:px-6 line-clamp-3">
         {description}
       </p>
     </motion.div>

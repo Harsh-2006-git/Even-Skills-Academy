@@ -66,25 +66,25 @@ const AdvisoryResearch = () => {
   ];
 
   return (
-    <section className="bg-[#FDFDFD] py-20 lg:py-28 w-full border-t border-zinc-200/50">
+    <section className="bg-[#FDFDFD] py-12 lg:py-28 w-full border-t border-zinc-200/50">
       <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-[120px]">
         {/* Top Header Section */}
-        <div className="flex flex-col lg:flex-row justify-between items-start gap-12 lg:gap-24 mb-20">
+        <div className="flex flex-col lg:flex-row justify-between items-start gap-8 lg:gap-24 mb-12 lg:mb-20">
           <div className="max-w-[600px] text-left">
             <span className="text-[#A64AED] font-inter text-[15px] font-semibold mb-4 block">
               What We Study
             </span>
-            <h2 className="font-montserrat font-bold text-[36px] md:text-[48px] lg:text-[56px] text-[#191919] leading-[1.1] mb-4 tracking-tight">
+            <h2 className="font-montserrat font-bold text-[28px] sm:text-[36px] md:text-[48px] lg:text-[56px] text-[#191919] leading-[1.1] mb-4 tracking-tight">
               Our Recent Research Engagements
             </h2>
-            <div className="w-20 h-1.5 bg-[#A64AED] rounded-full mb-8" />
+            <div className="w-20 h-1.5 bg-[#A64AED] rounded-full mb-5 lg:mb-8" />
             <p className="font-inter text-[#191919] opacity-70 text-[16px] md:text-[18px] leading-relaxed max-w-[500px]">
               We combine field expertise with rigorous data analysis to identify and dismantle the barriers preventing women from participating in high-growth economic sectors.
             </p>
           </div>
 
           <div className="max-w-[500px] w-full text-left">
-            <h3 className="text-[#000000] font-inter text-[14px] font-bold tracking-[0.12em] uppercase mb-8">
+            <h3 className="text-[#000000] font-inter text-[14px] font-bold tracking-[0.12em] uppercase mb-5 lg:mb-8">
               Primary Focus Areas
             </h3>
             <div className="space-y-6">
@@ -103,7 +103,7 @@ const AdvisoryResearch = () => {
         </div>
 
         {/* Engagements Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {engagements.map((item, idx) => (
             <motion.div
               key={idx}
@@ -113,7 +113,7 @@ const AdvisoryResearch = () => {
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               className="bg-white rounded-[20px] p-6 md:p-8 flex flex-col items-start border border-zinc-200/50 hover:border-[#A64AED]/30 shadow-md hover:shadow-xl transition-all duration-300 group min-h-[230px]"
             >
-              <div className={`w-12 h-12 rounded-full flex items-center justify-center text-white text-[18px] font-black font-plusJakartaSans mb-6 shadow-sm ${item.color}`}>
+              <div className={`w-12 h-12 rounded-full flex items-center justify-center text-white text-[18px] font-black font-plusJakartaSans mb-4 md:mb-6 shadow-sm ${item.color}`}>
                 {item.initial}
               </div>
 
