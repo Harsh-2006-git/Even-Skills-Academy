@@ -13,6 +13,16 @@ const ContactSection = () => {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
 
+  const isEmailValid = (email: string) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
+
+  const isFormValid =
+    formData.name.trim() !== "" &&
+    isEmailValid(formData.email) &&
+    formData.organization.trim() !== "" &&
+    formData.message.trim() !== "";
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -21,6 +31,7 @@ const ContactSection = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!isFormValid) return;
     setStatus("submitting");
     setErrorMessage("");
 
@@ -157,7 +168,7 @@ const ContactSection = () => {
                       placeholder="Full Name" 
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full bg-[#EADDFF] border-none p-3 px-3.5 sm:p-3.5 sm:px-4 rounded-lg sm:rounded-xl placeholder:text-zinc-500 text-[13px] sm:text-[14px] font-medium outline-none focus:ring-2 focus:ring-[#B794F4]"
+                      className="w-full bg-[#F5F0FC] border-2 border-transparent p-3 px-3.5 sm:p-3.5 sm:px-4 rounded-lg sm:rounded-xl placeholder:text-zinc-400 text-[13px] sm:text-[14px] font-semibold text-[#1A1A1A] outline-none transition-all duration-200 focus:bg-white focus:border-[#B794F4] focus:shadow-sm disabled:opacity-50"
                       required
                       disabled={status === "submitting"}
                     />
@@ -167,7 +178,11 @@ const ContactSection = () => {
                       placeholder="Email Address" 
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full bg-[#EADDFF] border-none p-3 px-3.5 sm:p-3.5 sm:px-4 rounded-lg sm:rounded-xl placeholder:text-zinc-500 text-[13px] sm:text-[14px] font-medium outline-none focus:ring-2 focus:ring-[#B794F4]"
+                      className={`w-full bg-[#F5F0FC] border-2 p-3 px-3.5 sm:p-3.5 sm:px-4 rounded-lg sm:rounded-xl placeholder:text-zinc-400 text-[13px] sm:text-[14px] font-semibold text-[#1A1A1A] outline-none transition-all duration-200 focus:bg-white focus:shadow-sm disabled:opacity-50 ${
+                        formData.email && !isEmailValid(formData.email)
+                          ? "border-red-300 focus:border-red-500 focus:ring-0"
+                          : "border-transparent focus:border-[#B794F4]"
+                      }`}
                       required
                       disabled={status === "submitting"}
                     />
@@ -179,7 +194,7 @@ const ContactSection = () => {
                     placeholder="Organization Name" 
                     value={formData.organization}
                     onChange={handleChange}
-                    className="w-full bg-[#EADDFF] border-none p-3 px-3.5 sm:p-3.5 sm:px-4 rounded-lg sm:rounded-xl placeholder:text-zinc-500 text-[13px] sm:text-[14px] font-medium outline-none focus:ring-2 focus:ring-[#B794F4]"
+                    className="w-full bg-[#F5F0FC] border-2 border-transparent p-3 px-3.5 sm:p-3.5 sm:px-4 rounded-lg sm:rounded-xl placeholder:text-zinc-400 text-[13px] sm:text-[14px] font-semibold text-[#1A1A1A] outline-none transition-all duration-200 focus:bg-white focus:border-[#B794F4] focus:shadow-sm disabled:opacity-50"
                     required
                     disabled={status === "submitting"}
                   />
@@ -189,32 +204,51 @@ const ContactSection = () => {
                     placeholder="How Would You Like to Partner With Us?" 
                     value={formData.message}
                     onChange={handleChange}
-                    rows={3}
-                    className="w-full bg-[#EADDFF] border-none p-3 px-3.5 sm:p-3.5 sm:px-4 rounded-lg sm:rounded-xl placeholder:text-zinc-500 text-[13px] sm:text-[14px] font-medium outline-none resize-none focus:ring-2 focus:ring-[#B794F4]"
+                    rows={4}
+                    className="w-full bg-[#F5F0FC] border-2 border-transparent p-3 px-3.5 sm:p-3.5 sm:px-4 rounded-lg sm:rounded-xl placeholder:text-zinc-400 text-[13px] sm:text-[14px] font-semibold text-[#1A1A1A] outline-none resize-none transition-all duration-200 focus:bg-white focus:border-[#B794F4] focus:shadow-sm disabled:opacity-50 min-h-[100px]"
                     required
                     disabled={status === "submitting"}
                   />
 
                   {status === "error" && (
-                    <motion.p
+                    <motion.div
                       initial={{ opacity: 0, y: -5 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="text-red-500 font-bold text-[12px] sm:text-[13px] text-center"
+                      className="bg-red-50 text-red-600 border border-red-200 rounded-[12px] p-3 flex items-center justify-center gap-2 text-[12.5px] sm:text-[13px] font-bold"
                     >
-                      {errorMessage}
-                    </motion.p>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-red-500 flex-shrink-0">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="12" y1="8" x2="12" y2="12" />
+                        <line x1="12" y1="16" x2="12.01" y2="16" />
+                      </svg>
+                      <span>{errorMessage}</span>
+                    </motion.div>
                   )}
 
                   <motion.button
-                    whileHover={status === "submitting" ? {} : { scale: 1.02 }}
-                    whileTap={status === "submitting" ? {} : { scale: 0.98 }}
+                    whileHover={!isFormValid || status === "submitting" ? {} : { scale: 1.02 }}
+                    whileTap={!isFormValid || status === "submitting" ? {} : { scale: 0.98 }}
                     type="submit"
-                    disabled={status === "submitting"}
-                    className={`w-full bg-[#B794F4] text-white py-3 sm:py-3.5 rounded-[12px] sm:rounded-[18px] font-extrabold text-[14px] sm:text-[16px] transition-all tracking-tight mt-2 sm:mt-3 ${
-                      status === "submitting" ? "opacity-75 cursor-not-allowed" : ""
+                    disabled={!isFormValid || status === "submitting"}
+                    className={`w-full py-3 sm:py-3.5 rounded-[12px] sm:rounded-[18px] font-extrabold text-[14px] sm:text-[16px] transition-all duration-300 tracking-tight mt-2 sm:mt-3 flex items-center justify-center gap-2.5 ${
+                      status === "submitting"
+                        ? "bg-[#2E1065] text-white/80 cursor-not-allowed opacity-90 shadow-none"
+                        : isFormValid
+                        ? "bg-[#2E1065] text-white hover:bg-[#1D0846] cursor-pointer shadow-md hover:shadow-lg active:scale-95"
+                        : "bg-[#E5DDF5] text-[#9B8EB9] cursor-not-allowed"
                     }`}
                   >
-                    {status === "submitting" ? "Sending Request..." : "Start Partnership"}
+                    {status === "submitting" ? (
+                      <>
+                        <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        <span>Sending Request...</span>
+                      </>
+                    ) : (
+                      "Start Partnership"
+                    )}
                   </motion.button>
                 </form>
               )}

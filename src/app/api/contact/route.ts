@@ -79,28 +79,19 @@ export function getWelcomeEmailHtml(name: string, email: string, organization: s
       color: #333333;
       margin-bottom: 25px;
     }
-    .section-title {
-      font-size: 13px;
-      color: #6b46c1;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      margin-bottom: 12px;
-      border-bottom: 2px solid #eaddff;
-      padding-bottom: 6px;
-      margin-top: 10px;
-    }
-    .card-grid {
+    .info-card {
       background-color: #faf8ff;
       border: 1px solid #eaddff;
       border-radius: 16px;
       padding: 20px;
       margin-bottom: 20px;
     }
-    .card-col {
+    .info-row {
       margin-bottom: 12px;
+      border-bottom: 1px solid #f0e6ff;
+      padding-bottom: 8px;
     }
-    .card-col:last-child {
+    .info-row-last {
       margin-bottom: 0;
     }
     .card-label {
@@ -116,36 +107,24 @@ export function getWelcomeEmailHtml(name: string, email: string, organization: s
       margin-top: 4px;
       font-weight: 500;
     }
-    .message-card {
-      background-color: #faf8ff;
-      border: 1px solid #eaddff;
-      border-left: 4px solid #A64AED;
-      border-radius: 16px;
-      padding: 20px;
-      font-size: 14px;
-      line-height: 1.6;
-      color: #333333;
-      font-style: italic;
-      margin-bottom: 30px;
-    }
-    .mission-box {
-      border: 2px dashed #b794f4;
-      border-radius: 18px;
-      padding: 24px;
-      background-color: #faf8ff;
-      margin-bottom: 30px;
-    }
-    .mission-box h4 {
-      margin-top: 0;
-      color: #6b46c1;
-      font-size: 15px;
-      font-weight: 700;
-    }
-    .mission-box p {
-      margin: 0;
+    .message-text {
       font-size: 14px;
       line-height: 1.5;
-      color: #555555;
+      color: #333333;
+      font-style: italic;
+      margin-top: 6px;
+      background-color: #ffffff;
+      border-left: 3px solid #A64AED;
+      padding: 10px 12px;
+      border-radius: 8px;
+      word-break: break-word;
+    }
+    .mission-box {
+      border: 1.5px dashed #b794f4;
+      border-radius: 14px;
+      padding: 16px;
+      background-color: #faf8ff;
+      margin-bottom: 20px;
     }
     .footer {
       background-color: #2E1065;
@@ -193,17 +172,25 @@ export function getWelcomeEmailHtml(name: string, email: string, organization: s
         padding: 25px 15px !important;
       }
       .welcome-text {
-        font-size: 15px !important;
+        font-size: 14px !important;
+        margin-bottom: 16px !important;
       }
-      .card-grid, .message-card, .mission-box {
+      .info-card {
         padding: 15px !important;
         border-radius: 12px !important;
+        margin-bottom: 16px !important;
       }
       .card-value {
         font-size: 14px !important;
       }
-      .message-card {
+      .message-text {
         font-size: 13px !important;
+        padding: 8px 10px !important;
+      }
+      .mission-box {
+        padding: 12px !important;
+        border-radius: 10px !important;
+        margin-bottom: 16px !important;
       }
       .footer {
         padding: 25px 15px !important;
@@ -224,38 +211,36 @@ export function getWelcomeEmailHtml(name: string, email: string, organization: s
       <div class="content">
         <p class="welcome-text">
           Dear ${name},<br><br>
-          Thank you for reaching out to <strong>Even Academy</strong>. We are thrilled about your interest in partnering with us to enable more women from resource-poor communities to build confidence, independence, and strong careers.
+          Thank you for reaching out to <strong>Even Academy</strong>. We are thrilled about your interest in collaborating to help women from resource-poor communities build confidence and strong careers.
         </p>
         
-        <div class="section-title">Your Partnership Request Details</div>
-        
-        <div class="card-grid">
-          <div class="card-col">
+        <div class="info-card">
+          <div class="info-row">
             <div class="card-label">Full Name</div>
             <div class="card-value">${name}</div>
           </div>
-          <div class="card-col" style="margin-top: 12px;">
+          <div class="info-row">
             <div class="card-label">Organization</div>
             <div class="card-value">${organization}</div>
           </div>
-          <div class="card-col" style="margin-top: 12px;">
+          <div class="info-row">
             <div class="card-label">Email Address</div>
             <div class="card-value" style="color: #6b46c1; font-weight: bold;">${email}</div>
           </div>
-        </div>
-
-        <div class="section-title">Partnership Interest & Message</div>
-        <div class="message-card">
-          ${formattedMessage}
+          <div class="info-row-last">
+            <div class="card-label">Partnership Interest & Message</div>
+            <div class="message-text">${formattedMessage}</div>
+          </div>
         </div>
 
         <div class="mission-box">
-          <h4>Our Core Programs</h4>
-          <p>We train women across vital sectors including Mobility, EV, Green Energy, Soft Skills, and Logistics-Specific roles—ensuring they graduate ready to enter the workforce with confidence.</p>
+          <p style="margin: 0; font-size: 13px; line-height: 1.4; color: #554477; font-weight: 500;">
+            <strong>Our Core Programs:</strong> We train women across sectors like EV, Mobility, Green Energy, and Logistics, ensuring they are job-ready and confident.
+          </p>
         </div>
 
         <p class="welcome-text">
-          A member of our partnerships team will review your message and get back to you shortly (typically within 1-2 business days) to discuss how we can collaborate.
+          Our team will review your request and get back to you within 1-2 business days to discuss how we can collaborate.
         </p>
       </div>
       <div class="footer">
@@ -345,28 +330,19 @@ export function getAdminEmailHtml(name: string, email: string, organization: str
     .content {
       padding: 30px;
     }
-    .section-title {
-      font-size: 13px;
-      color: #6b46c1;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      margin-bottom: 12px;
-      border-bottom: 2px solid #eaddff;
-      padding-bottom: 6px;
-      margin-top: 10px;
-    }
-    .card-grid {
+    .info-card {
       background-color: #faf8ff;
       border: 1px solid #eaddff;
       border-radius: 16px;
       padding: 20px;
       margin-bottom: 20px;
     }
-    .card-col {
+    .info-row {
       margin-bottom: 12px;
+      border-bottom: 1px solid #f0e6ff;
+      padding-bottom: 8px;
     }
-    .card-col:last-child {
+    .info-row-last {
       margin-bottom: 0;
     }
     .card-label {
@@ -382,17 +358,17 @@ export function getAdminEmailHtml(name: string, email: string, organization: str
       margin-top: 4px;
       font-weight: 500;
     }
-    .message-card {
-      background-color: #faf8ff;
-      border: 1px solid #eaddff;
-      border-left: 4px solid #A64AED;
-      border-radius: 16px;
-      padding: 20px;
+    .message-text {
       font-size: 14px;
-      line-height: 1.6;
+      line-height: 1.5;
       color: #333333;
       font-style: italic;
-      margin-bottom: 30px;
+      margin-top: 6px;
+      background-color: #ffffff;
+      border-left: 3px solid #A64AED;
+      padding: 10px 12px;
+      border-radius: 8px;
+      word-break: break-word;
     }
     .footer {
       background-color: #2E1065;
@@ -435,15 +411,16 @@ export function getAdminEmailHtml(name: string, email: string, organization: str
       .content {
         padding: 25px 15px !important;
       }
-      .card-grid, .message-card {
+      .info-card {
         padding: 15px !important;
         border-radius: 12px !important;
       }
       .card-value {
         font-size: 14px !important;
       }
-      .message-card {
+      .message-text {
         font-size: 13px !important;
+        padding: 8px 10px !important;
       }
       .footer {
         padding: 20px 15px !important;
@@ -462,28 +439,25 @@ export function getAdminEmailHtml(name: string, email: string, organization: str
         <div class="badge">New Collaboration Submission</div>
       </div>
       <div class="content">
-        <p>A new partnership request has been submitted. Here are the details:</p>
+        <p style="font-size: 15px; margin-bottom: 20px; color: #333333;">A new partnership request has been submitted with the following details:</p>
         
-        <div class="section-title">Submitter Profile</div>
-        
-        <div class="card-grid">
-          <div class="card-col">
+        <div class="info-card">
+          <div class="info-row">
             <div class="card-label">Full Name</div>
             <div class="card-value">${name}</div>
           </div>
-          <div class="card-col" style="margin-top: 12px;">
+          <div class="info-row">
             <div class="card-label">Organization</div>
             <div class="card-value">${organization}</div>
           </div>
-          <div class="card-col" style="margin-top: 12px;">
+          <div class="info-row">
             <div class="card-label">Email Address</div>
             <div class="card-value"><a href="mailto:${email}" style="color: #6b46c1; font-weight: bold; text-decoration: underline;">${email}</a></div>
           </div>
-        </div>
-
-        <div class="section-title">Partnership Proposal / Message</div>
-        <div class="message-card">
-          ${formattedMessage}
+          <div class="info-row-last">
+            <div class="card-label">Message / Proposal</div>
+            <div class="message-text">${formattedMessage}</div>
+          </div>
         </div>
       </div>
       <div class="footer">
