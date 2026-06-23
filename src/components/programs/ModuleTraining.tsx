@@ -80,7 +80,7 @@ const ModuleBlock = ({ data }: { data: typeof modules[0] }) => {
   return (
     <div className={`flex flex-col ${data.reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center justify-between gap-12 lg:gap-16 xl:gap-20 mb-24 lg:mb-32 last:mb-0 w-full`}>
       {/* Content Card */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, x: data.reverse ? 40 : -40 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
@@ -118,11 +118,11 @@ const ModuleBlock = ({ data }: { data: typeof modules[0] }) => {
             {data.features.map((feature, idx) => (
               <div key={idx} className="flex items-center gap-3 p-1 px-2 rounded-[16px] border border-[#A64AED] bg-white min-h-[70px] h-auto py-1.5 shadow-sm hover:shadow-md transition-shadow">
                 <div className="relative w-[60px] h-[54px] flex-shrink-0">
-                  <Image 
-                    src={feature.icon} 
-                    alt={feature.label} 
-                    fill 
-                    className="object-contain" 
+                  <Image
+                    src={feature.icon}
+                    alt={feature.label}
+                    fill
+                    className="object-contain"
                   />
                 </div>
                 <span className="text-[12px] sm:text-[13px] font-semibold text-[#191919] leading-tight pr-1">
@@ -133,23 +133,11 @@ const ModuleBlock = ({ data }: { data: typeof modules[0] }) => {
           </div>
         </div>
 
-        {/* Buttons */}
-        <div className="flex flex-wrap gap-3">
-          <Link href="/#contact">
-            <button className="bg-[#A64AED] hover:bg-[#9333EA] text-white px-6 py-2.5 rounded-full font-bold text-[13px] transition-all shadow-lg hover:shadow-[#A64AED]/20 active:scale-95">
-              Start Training
-            </button>
-          </Link>
-          <Link href="/impact">
-            <button className="bg-white border border-[#1A1A1A] hover:bg-zinc-50 text-[#1A1A1A] px-6 py-2.5 rounded-full font-bold text-[13px] transition-all active:scale-95">
-              Learn More
-            </button>
-          </Link>
-        </div>
+
       </motion.div>
 
       {/* Image Area */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, x: data.reverse ? -60 : 60 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
@@ -157,8 +145,8 @@ const ModuleBlock = ({ data }: { data: typeof modules[0] }) => {
         className="flex-1 w-full flex justify-center items-center"
       >
         <div className="relative w-full max-w-[480px] h-[360px] md:h-[420px] lg:h-[480px]">
-          <Image 
-            src={data.image} 
+          <Image
+            src={data.image}
             alt={data.title}
             fill
             className="object-contain"
@@ -176,7 +164,7 @@ const ModuleTraining = () => {
       <div className="max-w-[1550px] w-full mx-auto px-6 md:px-12 lg:px-16">
         {/* Section Header */}
         <div className="text-center mb-24 lg:mb-32">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

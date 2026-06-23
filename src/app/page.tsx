@@ -4,6 +4,7 @@ import TrainingSection from "@/components/home/TrainingSection";
 import ImpactBanner from "@/components/home/ImpactBanner";
 import WhyChange from "@/components/home/WhyChange";
 import ProgramsSection from "@/components/home/ProgramsSection";
+import ProgramsCarousel from "@/components/home/ProgramsCarousel";
 import ImpactStats from "@/components/home/ImpactStats";
 import ContactSection from "@/components/home/ContactSection";
 import Footer from "@/components/home/Footer";
@@ -16,10 +17,11 @@ export default function Home() {
       <div className="pt-[78px]">
         <Hero />
         <WhyChange />
+        <ProgramsCarousel />
         <ImpactBanner />
         <ProgramsSection />
         <TrainingSection />
-        <ImpactStats />
+
         <ContactSection />
         <Footer />
       </div>

@@ -123,15 +123,15 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-6 border-t border-[#F3E8FF] flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-[13px] font-semibold text-[#6B7280]">
+        <div className="pt-6 border-t border-[#F3E8FF] flex flex-col md:flex-row justify-between items-center gap-1 text-center md:text-left">
+          <p className="text-[10px]  text-[#6B7280] text-center md:text-left">
             © 2026 Even Academy. Empowering women through education.
           </p>
-          <div className="flex items-center gap-8">
-            <Link href="/privacy" className="text-[13px] font-semibold text-[#6B7280] hover:text-[#A64AED] transition-colors">
+          <div className="flex items-center justify-center gap-8">
+            <Link href="/privacy" className="text-[10px] text-[#6B7280] hover:text-[#A64AED] transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="text-[13px] font-semibold text-[#6B7280] hover:text-[#A64AED] transition-colors">
+            <Link href="/terms" className="text-[10px]  text-[#6B7280] hover:text-[#A64AED] transition-colors">
               Terms of Service
             </Link>
           </div>

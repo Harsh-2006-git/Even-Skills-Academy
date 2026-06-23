@@ -52,7 +52,7 @@ const Hero = () => {
           ease: "linear",
           repeatType: "loop"
         }}
-        className="absolute bottom-[4%] sm:bottom-[2%] z-20 w-[75px] md:w-[150px] lg:w-[260px] flex items-center"
+        className="absolute bottom-[4%] sm:bottom-[2%] z-20 w-[75px] md:w-[150px] lg:w-[180px] flex items-center"
       >
         {/* Exhaust Gas/Smoke Animation */}
         <div className="absolute left-0 bottom-[12%] w-0 h-0 pointer-events-none z-10">
