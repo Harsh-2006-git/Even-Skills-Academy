@@ -65,7 +65,7 @@ const WorkProcess = () => {
           <div className="w-[212px] h-[229px] absolute left-0 top-[163px] flex flex-col items-center">
             <motion.div
               whileHover={{ scale: 1.1, rotate: 2 }}
-              className="w-[90px] h-[90px] flex items-center justify-center bg-white border-2 border-[#191919] rounded-[26px] shadow-sm cursor-pointer transition-shadow hover:shadow-md"
+              className="w-[90px] h-[90px] flex items-center justify-center bg-[#A64AED] border-2 border-[#191919] rounded-full shadow-sm cursor-pointer transition-shadow hover:shadow-md"
             >
               <img
                 src="/how_we_work-1.png"
@@ -87,7 +87,7 @@ const WorkProcess = () => {
           <div className="w-[212px] h-[229px] absolute left-[262px] top-[168px] flex flex-col items-center">
             <motion.div
               whileHover={{ scale: 1.1, rotate: -2 }}
-              className="w-[90px] h-[90px] flex items-center justify-center bg-white border-2 border-[#191919] rounded-[26px] shadow-sm cursor-pointer transition-shadow hover:shadow-md"
+              className="w-[90px] h-[90px] flex items-center justify-center bg-[#A64AED] border-2 border-[#191919] rounded-full shadow-sm cursor-pointer transition-shadow hover:shadow-md"
             >
               <img
                 src="/how_we_work-2.png"
@@ -109,7 +109,7 @@ const WorkProcess = () => {
           <div className="w-[212px] h-[229px] absolute left-[508px] top-[152px] flex flex-col items-center">
             <motion.div
               whileHover={{ scale: 1.1, rotate: 3 }}
-              className="w-[90px] h-[90px] flex items-center justify-center bg-white border-2 border-[#191919] rounded-[26px] shadow-sm cursor-pointer transition-shadow hover:shadow-md"
+              className="w-[90px] h-[90px] flex items-center justify-center bg-[#A64AED] border-2 border-[#191919] rounded-full shadow-sm cursor-pointer transition-shadow hover:shadow-md"
             >
               <img
                 src="/how_we_work-3.png"
@@ -131,7 +131,7 @@ const WorkProcess = () => {
           <div className="w-[212px] h-[229px] absolute left-[754px] top-[168px] flex flex-col items-center">
             <motion.div
               whileHover={{ scale: 1.1, rotate: -3 }}
-              className="w-[90px] h-[90px] flex items-center justify-center bg-white border-2 border-[#191919] rounded-[26px] shadow-sm cursor-pointer transition-shadow hover:shadow-md"
+              className="w-[90px] h-[90px] flex items-center justify-center bg-[#A64AED] border-2 border-[#191919] rounded-full shadow-sm cursor-pointer transition-shadow hover:shadow-md"
             >
               <img
                 src="/how_we_work-4.png"
@@ -153,7 +153,7 @@ const WorkProcess = () => {
           <div className="w-[212px] h-[229px] absolute left-[1016px] top-[163px] flex flex-col items-center">
             <motion.div
               whileHover={{ scale: 1.1, rotate: 2 }}
-              className="w-[90px] h-[90px] flex items-center justify-center bg-white border-2 border-[#191919] rounded-[26px] shadow-sm cursor-pointer transition-shadow hover:shadow-md"
+              className="w-[90px] h-[90px] flex items-center justify-center bg-[#A64AED] border-2 border-[#191919] rounded-full shadow-sm cursor-pointer transition-shadow hover:shadow-md"
             >
               <img
                 src="/how_we_work-5.png"
@@ -221,7 +221,7 @@ const WorkProcess = () => {
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               className="flex items-start gap-5 relative z-10 w-full"
             >
-              <div className="w-[70px] h-[70px] shrink-0 flex items-center justify-center bg-white border-2 border-[#191919] rounded-[20px] shadow-sm">
+              <div className="w-[70px] h-[70px] shrink-0 flex items-center justify-center bg-[#A64AED] border-2 border-[#191919] rounded-full shadow-sm">
                 <img src={step.icon} className="w-[38px] h-[38px] object-contain" alt={step.title} />
               </div>
               <div className="flex flex-col pt-1 text-left">

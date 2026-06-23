@@ -40,7 +40,7 @@ const ContactSection = () => {
                 
                 <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
                   {/* Phone Block */}
-                  <div className="bg-[#EADDFF] rounded-[16px] sm:rounded-[20px] p-3 px-5 sm:p-4 sm:px-6 flex items-center gap-3 sm:gap-4 min-w-full sm:min-w-[240px] flex-1">
+                  <div className="bg-[#EADDFF] rounded-[16px] sm:rounded-[20px] p-3 px-4 sm:p-4 sm:px-5 flex items-center gap-2.5 sm:gap-3 min-w-full sm:min-w-[270px] flex-1">
                     <div className="w-9 h-9 sm:w-10 sm:h-10 bg-[#B794F4] rounded-lg sm:rounded-xl flex items-center justify-center text-white flex-shrink-0">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="w-[18px] h-[18px] sm:w-5 sm:h-5">
                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
@@ -48,12 +48,12 @@ const ContactSection = () => {
                     </div>
                     <div>
                       <p className="text-[10px] sm:text-[12px] font-bold text-[#4B5563]">Phone</p>
-                      <p className="text-[13.5px] sm:text-[15px] font-bold text-[#1A1A1A] tracking-tight">+91 XXXXX XXXXX</p>
+                      <a href="tel:+919667167448" className="hover:underline text-[13px] sm:text-[14px] lg:text-[15px] font-bold text-[#1A1A1A] tracking-tight">+91 96671 67448</a>
                     </div>
                   </div>
 
                   {/* Email Block */}
-                  <div className="bg-[#EADDFF] rounded-[16px] sm:rounded-[20px] p-3 px-5 sm:p-4 sm:px-6 flex items-center gap-3 sm:gap-4 min-w-full sm:min-w-[240px] flex-1">
+                  <div className="bg-[#EADDFF] rounded-[16px] sm:rounded-[20px] p-3 px-4 sm:p-4 sm:px-5 flex items-center gap-2.5 sm:gap-3 min-w-full sm:min-w-[270px] flex-1">
                     <div className="w-9 h-9 sm:w-10 sm:h-10 bg-[#B794F4] rounded-lg sm:rounded-xl flex items-center justify-center text-white flex-shrink-0">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="w-[18px] h-[18px] sm:w-5 sm:h-5">
                         <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
@@ -63,7 +63,7 @@ const ContactSection = () => {
                     </div>
                     <div>
                       <p className="text-[10px] sm:text-[12px] font-bold text-[#4B5563]">Email</p>
-                      <p className="text-[13.5px] sm:text-[15px] font-bold text-[#1A1A1A] tracking-tight">Info@Evenacademy</p>
+                      <a href="mailto:evenacademy.ea@gmail.com" className="hover:underline text-[12.5px] sm:text-[13.5px] lg:text-[15px] font-bold text-[#1A1A1A] tracking-tight break-words">evenacademy.ea@gmail.com</a>
                     </div>
                   </div>
                 </div>

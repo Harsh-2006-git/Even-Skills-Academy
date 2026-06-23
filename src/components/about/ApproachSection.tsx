@@ -31,8 +31,8 @@ const approachCards = [
   {
     title: "Employer Partnerships",
     description: "Our curriculum is co-designed with hiring companies. Training ends with interviews, not certificates.",
-    image: "/our-Approch-5.png",
-    imageScale: 1.2
+    image: "/employer-partnership.png",
+    imageScale: 1.0
   }
 ];
 
