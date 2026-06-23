@@ -1,9 +1,50 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 const ContactSection = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    organization: "",
+    message: "",
+  });
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("submitting");
+    setErrorMessage("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.error || "Failed to submit request.");
+      }
+
+      setStatus("success");
+      setFormData({ name: "", email: "", organization: "", message: "" });
+    } catch (err: any) {
+      console.error(err);
+      setStatus("error");
+      setErrorMessage(err.message || "Failed to send message. Please try again.");
+    }
+  };
+
   return (
     <section id="contact" className="relative w-full bg-white flex flex-col items-center justify-center pt-24 overflow-hidden">
       {/* Top Lavender Strip */}
@@ -83,45 +124,100 @@ const ContactSection = () => {
                 Get in Touch With Us
               </h2>
 
-              <form className="space-y-3 sm:space-y-4" onSubmit={(e) => e.preventDefault()}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
+              {status === "success" ? (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="flex flex-col items-center justify-center text-center py-6 sm:py-10 space-y-4"
+                >
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#EADDFF] rounded-full flex items-center justify-center text-[#B794F4]">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 sm:w-8 sm:h-8">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                  </div>
+                  <h3 className="text-[20px] sm:text-[24px] font-bold text-[#1A1A1A]">Thank You!</h3>
+                  <p className="text-[13px] sm:text-[14px] text-zinc-600 max-w-[320px] leading-relaxed px-2">
+                    Your partnership request has been submitted successfully. A confirmation email has been sent to your inbox.
+                  </p>
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    onClick={() => setStatus("idle")}
+                    className="mt-3 sm:mt-4 px-5 py-2 sm:px-6 sm:py-2.5 bg-[#B794F4] text-white rounded-[12px] font-extrabold text-[13px] sm:text-[14px] transition-colors hover:bg-[#a37ce8]"
+                  >
+                    Send Another Request
+                  </motion.button>
+                </motion.div>
+              ) : (
+                <form className="space-y-3 sm:space-y-4" onSubmit={handleSubmit}>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
+                    <input 
+                      type="text" 
+                      name="name"
+                      placeholder="Full Name" 
+                      value={formData.name}
+                      onChange={handleChange}
+                      className="w-full bg-[#EADDFF] border-none p-3 px-3.5 sm:p-3.5 sm:px-4 rounded-lg sm:rounded-xl placeholder:text-zinc-500 text-[13px] sm:text-[14px] font-medium outline-none focus:ring-2 focus:ring-[#B794F4]"
+                      required
+                      disabled={status === "submitting"}
+                    />
+                    <input 
+                      type="email" 
+                      name="email"
+                      placeholder="Email Address" 
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="w-full bg-[#EADDFF] border-none p-3 px-3.5 sm:p-3.5 sm:px-4 rounded-lg sm:rounded-xl placeholder:text-zinc-500 text-[13px] sm:text-[14px] font-medium outline-none focus:ring-2 focus:ring-[#B794F4]"
+                      required
+                      disabled={status === "submitting"}
+                    />
+                  </div>
+
                   <input 
                     type="text" 
-                    placeholder="Full Name" 
+                    name="organization"
+                    placeholder="Organization Name" 
+                    value={formData.organization}
+                    onChange={handleChange}
                     className="w-full bg-[#EADDFF] border-none p-3 px-3.5 sm:p-3.5 sm:px-4 rounded-lg sm:rounded-xl placeholder:text-zinc-500 text-[13px] sm:text-[14px] font-medium outline-none focus:ring-2 focus:ring-[#B794F4]"
                     required
+                    disabled={status === "submitting"}
                   />
-                  <input 
-                    type="email" 
-                    placeholder="Email Address" 
-                    className="w-full bg-[#EADDFF] border-none p-3 px-3.5 sm:p-3.5 sm:px-4 rounded-lg sm:rounded-xl placeholder:text-zinc-500 text-[13px] sm:text-[14px] font-medium outline-none focus:ring-2 focus:ring-[#B794F4]"
+
+                  <textarea 
+                    name="message"
+                    placeholder="How Would You Like to Partner With Us?" 
+                    value={formData.message}
+                    onChange={handleChange}
+                    rows={3}
+                    className="w-full bg-[#EADDFF] border-none p-3 px-3.5 sm:p-3.5 sm:px-4 rounded-lg sm:rounded-xl placeholder:text-zinc-500 text-[13px] sm:text-[14px] font-medium outline-none resize-none focus:ring-2 focus:ring-[#B794F4]"
                     required
+                    disabled={status === "submitting"}
                   />
-                </div>
 
-                <input 
-                  type="text" 
-                  placeholder="Organization Name" 
-                  className="w-full bg-[#EADDFF] border-none p-3 px-3.5 sm:p-3.5 sm:px-4 rounded-lg sm:rounded-xl placeholder:text-zinc-500 text-[13px] sm:text-[14px] font-medium outline-none focus:ring-2 focus:ring-[#B794F4]"
-                  required
-                />
+                  {status === "error" && (
+                    <motion.p
+                      initial={{ opacity: 0, y: -5 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="text-red-500 font-bold text-[12px] sm:text-[13px] text-center"
+                    >
+                      {errorMessage}
+                    </motion.p>
+                  )}
 
-                <textarea 
-                  placeholder="How Would You Like to Partner With Us?" 
-                  rows={3}
-                  className="w-full bg-[#EADDFF] border-none p-3 px-3.5 sm:p-3.5 sm:px-4 rounded-lg sm:rounded-xl placeholder:text-zinc-500 text-[13px] sm:text-[14px] font-medium outline-none resize-none focus:ring-2 focus:ring-[#B794F4]"
-                  required
-                />
-
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  type="submit"
-                  className="w-full bg-[#B794F4] text-white py-3 sm:py-3.5 rounded-[12px] sm:rounded-[18px] font-extrabold text-[14px] sm:text-[16px] transition-all tracking-tight mt-2 sm:mt-3"
-                >
-                  Start Partnership
-                </motion.button>
-              </form>
+                  <motion.button
+                    whileHover={status === "submitting" ? {} : { scale: 1.02 }}
+                    whileTap={status === "submitting" ? {} : { scale: 0.98 }}
+                    type="submit"
+                    disabled={status === "submitting"}
+                    className={`w-full bg-[#B794F4] text-white py-3 sm:py-3.5 rounded-[12px] sm:rounded-[18px] font-extrabold text-[14px] sm:text-[16px] transition-all tracking-tight mt-2 sm:mt-3 ${
+                      status === "submitting" ? "opacity-75 cursor-not-allowed" : ""
+                    }`}
+                  >
+                    {status === "submitting" ? "Sending Request..." : "Start Partnership"}
+                  </motion.button>
+                </form>
+              )}
             </motion.div>
           </div>
         </div>
